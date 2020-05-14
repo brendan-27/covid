@@ -43,7 +43,7 @@ bot.on("message", async msg=>  {
         .setAuthor("COVID Bot Commands: ", bot.user.displayAvatarURL())
         .setColor(colors.red)
 
-        .addField("-global", "Displays Global COVID-19 stats")
+        .addField("-global", "Displays Global COVID-19 stats.")
         .addField("-covidinfo {country}", "Use  to see country by country COVID info.")
 
 
@@ -137,8 +137,8 @@ bot.on("message", async msg=>  {
 
     if (cmd.includes(`${prefix}covidinfo`)) {
 
-        var arg = "";
-        arg = msg.content.slice(prefix.length).split(' ');
+    
+        var arg = msg.content.slice(prefix.length).split(' ');
         
         
         var finalString = "";
@@ -157,7 +157,7 @@ bot.on("message", async msg=>  {
             website = "https://covid19-stats-api.herokuapp.com/api/v1/cases?country=US";
         }
         
-        console.log(finalString + " hello goobi");
+        //console.log(finalString + " hello goobi");
         
 
         /*console.log(arg);
@@ -167,7 +167,7 @@ bot.on("message", async msg=>  {
 
         const response = await fetch(website);
         const data = await response.json();
-        console.log(data.confirmed);
+        
         var confirmedCases = data.confirmed;
         var confrimedDeaths = data.deaths;
         var recoveries = data.recovered;
@@ -222,6 +222,16 @@ bot.on("message", async msg=>  {
         console.log(data); 
 
     }
+
+    if(cmd == `${prefix}stats`) {
+
+        msg.channel.send("COVIDBOT is in " + bot.guilds.size + " servers!");
+
+
+    }
+
+
+
 
 
 
