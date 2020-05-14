@@ -1,0 +1,2 @@
+node commands.js 
+PAUSE
