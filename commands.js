@@ -117,6 +117,9 @@ bot.on("message", async msg=>  {
 
         var newDeaths = data.results[0];
         var newDeaths2 = newDeaths.total_new_deaths_today;
+
+        var totalCountries = data.results[0];
+        var totalCountries2= totalCountries.total_affected_countries;
         
         
 
@@ -126,11 +129,11 @@ bot.on("message", async msg=>  {
             .setAuthor("Global COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
-            .addField("Total Cases:", totalCases2, true)
-            .addField("Total Deaths:", deaths2, true)
+            .addField("Total Cases:", newCases2, true)
+            .addField("Total Deaths:", newDeaths2, true)
             .addField("Total Recovered: ", recovered2, true)
-            .addField("New Cases Today:", newCases2, true)
-            .addField("New Deaths Today: ", newDeaths2, true)
+            .addField("Total Countries:", totalCountries2, true)
+            .addField("New Deaths Today: ", recovered2, true)
 
 
 
