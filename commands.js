@@ -16,6 +16,20 @@ function textOutput (arg1, arg2) {
     return finalString;
 }
 
+/*function sendMessage () {
+
+    var guildList = bot.guilds;
+    console.log(guildList.array);
+    try {
+        guildList.forEach(guild => guild.defaultChannel.send("messageToSend"));
+    } catch (err) {
+        console.log("Could not send message to ");
+        console.log(err);
+    }
+
+}
+sendMessage();*/
+
 
 
 
@@ -47,12 +61,13 @@ bot.on("message", async msg=>  {
         .setColor(colors.red)
 
         .addField("-global", "Displays Global COVID-19 stats.")
-        .addField("-covidinfo {country}", "Use  to see country by country COVID info.")
+        .addField("-countryinfo {country}", "Use  to see country by country COVID info.")
+        .addField("-statesinfo {state}", "Use to see state by state COVID info.")
 
 
 
 
-        .setFooter("COVID-19 Bot | 1.0")
+        .setFooter("COVID-19 Bot | 1.1.2")
 
         msg.channel.send({embed: Embed});
 
@@ -119,7 +134,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.0")
+            .setFooter("COVID-19 Bot | 1.1.2")
 
 
 
@@ -138,7 +153,7 @@ bot.on("message", async msg=>  {
 
 
 
-    if (cmd.includes(`${prefix}covidinfo`)) {
+    if (cmd.includes(`${prefix}countryinfo`)) {
 
     
         var arg = msg.content.slice(prefix.length).split(' ');
@@ -188,7 +203,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.0")
+            .setFooter("COVID-19 Bot | 1.1.2")
 
 
 
@@ -213,7 +228,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.0")
+            .setFooter("COVID-19 Bot | 1.1.2")
 
 
 
@@ -228,23 +243,105 @@ bot.on("message", async msg=>  {
 
     if(cmd == `${prefix}stats`) {
 
-        var int = 0;
-
-        for (var i = 0; i < bot.guilds; i++) {
 
 
-            int++;
-
-        }
-
+        msg.channel.send("COVIDBOT is in " + bot.guilds.cache.size + " servers, serving " + bot.users.cache.size + " users!");
         
 
 
+    }
 
-        msg.channel.send("COVIDBOT is in " + int + " servers!");
+    if (cmd == `${prefix}statesinfo`) {
 
+        var newStr = "";
+
+        var arg2 = msg.content.slice(prefix.length).split(' ');
+        console.log(arg2[1]);
+        var argRep = arg2[1].toLowerCase()
+        console.log(argRep);
+        if ("new" == argRep)  {
+            console.log("goobi");
+
+            
+            newStr = arg2[1]  + "%20" + arg2[2];
+
+            console.log(newStr);
+
+        } else if (arg2[1].toLowerCase().includes("new")) {
+            var lowerCase = arg2[1].toLowerCase();
+            var newSplit = lowerCase.split("new");
+            newStr = "new" + "%20" + newSplit[1];
+
+        }
+
+
+         else {
+
+            newStr = arg2[1];
+
+        }
+        
+        
+        console.log(newStr);
+        var website2 = "https://corona.lmao.ninja/v2/states/" + newStr + "?yesterday=";
+        const response = await fetch(website2);
+        const data2 = await response.json();
+
+        var casesState = data2.cases;
+        var deahtsState = data2.deaths;
+        var tests = data2.tests;
+        var todayyCases = data2.todayCases;
+        var todayyDeaths = data2.todayDeaths;
+
+
+        if (casesState == undefined) {
+            Embed = new discord.MessageEmbed()
+            .setColor(colors.red)
+            .setAuthor("Error", bot.user.displayAvatarURL())
+
+            .setThumbnail(bot.user.displayAvatarURL())
+            .setDescription("That is not a valid state!")
+           
+
+
+
+            .setFooter("COVID-19 Bot | 1.1.2")
+
+
+
+
+            msg.channel.send({embed: Embed});
+            return
+            
+        }
+
+
+        Embed = new discord.MessageEmbed()
+            .setColor(colors.red)
+            .setAuthor( arg2[1] + " COVID-19 Information", bot.user.displayAvatarURL())
+
+            .setThumbnail(bot.user.displayAvatarURL())
+            .addField("Positive Cases:", casesState, true)
+            .addField("Confirmed Deaths:", deahtsState, true)
+            .addField("Tests:", tests, true)
+            //.addField("New Cases:", todayyCases, true)
+            //.addField("New Deaths:", todayyDeaths, true)
+
+
+           
+
+
+
+            .setFooter("COVID-19 Bot | 1.1.2")
+
+
+
+
+        msg.channel.send({embed: Embed});
 
     }
+
+    
 
 
 
@@ -264,3 +361,4 @@ bot.on("message", async msg=>  {
 
 
 bot.login(process.env.token);
+//bot.login(botconfig.token);
