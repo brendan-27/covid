@@ -120,6 +120,9 @@ bot.on("message", async msg=>  {
 
         var totalCountries = data.results[0];
         var totalCountries2= totalCountries.total_affected_countries;
+
+        var recoveries = data.results[0];
+        var recoveries2 = recoveries.total_unresolved;
         
         
 
@@ -131,7 +134,7 @@ bot.on("message", async msg=>  {
             .setThumbnail(bot.user.displayAvatarURL())
             .addField("Total Cases:", newCases2, true)
             .addField("Total Deaths:", newDeaths2, true)
-            .addField("Total Recovered: ", recovered2, true)
+            .addField("Total Recovered: ", recoveries2, true)
             .addField("Total Countries:", totalCountries2, true)
             .addField("New Deaths Today: ", recovered2, true)
 
