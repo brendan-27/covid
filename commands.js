@@ -19,6 +19,9 @@ function textOutput (arg1, arg2) {
 
 
 
+
+
+
 bot.on("ready", async () => {
     console.log(`${bot.user.username} is online!`)
     bot.user.setActivity("COVID-19 | -help");
@@ -219,13 +222,26 @@ bot.on("message", async msg=>  {
 
 
 
-        console.log(data); 
+        
 
     }
 
     if(cmd == `${prefix}stats`) {
 
-        msg.channel.send("COVIDBOT is in " + bot.guilds.size + " servers!");
+        var int = 0;
+
+        for (var i = 0; i < bot.guilds; i++) {
+
+
+            int++;
+
+        }
+
+        
+
+
+
+        msg.channel.send("COVIDBOT is in " + int + " servers!");
 
 
     }
