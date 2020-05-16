@@ -312,7 +312,7 @@ bot.on("message", async msg=>  {
             newStr = arg2[1];
 
         }
-        var argRep = arg2[1].toLowerCase()
+        /*var argRep = arg2[1].toLowerCase()
         if ("south" == argRep)  {
             
 
@@ -355,9 +355,9 @@ bot.on("message", async msg=>  {
 
             newStr = arg2[1];
 
-        }
+        } */
         
-        newStr = arg2[1]  + "%20" + arg2[2];
+        //newStr = arg2[1]  + "%20" + arg2[2];
         console.log(newStr);
         var website2 = "https://corona.lmao.ninja/v2/states/" + newStr + "?yesterday=";
         const response = await fetch(website2);
