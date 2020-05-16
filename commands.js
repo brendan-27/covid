@@ -63,11 +63,37 @@ bot.on("message", async msg=>  {
         .addField("-global", "Displays Global COVID-19 stats.")
         .addField("-countryinfo {country}", "Use  to see country by country COVID info.")
         .addField("-statesinfo {state}", "Use to see state by state COVID info.")
+        .addField("-stats", "Use to see amount of servers bot is in.")
+        .addFeild("-update", "Use to see new features and fixes within the update.")
+        
 
 
 
 
-        .setFooter("COVID-19 Bot | 1.1.2")
+        .setFooter("COVID-19 Bot | 1.1.6")
+
+        msg.channel.send({embed: Embed});
+
+    }
+
+
+    if (cmd == `${prefix}update`) {
+
+        Embed = new discord.MessageEmbed()
+
+        .setAuthor("COVID Bot Commands: ", bot.user.displayAvatarURL())
+        .setColor(colors.red)
+
+        .addField("Added -statesinfo. Use -help to see commands.")
+        .addField("Added Fix for States with two names not working properly.")
+        .addField("Global command now shows total affected countries.")
+        .addField("Fixed Field at the top of state info so it displays proper state now.")
+        
+
+
+
+
+        .setFooter("COVID-19 Bot | 1.1.6")
 
         msg.channel.send({embed: Embed});
 
@@ -140,7 +166,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.5")
+            .setFooter("COVID-19 Bot | 1.1.6")
 
 
 
@@ -209,7 +235,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.5")
+            .setFooter("COVID-19 Bot | 1.1.6")
 
 
 
@@ -234,7 +260,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.5")
+            .setFooter("COVID-19 Bot | 1.1.6")
 
 
 
@@ -262,16 +288,16 @@ bot.on("message", async msg=>  {
         var newStr = "";
 
         var arg2 = msg.content.slice(prefix.length).split(' ');
-        console.log(arg2[1]);
+        
         var argRep = arg2[1].toLowerCase()
-        console.log(argRep);
+        
         if ("new" == argRep)  {
             
 
             
             newStr = arg2[1]  + "%20" + arg2[2];
 
-            console.log(newStr);
+            
 
         } else if (arg2[1].toLowerCase().includes("new")) {
             var lowerCase = arg2[1].toLowerCase();
@@ -293,7 +319,7 @@ bot.on("message", async msg=>  {
             
             newStr = arg2[1]  + "%20" + arg2[2];
 
-            console.log(newStr);
+            
 
         } else if (arg2[1].toLowerCase().includes("south")) {
             var lowerCase = arg2[1].toLowerCase();
@@ -315,7 +341,7 @@ bot.on("message", async msg=>  {
             
             newStr = arg2[1]  + "%20" + arg2[2];
 
-            console.log(newStr);
+            
 
         } else if (arg2[1].toLowerCase().includes("north")) {
             var lowerCase = arg2[1].toLowerCase();
@@ -332,7 +358,7 @@ bot.on("message", async msg=>  {
         }
         
         newStr = arg2[1]  + "%20" + arg2[2];
-        console.log(newStr);
+        
         var website2 = "https://corona.lmao.ninja/v2/states/" + newStr + "?yesterday=";
         const response = await fetch(website2);
         const data2 = await response.json();
@@ -355,7 +381,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.5")
+            .setFooter("COVID-19 Bot | 1.1.6")
 
 
 
@@ -368,7 +394,7 @@ bot.on("message", async msg=>  {
 
         Embed = new discord.MessageEmbed()
             .setColor(colors.red)
-            .setAuthor( arg2[1] + " COVID-19 Information", bot.user.displayAvatarURL())
+            .setAuthor( arg2 + " COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
             .addField("Positive Cases:", casesState, true)
@@ -382,7 +408,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.5")
+            .setFooter("COVID-19 Bot | 1.1.6")
 
 
 
