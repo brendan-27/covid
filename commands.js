@@ -64,7 +64,7 @@ bot.on("message", async msg=>  {
         .addField("-countryinfo {country}", "Use  to see country by country COVID info.")
         .addField("-statesinfo {state}", "Use to see state by state COVID info.")
         .addField("-stats", "Use to see amount of servers bot is in.")
-        .addFeild("-update", "Use to see new features and fixes within the update.")
+        .addField("-update", "Use to see new features and fixes within the update.")
         
 
 
