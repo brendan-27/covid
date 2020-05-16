@@ -273,12 +273,12 @@ bot.on("message", async msg=>  {
 
             console.log(newStr);
 
-        } else if (arg2[1].toLowerCase().includes("new")) {
+        } /*else if (arg2[1].toLowerCase().includes("new")) {
             var lowerCase = arg2[1].toLowerCase();
             var newSplit = lowerCase.split("new");
             newStr = "new" + "%20" + newSplit[1];
 
-        }
+        }*/
 
 
          else {
@@ -295,12 +295,12 @@ bot.on("message", async msg=>  {
 
             console.log(newStr);
 
-        } else if (arg2[1].toLowerCase().includes("south")) {
+        } /*else if (arg2[1].toLowerCase().includes("south")) {
             var lowerCase = arg2[1].toLowerCase();
             var newSplit = lowerCase.split("south");
             newStr = "south" + "%20" + newSplit[1];
 
-        } 
+        } */
 
 
          else {
@@ -317,12 +317,12 @@ bot.on("message", async msg=>  {
 
             console.log(newStr);
 
-        } else if (arg2[1].toLowerCase().includes("north")) {
+        }/* else if (arg2[1].toLowerCase().includes("north")) {
             var lowerCase = arg2[1].toLowerCase();
             var newSplit = lowerCase.split("north");
             newStr = "north" + "%20" + newSplit[1];
 
-        }
+        }*/
 
 
          else {
