@@ -84,10 +84,10 @@ bot.on("message", async msg=>  {
         .setAuthor("COVID Bot Commands: ", bot.user.displayAvatarURL())
         .setColor(colors.red)
 
-        .addField("Added -statesinfo. Use -help to see commands.")
-        .addField("Added Fix for States with two names not working properly.")
-        .addField("Global command now shows total affected countries.")
-        .addField("Fixed Field at the top of state info so it displays proper state now.")
+        .addField("New:", "Added -statesinfo. Use -help to see commands.")
+        .addField("Bug Fix", "Added Fix for States with two names not working properly.")
+        .addField("New:", "Global command now shows total affected countries.")
+        .addField("Bug Fix:", "Fixed Field at the top of state info so it displays proper state now.")
         
 
 
@@ -358,7 +358,7 @@ bot.on("message", async msg=>  {
         }
         
         newStr = arg2[1]  + "%20" + arg2[2];
-        
+        console.log(newStr);
         var website2 = "https://corona.lmao.ninja/v2/states/" + newStr + "?yesterday=";
         const response = await fetch(website2);
         const data2 = await response.json();
