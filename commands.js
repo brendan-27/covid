@@ -312,7 +312,7 @@ bot.on("message", async msg=>  {
             newStr = arg2[1];
 
         }
-        /*var argRep = arg2[1].toLowerCase()
+        argRep = arg2[1].toLowerCase()
         if ("south" == argRep)  {
             
 
@@ -334,7 +334,7 @@ bot.on("message", async msg=>  {
             newStr = arg2[1];
 
         }
-        var argRep = arg2[1].toLowerCase()
+        argRep = arg2[1].toLowerCase()
         if ("north" == argRep)  {
             
 
@@ -355,9 +355,9 @@ bot.on("message", async msg=>  {
 
             newStr = arg2[1];
 
-        } */
+        } 
         
-        //newStr = arg2[1]  + "%20" + arg2[2];
+        
         console.log(newStr);
         var website2 = "https://corona.lmao.ninja/v2/states/" + newStr + "?yesterday=";
         const response = await fetch(website2);
@@ -394,7 +394,7 @@ bot.on("message", async msg=>  {
 
         Embed = new discord.MessageEmbed()
             .setColor(colors.red)
-            .setAuthor( arg2 + " COVID-19 Information", bot.user.displayAvatarURL())
+            .setAuthor( arg2[1] + " COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
             .addField("Positive Cases:", casesState, true)
