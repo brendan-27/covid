@@ -134,13 +134,13 @@ bot.on("message", async msg=>  {
             .setThumbnail(bot.user.displayAvatarURL())
             .addField("Total Cases:", newCases2, true)
             .addField("Total Deaths:", newDeaths2, true)
-            .addField("Total Recovered: ", recoveries2, true)
+            .addField("Total Recovered: ", recoveries, true)
             .addField("Total Countries:", totalCountries2, true)
             .addField("New Deaths Today: ", recovered2, true)
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.2")
+            .setFooter("COVID-19 Bot | 1.1.5")
 
 
 
@@ -209,7 +209,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.2")
+            .setFooter("COVID-19 Bot | 1.1.5")
 
 
 
@@ -234,7 +234,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.2")
+            .setFooter("COVID-19 Bot | 1.1.5")
 
 
 
@@ -286,6 +286,52 @@ bot.on("message", async msg=>  {
             newStr = arg2[1];
 
         }
+        argRep = arg2[1].toLowerCase()
+        console.log(argRep);
+        if ("south" == argRep)  {
+            console.log("goobi");
+
+            
+            newStr = arg2[1]  + "%20" + arg2[2];
+
+            console.log(newStr);
+
+        } else if (arg2[1].toLowerCase().includes("south")) {
+            var lowerCase = arg2[1].toLowerCase();
+            var newSplit = lowerCase.split("south");
+            newStr = "south" + "%20" + newSplit[1];
+
+        }
+
+
+         else {
+
+            newStr = arg2[1];
+
+        }
+        argRep = arg2[1].toLowerCase()
+        console.log(argRep);
+        if ("north" == argRep)  {
+            console.log("goobi");
+
+            
+            newStr = arg2[1]  + "%20" + arg2[2];
+
+            console.log(newStr);
+
+        } else if (arg2[1].toLowerCase().includes("north")) {
+            var lowerCase = arg2[1].toLowerCase();
+            var newSplit = lowerCase.split("north");
+            newStr = "north" + "%20" + newSplit[1];
+
+        }
+
+
+         else {
+
+            newStr = arg2[1];
+
+        }
         
         
         console.log(newStr);
@@ -311,7 +357,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.2")
+            .setFooter("COVID-19 Bot | 1.1.5")
 
 
 
@@ -338,7 +384,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.2")
+            .setFooter("COVID-19 Bot | 1.1.5")
 
 
 
