@@ -30,7 +30,9 @@ function textOutput (arg1, arg2) {
 }
 sendMessage();*/
 
-
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+}
 
 
 
@@ -316,6 +318,8 @@ bot.on("message", async msg=>  {
         var tests = data2.tests;
         var todayyCases = data2.todayCases;
         var todayyDeaths = data2.todayDeaths;
+
+        numberWithCommas(casesState);
 
 
         if (casesState == undefined) {
