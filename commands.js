@@ -266,7 +266,7 @@ bot.on("message", async msg=>  {
         var argRep = arg2[1].toLowerCase()
         console.log(argRep);
         if ("new" == argRep)  {
-            console.log("goobi");
+            
 
             
             newStr = arg2[1]  + "%20" + arg2[2];
@@ -286,10 +286,9 @@ bot.on("message", async msg=>  {
             newStr = arg2[1];
 
         }
-        argRep = arg2[1].toLowerCase()
-        console.log(argRep);
+        var argRep = arg2[1].toLowerCase()
         if ("south" == argRep)  {
-            console.log("goobi");
+            
 
             
             newStr = arg2[1]  + "%20" + arg2[2];
@@ -301,7 +300,7 @@ bot.on("message", async msg=>  {
             var newSplit = lowerCase.split("south");
             newStr = "south" + "%20" + newSplit[1];
 
-        }
+        } 
 
 
          else {
@@ -309,10 +308,9 @@ bot.on("message", async msg=>  {
             newStr = arg2[1];
 
         }
-        argRep = arg2[1].toLowerCase()
-        console.log(argRep);
+        var argRep = arg2[1].toLowerCase()
         if ("north" == argRep)  {
-            console.log("goobi");
+            
 
             
             newStr = arg2[1]  + "%20" + arg2[2];
