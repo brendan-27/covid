@@ -291,7 +291,7 @@ bot.on("message", async msg=>  {
         
         var argRep = arg2[1].toLowerCase()
         
-        if ("new" == argRep)  {
+        if ("new" == argRep || "south" == argRep || "north" == argRep || "west" == argRep)  {
             
 
             
@@ -299,63 +299,11 @@ bot.on("message", async msg=>  {
 
             
 
-        } else if (arg2[1].toLowerCase().includes("new")) {
-            var lowerCase = arg2[1].toLowerCase();
-            var newSplit = lowerCase.split("new");
-            newStr = "new" + "%20" + newSplit[1];
-
-        }
-
-
-         else {
+        } else {
 
             newStr = arg2[1];
 
         }
-        argRep = arg2[1].toLowerCase()
-        if ("south" == argRep)  {
-            
-
-            
-            newStr = arg2[1]  + "%20" + arg2[2];
-
-            
-
-        } else if (arg2[1].toLowerCase().includes("south")) {
-            var lowerCase = arg2[1].toLowerCase();
-            var newSplit = lowerCase.split("south");
-            newStr = "south" + "%20" + newSplit[1];
-
-        } 
-
-
-         else {
-
-            newStr = arg2[1];
-
-        }
-        argRep = arg2[1].toLowerCase()
-        if ("north" == argRep)  {
-            
-
-            
-            newStr = arg2[1]  + "%20" + arg2[2];
-
-            
-
-        } else if (arg2[1].toLowerCase().includes("north")) {
-            var lowerCase = arg2[1].toLowerCase();
-            var newSplit = lowerCase.split("north");
-            newStr = "north" + "%20" + newSplit[1];
-
-        }
-
-
-         else {
-
-            newStr = arg2[1];
-
-        } 
         
         
         console.log(newStr);
