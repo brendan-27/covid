@@ -72,7 +72,7 @@ bot.on("message", async msg=>  {
 
 
 
-        .setFooter("COVID-19 Bot | 1.1.6")
+        .setFooter("COVID-19 Bot | 1.1.7")
 
         msg.channel.send({embed: Embed});
 
@@ -90,12 +90,13 @@ bot.on("message", async msg=>  {
         .addField("Bug Fix", "Added Fix for States with two names not working properly.")
         .addField("New:", "Global command now shows total affected countries.")
         .addField("Bug Fix:", "Fixed Field at the top of state info so it displays proper state now.")
-        
+        .addField("New:", "Commas between numbers in stats pages.")
+        .addField("Bug Fix:", "Global stats now back to normal")
 
 
 
 
-        .setFooter("COVID-19 Bot | 1.1.6")
+        .setFooter("COVID-19 Bot | 1.1.7")
 
         msg.channel.send({embed: Embed});
 
@@ -160,15 +161,16 @@ bot.on("message", async msg=>  {
             .setAuthor("Global COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
-            .addField("Total Cases:", newCases2, true)
-            .addField("Total Deaths:", newDeaths2, true)
-            .addField("Total Recovered: ", recoveries, true)
-            .addField("Total Countries:", totalCountries2, true)
-            .addField("New Deaths Today: ", recovered2, true)
+            .addField("Total Cases:", numberWithCommas(totalCases2), true)
+            .addField("Total Deaths:", numberWithCommas(deaths2), true)
+            .addField("Total Recovered: ", numberWithCommas(recovered2), true)
+            .addField("Total Countries:", numberWithCommas(totalCountries2), true)
+            .addField("New Deaths Today: ", numberWithCommas(newDeaths2), true)
+            .addField("New Cases Today: ", numberWithCommas(newCases2), true)
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.6")
+            .setFooter("COVID-19 Bot | 1.1.7")
 
 
 
@@ -237,7 +239,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.6")
+            .setFooter("COVID-19 Bot | 1.1.7")
 
 
 
@@ -254,15 +256,15 @@ bot.on("message", async msg=>  {
             .setAuthor( arg[1] + " COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
-            .addField("Positive Cases:", confirmedCases, true)
-            .addField("Confirmed Deaths:", confrimedDeaths, true)
-            .addField("Confirmed Recoveries:", recoveries, true)
+            .addField("Positive Cases:", numberWithCommas(confirmedCases), true)
+            .addField("Confirmed Deaths:", numberWithCommas(confrimedDeaths), true)
+            .addField("Confirmed Recoveries:", numberWithCommas(recoveries), true)
 
            
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.6")
+            .setFooter("COVID-19 Bot | 1.1.7")
 
 
 
@@ -319,9 +321,6 @@ bot.on("message", async msg=>  {
         var todayyCases = data2.todayCases;
         var todayyDeaths = data2.todayDeaths;
 
-        numberWithCommas(casesState);
-
-
         if (casesState == undefined) {
             Embed = new discord.MessageEmbed()
             .setColor(colors.red)
@@ -333,7 +332,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.6")
+            .setFooter("COVID-19 Bot | 1.1.7")
 
 
 
@@ -343,15 +342,14 @@ bot.on("message", async msg=>  {
             
         }
 
-
         Embed = new discord.MessageEmbed()
             .setColor(colors.red)
             .setAuthor( arg2[1] + " COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
-            .addField("Positive Cases:", casesState, true)
-            .addField("Confirmed Deaths:", deahtsState, true)
-            .addField("Tests:", tests, true)
+            .addField("Positive Cases:", numberWithCommas(casesState), true)
+            .addField("Confirmed Deaths:", numberWithCommas(deahtsState), true)
+            .addField("Tests:", numberWithCommas(tests), true)
             //.addField("New Cases:", todayyCases, true)
             //.addField("New Deaths:", todayyDeaths, true)
 
@@ -360,7 +358,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.6")
+            .setFooter("COVID-19 Bot | 1.1.7")
 
 
 
