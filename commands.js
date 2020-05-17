@@ -67,13 +67,30 @@ bot.on("message", async msg=>  {
         .addField("-statesinfo {state}", "Use to see state by state COVID info.")
         .addField("-stats", "Use to see amount of servers bot is in.")
         .addField("-update", "Use to see new features and fixes within the update.")
+        .addField("-resources", "Use to see COVID-19 rescouces with multiple links.")
         
 
 
 
 
-        .setFooter("COVID-19 Bot | 1.1.7")
+        .setFooter("COVID-19 Bot | 1.1.8")
 
+        msg.channel.send({embed: Embed});
+
+    }
+
+    if (cmd == `${prefix}resources`) {
+        Embed = new discord.MessageEmbed()
+        .setAuthor("COVID Bot Commands: ", bot.user.displayAvatarURL())
+        .setColor(colors.red)
+
+        .setDescription("COVID-19 resources:")
+        .addField("CDC: ", "https://www.cdc.gov/coronavirus/2019-ncov/index.html")
+        .addField("r/corornavirus: ", "https://www.reddit.com/r/Coronavirus/")
+        .addField("World Health Organization:", "https://www.who.int/emergencies/diseases/novel-coronavirus-2019")
+
+
+        .setFooter("COVID-19 Bot | 1.1.8")
         msg.channel.send({embed: Embed});
 
     }
@@ -86,17 +103,16 @@ bot.on("message", async msg=>  {
         .setAuthor("COVID Bot Commands: ", bot.user.displayAvatarURL())
         .setColor(colors.red)
 
-        .addField("New:", "Added -statesinfo. Use -help to see commands.")
+        .addField("New:", "Added -resources. Can now see multiple COVID resources. Use -help.")
         .addField("Bug Fix", "Added Fix for States with two names not working properly.")
         .addField("New:", "Global command now shows total affected countries.")
-        .addField("Bug Fix:", "Fixed Field at the top of state info so it displays proper state now.")
         .addField("New:", "Commas between numbers in stats pages.")
-        .addField("Bug Fix:", "Global stats now back to normal")
+        
 
 
 
 
-        .setFooter("COVID-19 Bot | 1.1.7")
+        .setFooter("COVID-19 Bot | 1.1.8")
 
         msg.channel.send({embed: Embed});
 
@@ -170,7 +186,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.7")
+            .setFooter("COVID-19 Bot | 1.1.8")
 
 
 
@@ -239,7 +255,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.7")
+            .setFooter("COVID-19 Bot | 1.1.8")
 
 
 
@@ -264,7 +280,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.7")
+            .setFooter("COVID-19 Bot | 1.1.8")
 
 
 
@@ -332,7 +348,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.7")
+            .setFooter("COVID-19 Bot | 1.1.8")
 
 
 
@@ -358,7 +374,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.7")
+            .setFooter("COVID-19 Bot | 1.1.8")
 
 
 
