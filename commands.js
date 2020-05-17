@@ -107,6 +107,8 @@ bot.on("message", async msg=>  {
         .addField("Bug Fix", "Added Fix for States with two names not working properly.")
         .addField("New:", "Global command now shows total affected countries.")
         .addField("New:", "Commas between numbers in stats pages.")
+        .addField("Bug Fix:", "State Name not showing up properly on message.")
+        .addField("New:", "More Data for -statesinfo.")
         
 
 
@@ -336,6 +338,8 @@ bot.on("message", async msg=>  {
         var tests = data2.tests;
         var todayyCases = data2.todayCases;
         var todayyDeaths = data2.todayDeaths;
+        var activeCases = data2.active;
+        var state = data2.state;
 
         if (casesState == undefined) {
             Embed = new discord.MessageEmbed()
@@ -360,12 +364,13 @@ bot.on("message", async msg=>  {
 
         Embed = new discord.MessageEmbed()
             .setColor(colors.red)
-            .setAuthor( arg2[1] + " COVID-19 Information", bot.user.displayAvatarURL())
+            .setAuthor( state + " COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
             .addField("Positive Cases:", numberWithCommas(casesState), true)
             .addField("Confirmed Deaths:", numberWithCommas(deahtsState), true)
             .addField("Tests:", numberWithCommas(tests), true)
+            .addField("Active:", numberWithCommas(activeCases), true)
             //.addField("New Cases:", todayyCases, true)
             //.addField("New Deaths:", todayyDeaths, true)
 
