@@ -38,9 +38,13 @@ function numberWithCommas(x) {
 
 
 
+
+
 bot.on("ready", async () => {
     console.log(`${bot.user.username} is online!`)
     bot.user.setActivity("COVID-19 | -help");
+
+    
     
 })
 
@@ -299,7 +303,7 @@ bot.on("message", async msg=>  {
 
 
 
-        msg.channel.send("COVIDBOT is in " + bot.guilds.cache.size + " servers, serving " + bot.users.cache.size + " users!");
+        msg.channel.send("COVIDBOT is in " + numberWithCommas(bot.guilds.cache.size) + " servers, serving " + numberWithCommas(bot.users.cache.size) + " users!");
         
 
 
@@ -385,6 +389,18 @@ bot.on("message", async msg=>  {
 
 
         msg.channel.send({embed: Embed});
+
+    }
+
+    if (cmd == `${prefix}notification`) {
+
+
+        var fs = require('fs');
+
+        var readMe = fs.readFileSync('servers_update_id', 'utf8');
+        console.log(readMe);
+
+
 
     }
 
