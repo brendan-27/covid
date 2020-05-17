@@ -183,12 +183,12 @@ bot.on("message", async msg=>  {
             .setAuthor("Global COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
-            .addField("Total Cases:", numberWithCommas(totalCases2), true)
-            .addField("Total Deaths:", numberWithCommas(deaths2), true)
-            .addField("Total Recovered: ", numberWithCommas(recovered2), true)
-            .addField("Total Countries:", numberWithCommas(totalCountries2), true)
-            .addField("New Deaths Today: ", numberWithCommas(newDeaths2), true)
-            .addField("New Cases Today: ", numberWithCommas(newCases2), true)
+            .addField("📈Total Cases:", numberWithCommas(totalCases2), true)
+            .addField("☠️Total Deaths:", numberWithCommas(deaths2), true)
+            .addField("💉Total Recovered: ", numberWithCommas(recovered2), true)
+            .addField("🗺️Total Countries:", numberWithCommas(totalCountries2), true)
+            .addField("✉️New Deaths Today: ", numberWithCommas(newDeaths2), true)
+            .addField("✉️New Cases Today: ", numberWithCommas(newCases2), true)
 
 
 
@@ -278,9 +278,9 @@ bot.on("message", async msg=>  {
             .setAuthor( arg[1] + " COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
-            .addField("Positive Cases:", numberWithCommas(confirmedCases), true)
-            .addField("Confirmed Deaths:", numberWithCommas(confrimedDeaths), true)
-            .addField("Confirmed Recoveries:", numberWithCommas(recoveries), true)
+            .addField("📈Positive Cases:", numberWithCommas(confirmedCases))
+            .addField("💀Confirmed Deaths:", numberWithCommas(confrimedDeaths))
+            .addField("💉Confirmed Recoveries:", numberWithCommas(recoveries))
 
            
 
@@ -371,10 +371,10 @@ bot.on("message", async msg=>  {
             .setAuthor( state + " COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
-            .addField("Positive Cases:", numberWithCommas(casesState), true)
-            .addField("Confirmed Deaths:", numberWithCommas(deahtsState), true)
-            .addField("Tests:", numberWithCommas(tests), true)
-            .addField("Active:", numberWithCommas(activeCases), true)
+            .addField("📈Positive Cases:", numberWithCommas(casesState), true)
+            .addField("☠️Confirmed Deaths:", numberWithCommas(deahtsState), true)
+            .addField("🧪Tests:", numberWithCommas(tests), true)
+            .addField("💹Active:", numberWithCommas(activeCases), true)
             //.addField("New Cases:", todayyCases, true)
             //.addField("New Deaths:", todayyDeaths, true)
 
