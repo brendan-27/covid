@@ -70,16 +70,18 @@ bot.on("message", async msg=>  {
         .addField("-global", "Displays Global COVID-19 stats.")
         .addField("-countryinfo {country}", "Use  to see country by country COVID info.")
         .addField("-statesinfo {state}", "Use to see state by state COVID info.")
+        .addField("-continentsinfo {continent}", "Use to see COVID stats on different continents.")
         .addField("-stats", "Use to see amount of servers bot is in.")
         .addField("-update", "Use to see new features and fixes within the update.")
         .addField("-resources", "Use to see COVID-19 rescouces with multiple links.")
         .addField("-invite", "Use to get a invite link to get COVID Bot in your server.")
         
+        
 
 
 
 
-        .setFooter("COVID-19 Bot | 1.1.9")
+        .setFooter("COVID-19 Bot | 1.3")
 
         msg.channel.send({embed: Embed});
 
@@ -96,7 +98,7 @@ bot.on("message", async msg=>  {
         .addField("World Health Organization:", "https://www.who.int/emergencies/diseases/novel-coronavirus-2019")
 
 
-        .setFooter("COVID-19 Bot | 1.1.9")
+        .setFooter("COVID-19 Bot | 1.3")
         msg.channel.send({embed: Embed});
 
     }
@@ -110,15 +112,16 @@ bot.on("message", async msg=>  {
         .setColor(colors.red)
 
         .addField("New:", "Added -resources. Can now see multiple COVID resources. Use -help.")
-        .addField("Bug Fix", "Added Fix for States with two names not working properly.")
+        .addField("New", "Completely Rewrote all stats. Much more info and stats for all colums.")
         .addField("New:", "Added -invite use -help to see.")
-        .addField("New:", "More Data for -statesinfo.")
+        .addField("New:", "Added continents to the pool of stats. -continentsinfo. use -help to see.")
+        .addField("Bug Fix:", "Bugs and other issues fixed.")
         
 
 
 
 
-        .setFooter("COVID-19 Bot | 1.1.9")
+        .setFooter("COVID-19 Bot | 1.2")
 
         msg.channel.send({embed: Embed});
 
@@ -150,31 +153,35 @@ bot.on("message", async msg=>  {
 
 
     if (cmd === `${prefix}global`) {
-        const response = await fetch("https://thevirustracker.com/free-api?global=stats");
+        const response = await fetch("https://corona.lmao.ninja/v2/all");
         const data = await response.json();
 
 
-        var totalCases = data.results[0];
-        var totalCases2 = totalCases.total_cases;
-
-        var deaths = data.results[0];
-        var deaths2 = deaths.total_deaths;
-
-        var newCases = data.results[0];
-        var newCases2 = newCases.total_new_cases_today;
-
-        var recovered = data.results[0];
-        var recovered2 = recovered.total_recovered;
-
-        var newDeaths = data.results[0];
-        var newDeaths2 = newDeaths.total_new_deaths_today;
-
-        var totalCountries = data.results[0];
-        var totalCountries2= totalCountries.total_affected_countries;
-
-        var recoveries = data.results[0];
-        var recoveries2 = recoveries.total_unresolved;
+        var totalCases = data.cases;
         
+
+        var deaths = data.deaths
+        
+
+        var newCases = data.todayCases;
+        
+
+        var recovered = data.recovered
+        
+
+        var newDeaths = data.todayDeaths;
+
+
+        var totalCountries = data.affectedCountries;
+
+
+        var test = data.tests;
+
+        
+        var testPerMillion = data.testsPerOneMillion;
+
+
+        var activePerMillion = data.activePerOneMillion;
         
 
 
@@ -183,16 +190,19 @@ bot.on("message", async msg=>  {
             .setAuthor("Global COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
-            .addField("📈Total Cases:", numberWithCommas(totalCases2), true)
-            .addField("☠️Total Deaths:", numberWithCommas(deaths2), true)
-            .addField("💉Total Recovered: ", numberWithCommas(recovered2), true)
-            .addField("🗺️Total Countries:", numberWithCommas(totalCountries2), true)
-            .addField("☠️New Deaths Today: ", numberWithCommas(newDeaths2), true)
-            .addField("✉️New Cases Today: ", numberWithCommas(newCases2), true)
+            .addField("📈Total Cases:", numberWithCommas(totalCases), true)
+            .addField("☠️Total Deaths:", numberWithCommas(deaths), true)
+            .addField("💉Total Recovered: ", numberWithCommas(recovered), true)
+            .addField("🗺️Total Countries:", numberWithCommas(totalCountries), true)
+            .addField("☠️New Deaths Today: ", numberWithCommas(newDeaths), true)
+            .addField("✉️New Cases Today: ", numberWithCommas(newCases), true)
+            .addField("🧪Tests: ", numberWithCommas(test), true)
+            .addField("🧪Tests Per One Million: ", numberWithCommas(testPerMillion), true)
+            .addField("📊Active Per One Million", numberWithCommas(activePerMillion), true)
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.9")
+            .setFooter("COVID-19 Bot | 1.3")
 
 
 
@@ -214,40 +224,47 @@ bot.on("message", async msg=>  {
     if (cmd.includes(`${prefix}countryinfo`)) {
 
     
-        var arg = msg.content.slice(prefix.length).split(' ');
-        
-        
-        var finalString = "";
-        var res = msg.content.substr(msg.content.length - arg[1].length + 1, msg.content.length);
+        var newStr = "";
 
+        var arg2 = msg.content.slice(prefix.length).split(' ');
         
-        finalString = finalString.concat(arg[1][0].toUpperCase());
+        var argRep = arg2[1].toLowerCase()
         
-        finalString = finalString.concat(res.toLowerCase());
-        if (arg[1].toUpperCase() != "US" && arg[1].toLowerCase() != "united states" && arg[1].toLowerCase() != "america") {
+        if ("united" == argRep || "south" == argRep || "new" == argRep || "saudi" == argRep || "Sri" == argRep || "costa" == argRep || "san" == argRep)  {
+            
 
+            
+            newStr = arg2[1]  + "%20" + arg2[2];
 
-            var website = "https://covid19-stats-api.herokuapp.com/api/v1/cases?country=" + textOutput(msg.content, arg);
+            
 
         } else {
-            website = "https://covid19-stats-api.herokuapp.com/api/v1/cases?country=US";
+
+            newStr = arg2[1];
+
         }
         
-        //console.log(finalString + " hello goobi");
-        
-
-        /*console.log(arg);
-        console.log(website);*/
         
         
+        var website2 = "https://corona.lmao.ninja/v2/countries/" + newStr;
 
         const response = await fetch(website);
         const data = await response.json();
+
+        var flagCountry = data.flag;
         
-        var confirmedCases = data.confirmed;
+        var confirmedCases = data.cases;
         var confrimedDeaths = data.deaths;
         var recoveries = data.recovered;
-        //var confirmedCases2 = confirmedCases.confirmed;
+
+        var activeCountry = data.active;
+        var criticalCountry = data.critical
+        var testsCountry = data.tests;
+
+        var casesMillion = data.casesPerOneMillion;
+        var testsMillion = data.testsPerOneMillion;
+        var recoveredMillion = data.recoveredPerOneMillion;
+        
         
 
         if (confirmedCases == undefined) {
@@ -261,7 +278,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.9")
+            .setFooter("COVID-19 Bot | 1.3")
 
 
 
@@ -277,16 +294,22 @@ bot.on("message", async msg=>  {
             .setColor(colors.red)
             .setAuthor( arg[1] + " COVID-19 Information", bot.user.displayAvatarURL())
 
-            .setThumbnail(bot.user.displayAvatarURL())
-            .addField("📈Positive Cases:", numberWithCommas(confirmedCases))
-            .addField("💀Confirmed Deaths:", numberWithCommas(confrimedDeaths))
-            .addField("💉Confirmed Recoveries:", numberWithCommas(recoveries))
+            .setThumbnail(flagCountry)
+            .addField("📈Positive Cases:", numberWithCommas(confirmedCases), true)
+            .addField("💀Confirmed Deaths:", numberWithCommas(confrimedDeaths), true)
+            .addField("💉Confirmed Recoveries:", numberWithCommas(recoveries), true)
+            .addField("💹Active Cases:", numberWithCommas(activeCountry), true)
+            .addField("💀Critical:", numberWithCommas(criticalCountry), true)
+            .addField("🧪Tests:", numberWithCommas(testsCountry), true)
+            .addField("📈Cases Per Million:", numberWithCommas(casesMillion), true)
+            .addField("🧪Tests Per Million:", numberWithCommas(testsMillion), true)
+            .addField("💉Recoverd Per Million:", numberWithCommas(recoveredMillion), true)
 
            
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.9")
+            .setFooter("COVID-19 Bot | 1.3")
 
 
 
@@ -333,17 +356,17 @@ bot.on("message", async msg=>  {
         
         
         console.log(newStr);
-        var website2 = "https://corona.lmao.ninja/v2/states/" + newStr + "?yesterday=";
+        var website2 = "https://corona.lmao.ninja/v2/states/" + newStr;
         const response = await fetch(website2);
         const data2 = await response.json();
 
         var casesState = data2.cases;
         var deahtsState = data2.deaths;
         var tests = data2.tests;
-        var todayyCases = data2.todayCases;
-        var todayyDeaths = data2.todayDeaths;
         var activeCases = data2.active;
         var state = data2.state;
+        var deathsMillion = data2.deathsPerOneMillion;
+        var testsStateMillion = data2.testsPerOneMillion;
 
         if (casesState == undefined) {
             Embed = new discord.MessageEmbed()
@@ -356,7 +379,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.9")
+            .setFooter("COVID-19 Bot | 1.3")
 
 
 
@@ -371,19 +394,19 @@ bot.on("message", async msg=>  {
             .setAuthor( state + " COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
-            .addField("📈Positive Cases:", numberWithCommas(casesState))
-            .addField("☠️Confirmed Deaths:", numberWithCommas(deahtsState))
-            .addField("🧪Tests:", numberWithCommas(tests))
-            .addField("💹Active:", numberWithCommas(activeCases))
-            //.addField("New Cases:", todayyCases, true)
-            //.addField("New Deaths:", todayyDeaths, true)
+            .addField("📈Positive Cases:", numberWithCommas(casesState), true)
+            .addField("☠️Confirmed Deaths:", numberWithCommas(deahtsState), true)
+            .addField("🧪Tests:", numberWithCommas(tests), true)
+            .addField("💹Active:", numberWithCommas(activeCases), true)
+            .addField("☠️Deaths Per Million:", numberWithCommas(deathsMillion), true)
+            .addField("🧪Tests Per Million:", numberWithCommas(testsStateMillion), true)
 
 
-           
+    
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.9")
+            .setFooter("COVID-19 Bot | 1.3")
 
 
 
@@ -402,6 +425,110 @@ bot.on("message", async msg=>  {
 
 
         msg.author.send(Embed);
+
+    }
+
+    if(cmd == `${prefix}continentsinfo`) {
+
+        var newStr = "";
+
+        var arg2 = msg.content.slice(prefix.length).split(' ');
+        
+        var argRep = arg2[1].toLowerCase()
+        
+        if ("south" == argRep || "north" == argRep || "west" == argRep)  {
+            
+
+            
+            newStr = arg2[1]  + "%20" + arg2[2];
+
+            
+
+        } else {
+
+            newStr = arg2[1];
+
+        }
+        
+        
+        console.log(newStr);
+        var website2 = "https://corona.lmao.ninja/v2/continents/" + newStr;
+        const response = await fetch(website2);
+        const data = await response.json();
+
+        var continentCases = data.cases;
+        var continentNewCases = data.todayCases;
+        var continentDeaths = data.deaths;
+
+
+        var continentTodayDeaths = data.todayDeaths;
+        var continentRecovered = data.recovered;
+        var continentActive = data.active;
+
+        var continentTests = data.tests;
+        var contientTestsMillion = data.testsPerOneMillion;
+        var continentDeahtsMillion = data.deathsPerOneMillion;
+
+
+
+        if (casesState == undefined) {
+            Embed = new discord.MessageEmbed()
+            .setColor(colors.red)
+            .setAuthor("Error", bot.user.displayAvatarURL())
+
+            .setThumbnail(bot.user.displayAvatarURL())
+            .setDescription("That is not a valid continent!")
+           
+
+
+
+            .setFooter("COVID-19 Bot | 1.3")
+
+
+
+
+            msg.channel.send({embed: Embed});
+            return
+            
+        }
+
+        Embed = new discord.MessageEmbed()
+            .setColor(colors.red)
+            .setAuthor( state + " COVID-19 Information", bot.user.displayAvatarURL())
+
+            .setThumbnail(bot.user.displayAvatarURL())
+            .addField("📈Positive Cases:", numberWithCommas(continentCases))
+            .addField("☠️Confirmed Deaths:", numberWithCommas(continentDeaths))
+            .addField("🧪Tests:", numberWithCommas(continentTests))
+            .addField("💹Active:", numberWithCommas(continentActive))
+            .addField("📊New Cases:", numberWithCommas(continentNewCases), true)
+            .addField("☠️New Deaths:", numberWithCommas(continentTodayDeaths), true)
+            .addField("🏥Recovered:", numberWithCommas(continentRecovered), true)
+            .addField("🧪Tests Per Million:", numberWithCommas(contientTestsMillion), true)
+            .addField("☠️Deahts Per Million:", numberWithCommas(continentDeahtsMillion), true)
+            
+            
+            
+
+
+           
+
+
+
+            .setFooter("COVID-19 Bot | 1.3")
+
+
+
+
+        msg.channel.send({embed: Embed});
+
+
+
+
+
+
+
+
 
     }
 
