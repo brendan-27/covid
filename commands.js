@@ -248,7 +248,7 @@ bot.on("message", async msg=>  {
         
         var website2 = "https://corona.lmao.ninja/v2/countries/" + newStr;
 
-        const response = await fetch(website);
+        const response = await fetch(website2);
         const data = await response.json();
 
         var flagCountry = data.flag;
