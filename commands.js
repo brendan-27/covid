@@ -456,6 +456,8 @@ bot.on("message", async msg=>  {
         const response = await fetch(website2);
         const data = await response.json();
 
+        var continentName = data.continent;
+
         var continentCases = data.cases;
         var continentNewCases = data.todayCases;
         var continentDeaths = data.deaths;
@@ -494,13 +496,13 @@ bot.on("message", async msg=>  {
 
         Embed = new discord.MessageEmbed()
             .setColor(colors.red)
-            .setAuthor( state + " COVID-19 Information", bot.user.displayAvatarURL())
+            .setAuthor( continent + " COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
-            .addField("📈Positive Cases:", numberWithCommas(continentCases))
-            .addField("☠️Confirmed Deaths:", numberWithCommas(continentDeaths))
-            .addField("🧪Tests:", numberWithCommas(continentTests))
-            .addField("💹Active:", numberWithCommas(continentActive))
+            .addField("📈Positive Cases:", numberWithCommas(continentCases), true)
+            .addField("☠️Confirmed Deaths:", numberWithCommas(continentDeaths), true)
+            .addField("🧪Tests:", numberWithCommas(continentTests), true)
+            .addField("💹Active:", numberWithCommas(continentActive), true)
             .addField("📊New Cases:", numberWithCommas(continentNewCases), true)
             .addField("☠️New Deaths:", numberWithCommas(continentTodayDeaths), true)
             .addField("🏥Recovered:", numberWithCommas(continentRecovered), true)
