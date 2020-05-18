@@ -294,7 +294,7 @@ bot.on("message", async msg=>  {
             .setColor(colors.red)
             .setAuthor( arg2[1] + " COVID-19 Information", bot.user.displayAvatarURL())
 
-            .setThumbnail(flagCountry)
+            .setThumbnail(bot.user.displayAvatarURL())
             .addField("📈Positive Cases:", numberWithCommas(confirmedCases), true)
             .addField("💀Confirmed Deaths:", numberWithCommas(confrimedDeaths), true)
             .addField("💉Confirmed Recoveries:", numberWithCommas(recoveries), true)
