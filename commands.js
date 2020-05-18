@@ -94,6 +94,7 @@ bot.on("message", async msg=>  {
 
         .setAuthor("COVID-19 Bot", bot.user.displayAvatarURL())
         .setTitle("Info: ")
+        .setColor(colors.red)
         .addField("Data:", "Data is provided by https://corona.lmao.ninja/")
         .addField("Live Data:", "Data is updated live about once every 10 minutes.")
         .addField("Support Server:", "https://discord.gg/EvDeuWT")
