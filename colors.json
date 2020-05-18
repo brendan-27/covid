@@ -1,4 +1,12 @@
 {
-    "blue": "1V30C1",
-    "red": "D21717"
+    "red": "C0392B",
+    "blue": "392BC0",
+    "green": "2BC039",
+    "lime": "2BC084",
+    "orange": "C0842B",
+    "yellow": "B2C02B",
+    "yellowgreen": "68C02B",
+    "cyan": "2BB2C0",
+    "purple": "832BC0",
+    "white": "F7E6E4"
 }

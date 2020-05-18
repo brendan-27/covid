@@ -3,6 +3,7 @@ const discord = require("discord.js");
 const bot = new discord.Client({disableEveryone : true});
 const fetch = require("node-fetch");
 const colors = require("./colors.json");
+var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 
 function textOutput (arg1, arg2) {
     var finalString = "";
@@ -72,12 +73,13 @@ bot.on("message", async msg=>  {
         .addField("-stats", "Use to see amount of servers bot is in.")
         .addField("-update", "Use to see new features and fixes within the update.")
         .addField("-resources", "Use to see COVID-19 rescouces with multiple links.")
+        .addField("-invite", "Use to get a invite link to get COVID Bot in your server.")
         
 
 
 
 
-        .setFooter("COVID-19 Bot | 1.1.8")
+        .setFooter("COVID-19 Bot | 1.1.9")
 
         msg.channel.send({embed: Embed});
 
@@ -94,7 +96,7 @@ bot.on("message", async msg=>  {
         .addField("World Health Organization:", "https://www.who.int/emergencies/diseases/novel-coronavirus-2019")
 
 
-        .setFooter("COVID-19 Bot | 1.1.8")
+        .setFooter("COVID-19 Bot | 1.1.9")
         msg.channel.send({embed: Embed});
 
     }
@@ -109,16 +111,14 @@ bot.on("message", async msg=>  {
 
         .addField("New:", "Added -resources. Can now see multiple COVID resources. Use -help.")
         .addField("Bug Fix", "Added Fix for States with two names not working properly.")
-        .addField("New:", "Global command now shows total affected countries.")
-        .addField("New:", "Commas between numbers in stats pages.")
-        .addField("Bug Fix:", "State Name not showing up properly on message.")
+        .addField("New:", "Added -invite use -help to see.")
         .addField("New:", "More Data for -statesinfo.")
         
 
 
 
 
-        .setFooter("COVID-19 Bot | 1.1.8")
+        .setFooter("COVID-19 Bot | 1.1.9")
 
         msg.channel.send({embed: Embed});
 
@@ -187,12 +187,12 @@ bot.on("message", async msg=>  {
             .addField("☠️Total Deaths:", numberWithCommas(deaths2), true)
             .addField("💉Total Recovered: ", numberWithCommas(recovered2), true)
             .addField("🗺️Total Countries:", numberWithCommas(totalCountries2), true)
-            .addField("✉️New Deaths Today: ", numberWithCommas(newDeaths2), true)
+            .addField("☠️New Deaths Today: ", numberWithCommas(newDeaths2), true)
             .addField("✉️New Cases Today: ", numberWithCommas(newCases2), true)
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.8")
+            .setFooter("COVID-19 Bot | 1.1.9")
 
 
 
@@ -261,7 +261,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.8")
+            .setFooter("COVID-19 Bot | 1.1.9")
 
 
 
@@ -286,7 +286,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.8")
+            .setFooter("COVID-19 Bot | 1.1.9")
 
 
 
@@ -356,7 +356,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.8")
+            .setFooter("COVID-19 Bot | 1.1.9")
 
 
 
@@ -371,10 +371,10 @@ bot.on("message", async msg=>  {
             .setAuthor( state + " COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
-            .addField("📈Positive Cases:", numberWithCommas(casesState), true)
-            .addField("☠️Confirmed Deaths:", numberWithCommas(deahtsState), true)
-            .addField("🧪Tests:", numberWithCommas(tests), true)
-            .addField("💹Active:", numberWithCommas(activeCases), true)
+            .addField("📈Positive Cases:", numberWithCommas(casesState))
+            .addField("☠️Confirmed Deaths:", numberWithCommas(deahtsState))
+            .addField("🧪Tests:", numberWithCommas(tests))
+            .addField("💹Active:", numberWithCommas(activeCases))
             //.addField("New Cases:", todayyCases, true)
             //.addField("New Deaths:", todayyDeaths, true)
 
@@ -383,7 +383,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.1.8")
+            .setFooter("COVID-19 Bot | 1.1.9")
 
 
 
@@ -392,15 +392,16 @@ bot.on("message", async msg=>  {
 
     }
 
-    if (cmd == `${prefix}notification`) {
+    if (cmd == `${prefix}invite`) {
+
+        Embed = new discord.MessageEmbed()
+        
+        .setAuthor("Invite COVID Bot to your server!", bot.user.displayAvatarURL())
+        .setColor(colors.red)
+        .addField("Use this link to invite COVID Bot:", invite)
 
 
-        var fs = require('fs');
-
-        var readMe = fs.readFileSync('servers_update_id', 'utf8');
-        console.log(readMe);
-
-
+        msg.author.send(Embed);
 
     }
 
