@@ -496,7 +496,7 @@ bot.on("message", async msg=>  {
 
         Embed = new discord.MessageEmbed()
             .setColor(colors.red)
-            .setAuthor( continent + " COVID-19 Information", bot.user.displayAvatarURL())
+            .setAuthor( continentName + " COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
             .addField("📈Positive Cases:", numberWithCommas(continentCases), true)
