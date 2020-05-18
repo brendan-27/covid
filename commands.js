@@ -436,7 +436,7 @@ bot.on("message", async msg=>  {
         
         var argRep = arg2[1].toLowerCase()
         
-        if ("south" == argRep || "north" == argRep || "west" == argRep)  {
+        if ("south" == argRep || "north" == argRep)  {
             
 
             
@@ -471,7 +471,7 @@ bot.on("message", async msg=>  {
 
 
 
-        if (casesState == undefined) {
+        if (continentCases == undefined) {
             Embed = new discord.MessageEmbed()
             .setColor(colors.red)
             .setAuthor("Error", bot.user.displayAvatarURL())
