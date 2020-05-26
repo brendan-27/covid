@@ -81,7 +81,7 @@ bot.on("message", async msg=>  {
 
 
 
-        .setFooter("COVID-19 Bot | 1.4 | " + msg.createdTimestamp)
+        .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
 
         msg.channel.send({embed: Embed});
 
@@ -100,7 +100,7 @@ bot.on("message", async msg=>  {
 
 
 
-        .setFooter("COVID-19 Bot | 1.4 | " + msg.createdTimestamp)
+        .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
         msg.channel.send({embed: Embed});
 
     }
@@ -116,7 +116,7 @@ bot.on("message", async msg=>  {
         .addField("World Health Organization:", "https://www.who.int/emergencies/diseases/novel-coronavirus-2019")
 
 
-        .setFooter("COVID-19 Bot | 1.4 | " + msg.createdTimestamp)
+        .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
         msg.channel.send({embed: Embed});
 
     }
@@ -139,7 +139,7 @@ bot.on("message", async msg=>  {
 
 
 
-        .setFooter("COVID-19 Bot | 1.4 | " + msg.createdTimestamp)
+        .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
 
         msg.channel.send({embed: Embed});
 
@@ -220,7 +220,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.4 | " + msg.createdTimestamp)
+            .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
 
 
 
@@ -296,7 +296,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.4 | " + msg.createdTimestamp)
+            .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
 
 
 
@@ -327,7 +327,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.4 | " + msg.createdTimestamp)
+            .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
 
 
 
@@ -397,7 +397,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.4 | " + msg.createdTimestamp)
+            .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
 
 
 
@@ -424,7 +424,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.4 | " + msg.createdTimestamp)
+            .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
 
 
 
@@ -502,7 +502,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.4 | " + msg.createdTimestamp)
+            .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
 
 
 
@@ -535,7 +535,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.4 | " + msg.createdTimestamp)
+            .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
 
 
 
