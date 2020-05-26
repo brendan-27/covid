@@ -3,7 +3,19 @@ const discord = require("discord.js");
 const bot = new discord.Client({disableEveryone : true});
 const fetch = require("node-fetch");
 const colors = require("./colors.json");
+const DBL = require("dblapi.js");
+const dbl = new DBL('Your top.gg token', bot);
+
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
+
+dbl.on('posted', () => {
+    console.log('Server count posted!');
+  })
+  
+  dbl.on('error', e => {
+   console.log(`Oops! ${e}`);
+  })
+
 
 function textOutput (arg1, arg2) {
     var finalString = "";
@@ -66,15 +78,16 @@ bot.on("message", async msg=>  {
 
         .setAuthor("COVID Bot Commands: ", bot.user.displayAvatarURL())
         .setColor(colors.red)
-        .addField("-global", "Displays Global COVID-19 stats.")
-        .addField("-countryinfo {country}", "Use  to see country by country COVID info.")
-        .addField("-statesinfo {state}", "Use to see state by state COVID info.")
-        .addField("-continentsinfo {continent}", "Use to see COVID stats on different continents.")
-        .addField("-stats", "Use to see amount of servers bot is in.")
-        .addField("-update", "Use to see new features and fixes within the update.")
-        .addField("-resources", "Use to see COVID-19 rescouces with multiple links.")
-        .addField("-invite", "Use to get a invite link to get COVID Bot in your server.")
-        .addField("-info", "Shows info about the bot such the data it uses and other info.")
+        .addField("**-global**", "Displays Global COVID-19 stats.")
+        .addField("**-countryinfo {country}**", "Use  to see country by country COVID info.")
+        .addField("**-statesinfo {state}**", "Use to see state by state COVID info.")
+        .addField("**-continentsinfo {continent}**", "Use to see COVID stats on different continents.")
+        .addField("**-stats**", "Use to see amount of servers bot is in.")
+        .addField("**-update**", "Use to see new features and fixes within the update.")
+        .addField("**-resources**", "Use to see COVID-19 rescouces with multiple links.")
+        .addField("**-invite**", "Use to get a invite link to get COVID Bot in your server.")
+        .addField("**-info**", "Shows info about the bot such the data it uses and other info.")
+        .addField("**Support Us By upvoting the bot at:**", "https://top.gg/bot/708408478573789266")
         
         
 
@@ -94,9 +107,9 @@ bot.on("message", async msg=>  {
         .setAuthor("COVID-19 Bot", bot.user.displayAvatarURL())
         .setTitle("Info: ")
         .setColor(colors.red)
-        .addField("Data:", "Data is provided by https://corona.lmao.ninja/")
-        .addField("Live Data:", "Data is updated live about once every 10 minutes.")
-        .addField("Support Server:", "https://discord.gg/EvDeuWT")
+        .addField("**Data:**", "Data is provided by https://corona.lmao.ninja/")
+        .addField("**Live Data:**", "Data is updated live about once every 10 minutes.")
+        .addField("**Support Server:**", "https://discord.gg/kvVr3qU")
 
 
 
@@ -111,9 +124,9 @@ bot.on("message", async msg=>  {
         .setColor(colors.red)
 
         .setDescription("COVID-19 resources:")
-        .addField("CDC: ", "https://www.cdc.gov/coronavirus/2019-ncov/index.html")
-        .addField("r/corornavirus: ", "https://www.reddit.com/r/Coronavirus/")
-        .addField("World Health Organization:", "https://www.who.int/emergencies/diseases/novel-coronavirus-2019")
+        .addField("**CDC:** ", "https://www.cdc.gov/coronavirus/2019-ncov/index.html")
+        .addField("**r/corornavirus: **", "https://www.reddit.com/r/Coronavirus/")
+        .addField("**World Health Organization:**", "https://www.who.int/emergencies/diseases/novel-coronavirus-2019")
 
 
         .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
@@ -129,10 +142,10 @@ bot.on("message", async msg=>  {
         .setAuthor("COVID Bot Commands: ", bot.user.displayAvatarURL())
         .setColor(colors.red)
 
-        .addField("New:", "Added -info. Shows info about the bot. -help for more info.")
-        .addField("New", "Completely Rewrote all stats. Much more info and stats for all colums.")
-        .addField("New:", "Added -invite use -help to see.")
-        .addField("New:", "Added continents to the pool of stats. -continentsinfo. use -help to see.")
+        .addField("**New:**", "Added -info. Shows info about the bot. -help for more info.")
+        .addField("**New**", "Completely Rewrote all stats. Much more info and stats for all colums.")
+        .addField("**New:**", "Added -invite use -help to see.")
+        .addField("**New:**", "Added continents to the pool of stats. -continentsinfo. use -help to see.")
        
         
 
