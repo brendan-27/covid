@@ -252,7 +252,7 @@ bot.on("message", async msg=>  {
 
 
 
-    if (cmd.includes(`${prefix}countryinfo`)) {
+    if (cmd == `${prefix}countryinfo` || cmd == `${prefix}country`) {
 
     
         var newStr = "";
@@ -363,7 +363,7 @@ bot.on("message", async msg=>  {
 
     }
 
-    if (cmd == `${prefix}statesinfo`) {
+    if (cmd == `${prefix}statesinfo` || cmd == `${prefix}stateinfo` || cmd == `${prefix}state`) {
 
         var newStr = "";
 
@@ -459,7 +459,7 @@ bot.on("message", async msg=>  {
 
     }
 
-    if(cmd == `${prefix}continentsinfo`) {
+    if(cmd == `${prefix}continentsinfo` || cmd == `${prefix}continentinfo` || cmd == `${prefix}continent`) {
 
         var newStr = "";
 
