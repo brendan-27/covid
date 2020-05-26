@@ -4,7 +4,7 @@ const bot = new discord.Client({disableEveryone : true});
 const fetch = require("node-fetch");
 const colors = require("./colors.json");
 const DBL = require("dblapi.js");
-const dbl = new DBL('Your top.gg token', bot);
+const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcwODQwODQ3ODU3Mzc4OTI2NiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTkwNTI0NDkyfQ.ajFs47xxzPA-N5y36CtaSoQBgxo41QcnX0-Fy7n3hWc', bot);
 
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 
@@ -87,7 +87,7 @@ bot.on("message", async msg=>  {
         .addField("**-resources**", "Use to see COVID-19 rescouces with multiple links.")
         .addField("**-invite**", "Use to get a invite link to get COVID Bot in your server.")
         .addField("**-info**", "Shows info about the bot such the data it uses and other info.")
-        .addField("**Support Us By upvoting the bot at:**", "https://top.gg/bot/708408478573789266")
+        .addField("**Support us by upvoting the bot at:**", "https://top.gg/bot/708408478573789266")
         
         
 
@@ -163,7 +163,7 @@ bot.on("message", async msg=>  {
 
         const response = await fetch("https://thevirustracker.com/free-api?global=stats");
         const data = await response.json();
-        console.log(data);
+        
         
 
 
@@ -386,7 +386,7 @@ bot.on("message", async msg=>  {
         }
         
         
-        console.log(newStr);
+        
         var website2 = "https://corona.lmao.ninja/v2/states/" + newStr;
         const response = await fetch(website2);
         const data2 = await response.json();
@@ -482,7 +482,7 @@ bot.on("message", async msg=>  {
         }
         
         
-        console.log(newStr);
+        
         var website2 = "https://corona.lmao.ninja/v2/continents/" + newStr;
         const response = await fetch(website2);
         const data = await response.json();
