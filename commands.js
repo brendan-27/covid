@@ -144,8 +144,8 @@ bot.on("message", async msg=>  {
 
         .addField("**New:**", "Added -info. Shows info about the bot. -help for more info.")
         .addField("**New**", "Completely Rewrote all stats. Much more info and stats for all colums.")
-        .addField("**New:**", "Added -invite use -help to see.")
-        .addField("**New:**", "Added continents to the pool of stats. -continentsinfo. use -help to see.")
+        .addField("**New:**", "Added -invite.")
+        .addField("**New:**", "Added bolding to the starting of the commands.")
        
         
 
@@ -218,7 +218,7 @@ bot.on("message", async msg=>  {
 
         Embed = new discord.MessageEmbed()
             .setColor(colors.red)
-            .setAuthor("Global COVID-19 Information", bot.user.displayAvatarURL())
+            .setAuthor("**Global COVID-19 Information**", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
             .addField("📈Total Cases:", numberWithCommas(totalCases), true)
@@ -301,7 +301,7 @@ bot.on("message", async msg=>  {
         if (confirmedCases == undefined) {
             Embed = new discord.MessageEmbed()
             .setColor(colors.red)
-            .setAuthor("Error", bot.user.displayAvatarURL())
+            .setAuthor("**Error**", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
             .setDescription("That is not a valid country!")
@@ -323,7 +323,7 @@ bot.on("message", async msg=>  {
 
         Embed = new discord.MessageEmbed()
             .setColor(colors.red)
-            .setAuthor( arg2[1] + " COVID-19 Information", bot.user.displayAvatarURL())
+            .setAuthor("**" + arg2[1] + "**" + " **COVID-19 Information**", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
             .addField("📈Positive Cases:", numberWithCommas(confirmedCases), true)
@@ -402,7 +402,7 @@ bot.on("message", async msg=>  {
         if (casesState == undefined) {
             Embed = new discord.MessageEmbed()
             .setColor(colors.red)
-            .setAuthor("Error", bot.user.displayAvatarURL())
+            .setAuthor("**Error**", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
             .setDescription("That is not a valid state!")
@@ -422,7 +422,7 @@ bot.on("message", async msg=>  {
 
         Embed = new discord.MessageEmbed()
             .setColor(colors.red)
-            .setAuthor( state + " COVID-19 Information", bot.user.displayAvatarURL())
+            .setAuthor( "**" + state + "**" + " **COVID-19 Information**", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
             .addField("📈Positive Cases:", numberWithCommas(casesState), true)
@@ -507,7 +507,7 @@ bot.on("message", async msg=>  {
         if (continentCases == undefined) {
             Embed = new discord.MessageEmbed()
             .setColor(colors.red)
-            .setAuthor("Error", bot.user.displayAvatarURL())
+            .setAuthor("**Error**", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
             .setDescription("That is not a valid continent!")
@@ -527,7 +527,7 @@ bot.on("message", async msg=>  {
 
         Embed = new discord.MessageEmbed()
             .setColor(colors.red)
-            .setAuthor( continentName + " COVID-19 Information", bot.user.displayAvatarURL())
+            .setAuthor( "**" + continentName + "**" + " COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
             .addField("📈Positive Cases:", numberWithCommas(continentCases), true)
