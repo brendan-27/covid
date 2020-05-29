@@ -88,7 +88,7 @@ bot.on("message", async msg=>  {
         .addField("**-invite**", "Use to get a invite link to get COVID Bot in your server.")
         .addField("**-info**", "Shows info about the bot such the data it uses and other info.")
         .addField("**Support us by upvoting the bot at:**", "https://top.gg/bot/708408478573789266")
-        .addField("**Maintenance and Errors:**", "The API for continents is currently down. It should be up in less than 12 hours. Sorry for the incovenience.")
+        .addField("**Maintenance and Errors:**", "The API for the continents info is now back up and working. Sorry for the incovenience.")
         
 
 
