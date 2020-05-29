@@ -75,9 +75,10 @@ bot.on("message", async msg=>  {
 
     if (cmd == `${prefix}help`) {
         Embed = new discord.MessageEmbed()
+        .setColor(colors.blue)
+
 
         .setAuthor("COVID Bot Commands: ", bot.user.displayAvatarURL())
-        .setColor(colors.red)
         .addField("**-global**", "Displays Global COVID-19 stats.")
         .addField("**-countryinfo {country}**", "Use  to see country by country COVID info.")
         .addField("**-statesinfo {state}**", "Use to see state by state COVID info.")
@@ -89,6 +90,11 @@ bot.on("message", async msg=>  {
         .addField("**-info**", "Shows info about the bot such the data it uses and other info.")
         .addField("**Support us by upvoting the bot at:**", "https://top.gg/bot/708408478573789266")
         .addField("**Maintenance and Errors:**", "The API for the continents info is now back up and working. Sorry for the incovenience.")
+        .addField("**Info:**")
+        .addField("**Data:**", "Data is provided by https://corona.lmao.ninja/")
+        .addField("**Live Data:**", "Data is updated live about once every 10 minutes.")
+        .addField("**Support Server:**", "https://discord.gg/kvVr3qU")
+
         
 
 
@@ -99,13 +105,13 @@ bot.on("message", async msg=>  {
 
     }
 
-    if (cmd == `${prefix}info`) {
+    /*if (cmd == `${prefix}info`) {
 
         Embed = new discord.MessageEmbed()
 
         .setAuthor("COVID-19 Bot", bot.user.displayAvatarURL())
         .setTitle("Info: ")
-        .setColor(colors.red)
+        .setColor(colors.blue)
         .addField("**Data:**", "Data is provided by https://corona.lmao.ninja/")
         .addField("**Live Data:**", "Data is updated live about once every 10 minutes.")
         .addField("**Support Server:**", "https://discord.gg/kvVr3qU")
@@ -115,12 +121,12 @@ bot.on("message", async msg=>  {
         .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
         msg.channel.send({embed: Embed});
 
-    }
+    }*/
 
     if (cmd == `${prefix}resources`) {
         Embed = new discord.MessageEmbed()
         .setAuthor("COVID Bot Commands: ", bot.user.displayAvatarURL())
-        .setColor(colors.red)
+        .setColor(colors.blue)
 
         .setDescription("COVID-19 resources:")
         .addField("**CDC:** ", "https://www.cdc.gov/coronavirus/2019-ncov/index.html")
@@ -139,10 +145,10 @@ bot.on("message", async msg=>  {
         Embed = new discord.MessageEmbed()
 
         .setAuthor("COVID Bot Commands: ", bot.user.displayAvatarURL())
-        .setColor(colors.red)
+        .setColor(colors.blue)
 
-        .addField("**New:**", "Added -info. Shows info about the bot. -help for more info.")
-        .addField("**New:**", "Completely Rewrote all stats. Much more info and stats for all colums.")
+        .addField("**New:**", "Redid bots embed cards and style.")
+        .addField("**New:**", "Added Different link embeds.")
         .addField("**New:**", "Added -invite.")
         .addField("**New:**", "Added bolding to the starting of the commands.")
        
@@ -162,11 +168,6 @@ bot.on("message", async msg=>  {
 
         const response = await fetch("https://thevirustracker.com/free-api?global=stats");
         const data = await response.json();
-        
-        
-
-
-
     }
     if(cmd === `${prefix}totalcases`) {
         const response = await fetch("https://thevirustracker.com/free-api?global=stats");
@@ -177,8 +178,6 @@ bot.on("message", async msg=>  {
 
         msg.channel.send("There are " + total2 + " cases in the world.");
     
-
-
     }
 
 
@@ -216,19 +215,19 @@ bot.on("message", async msg=>  {
 
 
         Embed = new discord.MessageEmbed()
-            .setColor(colors.red)
+            .setColor(colors.blue)
             .setAuthor("Global COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
-            .addField("📈Total Cases:", numberWithCommas(totalCases), true)
-            .addField("☠️Total Deaths:", numberWithCommas(deaths), true)
-            .addField("💉Total Recovered: ", numberWithCommas(recovered), true)
-            .addField("🗺️Total Countries:", numberWithCommas(totalCountries), true)
-            .addField("☠️New Deaths Today: ", numberWithCommas(newDeaths), true)
-            .addField("✉️New Cases Today: ", numberWithCommas(newCases), true)
-            .addField("🧪Tests: ", numberWithCommas(test), true)
-            .addField("🧪Tests Per One Million: ", numberWithCommas(testPerMillion), true)
-            .addField("📊Active Per One Million", numberWithCommas(activePerMillion), true)
+            .addField("📈 Total Cases:", numberWithCommas(totalCases) + "(+" + numberWithCommas(newCases) + " today)", true)
+            .addField("☠️ Total Deaths:", numberWithCommas(deaths) + "(+" + numberWithCommas(newDeaths) + " today)", true)
+            .addField("💉 Total Recovered: ", numberWithCommas(recovered), true)
+            .addField("🗺️ Total Countries:", numberWithCommas(totalCountries), true)
+            .addField("☠️ New Deaths Today: ", numberWithCommas(newDeaths), true)
+            .addField("✉️ New Cases Today: ", numberWithCommas(newCases), true)
+            .addField("🧪 Tests: ", numberWithCommas(test), true)
+            .addField("🧪 Tests Per One Million: ", numberWithCommas(testPerMillion), true)
+            .addField("📊 Active Per One Million", numberWithCommas(activePerMillion), true)
 
 
 
@@ -299,7 +298,7 @@ bot.on("message", async msg=>  {
 
         if (confirmedCases == undefined) {
             Embed = new discord.MessageEmbed()
-            .setColor(colors.red)
+            .setColor(colors.blue)
             .setAuthor("Error", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
@@ -321,19 +320,19 @@ bot.on("message", async msg=>  {
 
 
         Embed = new discord.MessageEmbed()
-            .setColor(colors.red)
+            .setColor(colors.blue)
             .setAuthor(arg2[1] + " COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
-            .addField("📈Positive Cases:", numberWithCommas(confirmedCases), true)
-            .addField("💀Confirmed Deaths:", numberWithCommas(confrimedDeaths), true)
-            .addField("💉Confirmed Recoveries:", numberWithCommas(recoveries), true)
-            .addField("💹Active Cases:", numberWithCommas(activeCountry), true)
-            .addField("💀Critical:", numberWithCommas(criticalCountry), true)
-            .addField("🧪Tests:", numberWithCommas(testsCountry), true)
-            .addField("📈Cases Per Million:", numberWithCommas(casesMillion), true)
-            .addField("🧪Tests Per Million:", numberWithCommas(testsMillion), true)
-            .addField("💉Recoverd Per Million:", numberWithCommas(recoveredMillion), true)
+            .addField("📈 Positive Cases:", numberWithCommas(confirmedCases), true)
+            .addField("💀 Confirmed Deaths:", numberWithCommas(confrimedDeaths), true)
+            .addField("💉 Confirmed Recoveries:", numberWithCommas(recoveries), true)
+            .addField("💹 Active Cases:", numberWithCommas(activeCountry), true)
+            .addField("💀 Critical:", numberWithCommas(criticalCountry), true)
+            .addField("🧪 Tests:", numberWithCommas(testsCountry), true)
+            .addField("📈 Cases Per Million:", numberWithCommas(casesMillion), true)
+            .addField("🧪 Tests Per Million:", numberWithCommas(testsMillion), true)
+            .addField("💉 Recoverd Per Million:", numberWithCommas(recoveredMillion), true)
 
            
 
@@ -400,7 +399,7 @@ bot.on("message", async msg=>  {
 
         if (casesState == undefined) {
             Embed = new discord.MessageEmbed()
-            .setColor(colors.red)
+            .setColor(colors.blue)
             .setAuthor("Error", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
@@ -420,7 +419,7 @@ bot.on("message", async msg=>  {
         }
 
         Embed = new discord.MessageEmbed()
-            .setColor(colors.red)
+            .setColor(colors.blue)
             .setAuthor(state + " COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
@@ -450,7 +449,7 @@ bot.on("message", async msg=>  {
         Embed = new discord.MessageEmbed()
         
         .setAuthor("Invite COVID Bot to your server!", bot.user.displayAvatarURL())
-        .setColor(colors.red)
+        .setColor(colors.blue)
         .addField("Use this link to invite COVID Bot:", invite)
 
 
@@ -505,7 +504,7 @@ bot.on("message", async msg=>  {
 
         if (continentCases == undefined) {
             Embed = new discord.MessageEmbed()
-            .setColor(colors.red)
+            .setColor(colors.blue)
             .setAuthor("Error", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
@@ -525,19 +524,19 @@ bot.on("message", async msg=>  {
         }
 
         Embed = new discord.MessageEmbed()
-            .setColor(colors.red)
+            .setColor(colors.blue)
             .setAuthor(continentName +  " COVID-19 Information", bot.user.displayAvatarURL())
 
             .setThumbnail(bot.user.displayAvatarURL())
-            .addField("📈Positive Cases:", numberWithCommas(continentCases), true)
-            .addField("☠️Confirmed Deaths:", numberWithCommas(continentDeaths), true)
-            .addField("🧪Tests:", numberWithCommas(continentTests), true)
-            .addField("💹Active:", numberWithCommas(continentActive), true)
-            .addField("📊New Cases:", numberWithCommas(continentNewCases), true)
-            .addField("☠️New Deaths:", numberWithCommas(continentTodayDeaths), true)
-            .addField("🏥Recovered:", numberWithCommas(continentRecovered), true)
-            .addField("🧪Tests Per Million:", numberWithCommas(contientTestsMillion), true)
-            .addField("☠️Deahts Per Million:", numberWithCommas(continentDeahtsMillion), true)
+            .addField("📈 Positive Cases:", numberWithCommas(continentCases) + "(+" + numberWithCommas(continentNewCases) + " today)", true)
+            .addField("☠️ Confirmed Deaths:", numberWithCommas(continentDeaths) + "(+" + numberWithCommas(continentTodayDeaths) + " today)", true)
+            .addField("🧪 Tests:", numberWithCommas(continentTests), true)
+            .addField("💹 Active:", numberWithCommas(continentActive), true)
+            .addField("📊 New Cases:", numberWithCommas(continentNewCases), true)
+            .addField("☠️ New Deaths:", numberWithCommas(continentTodayDeaths), true)
+            .addField("🏥 Recovered:", numberWithCommas(continentRecovered), true)
+            .addField("🧪 Tests Per Million:", numberWithCommas(contientTestsMillion), true)
+            .addField("☠️ Deahts Per Million:", numberWithCommas(continentDeahtsMillion), true)
             
             
             
