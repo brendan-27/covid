@@ -87,12 +87,12 @@ bot.on("message", async msg=>  {
         .addField("**-update**", "Use to see new features and fixes within the update.")
         .addField("**-resources**", "Use to see COVID-19 rescouces with multiple links.")
         .addField("**-invite**", "Use to get a invite link to get COVID Bot in your server.")
-        .addField("**-info**", "Shows info about the bot such the data it uses and other info.")
         .addField("**Maintenance and Errors:**", "The API for the continents info is now back up and working. Sorry for the incovenience.")
         .addField("**Live Data:**", "Data is updated live about once every 10 minutes.")
         .addField("**Data:**", "Data is provided by https://corona.lmao.ninja/")
         .addField("**Support Server:**", "https://discord.gg/kvVr3qU")
         .addField("**Support us by upvoting the bot at:**", "https://top.gg/bot/708408478573789266")
+        .addField("**Invite COVID Bot to your server:**", "Click [Here](https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot), or use -invite.")
 
         
 
@@ -148,7 +148,7 @@ bot.on("message", async msg=>  {
 
         .addField("**New:**", "Redid bots embed cards and style.")
         .addField("**New:**", "Added Different link embeds.")
-        .addField("**New:**", "Added -invite.")
+        .addField("**New:**", "Info is now merged with -help")
         .addField("**New:**", "Added bolding to the starting of the commands.")
        
         
