@@ -88,6 +88,7 @@ bot.on("message", async msg=>  {
         .addField("**-invite**", "Use to get a invite link to get COVID Bot in your server.")
         .addField("**-info**", "Shows info about the bot such the data it uses and other info.")
         .addField("**Support us by upvoting the bot at:**", "https://top.gg/bot/708408478573789266")
+        .addFeild("**Maintenance and Errors:**", "The API for continents is currently down. It should be up in less than 12 hours. Sorry for the incovenience.")
         
         
 
@@ -143,7 +144,7 @@ bot.on("message", async msg=>  {
         .setColor(colors.red)
 
         .addField("**New:**", "Added -info. Shows info about the bot. -help for more info.")
-        .addField("**New**", "Completely Rewrote all stats. Much more info and stats for all colums.")
+        .addField("**New:**", "Completely Rewrote all stats. Much more info and stats for all colums.")
         .addField("**New:**", "Added -invite.")
         .addField("**New:**", "Added bolding to the starting of the commands.")
        
