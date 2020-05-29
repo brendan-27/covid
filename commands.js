@@ -88,12 +88,11 @@ bot.on("message", async msg=>  {
         .addField("**-resources**", "Use to see COVID-19 rescouces with multiple links.")
         .addField("**-invite**", "Use to get a invite link to get COVID Bot in your server.")
         .addField("**-info**", "Shows info about the bot such the data it uses and other info.")
-        .addField("**Support us by upvoting the bot at:**", "https://top.gg/bot/708408478573789266")
         .addField("**Maintenance and Errors:**", "The API for the continents info is now back up and working. Sorry for the incovenience.")
-        .addField("**Info:**")
-        .addField("**Data:**", "Data is provided by https://corona.lmao.ninja/")
         .addField("**Live Data:**", "Data is updated live about once every 10 minutes.")
+        .addField("**Data:**", "Data is provided by https://corona.lmao.ninja/")
         .addField("**Support Server:**", "https://discord.gg/kvVr3qU")
+        .addField("**Support us by upvoting the bot at:**", "https://top.gg/bot/708408478573789266")
 
         
 
