@@ -79,14 +79,19 @@ bot.on("message", async msg=>  {
 
 
         .setAuthor("COVID Bot Commands: ", bot.user.displayAvatarURL())
+        .addField("**Commands for COVID Bot**:", "By state, by country, global, and by continent.", true)
         .addField("**-global**", "Displays Global COVID-19 stats.")
-        .addField("**-countryinfo {country}**", "Use  to see country by country COVID info.")
-        .addField("**-statesinfo {state}**", "Use to see state by state COVID info.")
-        .addField("**-continentsinfo {continent}**", "Use to see COVID stats on different continents.")
+        .addField("**-countryinfo {state} or -country {country}**", "Use  to see country by country COVID info.")
+        .addField("**Example:**", "-countryinfo US, -country sweden.", true)
+        .addField("**-statesinfo {state} or -state {state}**", "Use to see state by state COVID info.")
+        .addField("**Example:**", "-statesinfo New York, -state california.", true)
+        .addField("**-continentsinfo {continent} or -continent {continent} **", "Use to see COVID stats on different continents.")
+        .addField("**Example:**", "-statesinfo New York, -state california.", true)
         .addField("**-stats**", "Use to see amount of servers bot is in.")
         .addField("**-update**", "Use to see new features and fixes within the update.")
         .addField("**-resources**", "Use to see COVID-19 rescouces with multiple links.")
         .addField("**-invite**", "Use to get a invite link to get COVID Bot in your server.")
+        .addField("**Info about the bot:**", "Data, support server and other general info about the bot.", true)
         .addField("**Maintenance and Errors:**", "The API for the continents info is now back up and working. Sorry for the incovenience.")
         .addField("**Live Data:**", "Data is updated live about once every 10 minutes.")
         .addField("**Data:**", "Data is provided by https://corona.lmao.ninja/")
@@ -124,7 +129,7 @@ bot.on("message", async msg=>  {
 
     if (cmd == `${prefix}resources`) {
         Embed = new discord.MessageEmbed()
-        .setAuthor("COVID Bot Commands: ", bot.user.displayAvatarURL())
+        .setAuthor("COVID Bot ", bot.user.displayAvatarURL())
         .setColor(colors.blue)
 
         .setDescription("COVID-19 resources:")
