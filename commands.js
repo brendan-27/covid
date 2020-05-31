@@ -78,7 +78,7 @@ bot.on("message", async msg=>  {
         .setColor(colors.blue)
 
 
-        .setAuthor("COVID Bot Commands: ", bot.user.displayAvatarURL())
+        .setAuthor("COVID Bot Help: ", bot.user.displayAvatarURL())
         .addField("**Commands for COVID Bot**:", "By state, by country, global, and by continent.", true)
         .addField("**-global**", "Displays Global COVID-19 stats.")
         .addField("**-countryinfo {state} or -country {country}**", "Use  to see country by country COVID info.")
@@ -103,7 +103,7 @@ bot.on("message", async msg=>  {
 
 
 
-        .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
+        .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
 
         msg.channel.send({embed: Embed});
 
@@ -122,7 +122,7 @@ bot.on("message", async msg=>  {
 
 
 
-        .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
+        .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
         msg.channel.send({embed: Embed});
 
     }*/
@@ -138,7 +138,7 @@ bot.on("message", async msg=>  {
         .addField("**World Health Organization:**", "https://www.who.int/emergencies/diseases/novel-coronavirus-2019")
 
 
-        .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
+        .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
         msg.channel.send({embed: Embed});
 
     }
@@ -161,7 +161,7 @@ bot.on("message", async msg=>  {
 
 
 
-        .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
+        .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
 
         msg.channel.send({embed: Embed});
 
@@ -191,31 +191,14 @@ bot.on("message", async msg=>  {
 
 
         var totalCases = data.cases;
-        
-
         var deaths = data.deaths
-        
-
         var newCases = data.todayCases;
-        
-
         var recovered = data.recovered
-        
-
         var newDeaths = data.todayDeaths;
-
-
         var totalCountries = data.affectedCountries;
-
-
         var test = data.tests;
-
-        
         var testPerMillion = data.testsPerOneMillion;
-
-
         var activePerMillion = data.activePerOneMillion;
-        
 
 
         Embed = new discord.MessageEmbed()
@@ -224,29 +207,23 @@ bot.on("message", async msg=>  {
 
             .setThumbnail(bot.user.displayAvatarURL())
             .addField("📈 Total Cases:", numberWithCommas(totalCases) + "(+" + numberWithCommas(newCases) + " today)", true)
-            .addField("☠️ Total Deaths:", numberWithCommas(deaths) + "(+" + numberWithCommas(newDeaths) + " today)", true)
-            .addField("💉 Total Recovered: ", numberWithCommas(recovered), true)
+            .addField("☠️ Total Deaths:", numberWithCommas(deaths) + "(+" + numberWithCommas(newDeaths) + " today)" + "(" + deaths / totalCases * 100 + "% of total cases)", true)
+            .addField("💉 Total Recovered: ", numberWithCommas(recovered) + "(" + recovered / totalCases * 100 + "% of total cases)", true)
             .addField("🗺️ Total Countries:", numberWithCommas(totalCountries), true)
-            .addField("☠️ New Deaths Today: ", numberWithCommas(newDeaths), true)
-            .addField("✉️ New Cases Today: ", numberWithCommas(newCases), true)
+            .addField("☠️ New Deaths Today: ", numberWithCommas(newDeaths) + "(" + newDeaths / deaths * 100 + "% of total deaths)", true)
+            .addField("✉️ New Cases Today: ", numberWithCommas(newCases) + "(" + newCases / totalCases * 100 + "% of total cases)", true)
             .addField("🧪 Tests: ", numberWithCommas(test), true)
             .addField("🧪 Tests Per One Million: ", numberWithCommas(testPerMillion), true)
             .addField("📊 Active Per One Million", numberWithCommas(activePerMillion), true)
 
 
 
-            .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
 
 
 
 
         msg.channel.send({embed: Embed});
-
-
-        
-
-
-
 
 
     }
@@ -311,7 +288,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
 
 
 
@@ -329,10 +306,10 @@ bot.on("message", async msg=>  {
 
             .setThumbnail(bot.user.displayAvatarURL())
             .addField("📈 Positive Cases:", numberWithCommas(confirmedCases), true)
-            .addField("💀 Confirmed Deaths:", numberWithCommas(confrimedDeaths), true)
-            .addField("💉 Confirmed Recoveries:", numberWithCommas(recoveries), true)
-            .addField("💹 Active Cases:", numberWithCommas(activeCountry), true)
-            .addField("💀 Critical:", numberWithCommas(criticalCountry), true)
+            .addField("💀 Confirmed Deaths:", numberWithCommas(confrimedDeaths) + "(" + confrimedDeaths / confirmedCases * 100 + "% of total cases)", true)
+            .addField("💉 Confirmed Recoveries:", numberWithCommas(recoveries) + "(" + recoveries / confirmedCases * 100 + "% of total cases)", true)
+            .addField("💹 Active Cases:", numberWithCommas(activeCountry) + "(" + activeCountry / confirmedCases * 100 + "% of total cases)", true)
+            .addField("💀 Critical:", numberWithCommas(criticalCountry) + "(" + criticalCountry / continentCases * 100 + "% of total cases)", true)
             .addField("🧪 Tests:", numberWithCommas(testsCountry), true)
             .addField("📈 Cases Per Million:", numberWithCommas(casesMillion), true)
             .addField("🧪 Tests Per Million:", numberWithCommas(testsMillion), true)
@@ -342,7 +319,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
 
 
 
@@ -412,7 +389,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
 
 
 
@@ -428,9 +405,9 @@ bot.on("message", async msg=>  {
 
             .setThumbnail(bot.user.displayAvatarURL())
             .addField("📈Positive Cases:", numberWithCommas(casesState), true)
-            .addField("☠️Confirmed Deaths:", numberWithCommas(deahtsState), true)
+            .addField("☠️Confirmed Deaths:", numberWithCommas(deahtsState) + "(" + deathsState / casesState * 100 + "% of total cases)", true)
             .addField("🧪Tests:", numberWithCommas(tests), true)
-            .addField("💹Active:", numberWithCommas(activeCases), true)
+            .addField("💹Active:", numberWithCommas(activeCases) + "(" + activeCases / casesState * 100 + "% of total cases)", true)
             .addField("☠️Deaths Per Million:", numberWithCommas(deathsMillion), true)
             .addField("🧪Tests Per Million:", numberWithCommas(testsStateMillion), true)
 
@@ -439,7 +416,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
 
 
 
@@ -517,7 +494,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
 
 
 
@@ -535,10 +512,10 @@ bot.on("message", async msg=>  {
             .addField("📈 Positive Cases:", numberWithCommas(continentCases) + "(+" + numberWithCommas(continentNewCases) + " today)", true)
             .addField("☠️ Confirmed Deaths:", numberWithCommas(continentDeaths) + "(+" + numberWithCommas(continentTodayDeaths) + " today)", true)
             .addField("🧪 Tests:", numberWithCommas(continentTests), true)
-            .addField("💹 Active:", numberWithCommas(continentActive), true)
-            .addField("📊 New Cases:", numberWithCommas(continentNewCases), true)
-            .addField("☠️ New Deaths:", numberWithCommas(continentTodayDeaths), true)
-            .addField("🏥 Recovered:", numberWithCommas(continentRecovered), true)
+            .addField("💹 Active:", numberWithCommas(continentActive) + "(" + continentActive / continentCases * 100 + "% of total cases)", true)
+            .addField("📊 New Cases:", numberWithCommas(continentNewCases) + "(" + continentNewCases / continentCases * 100 + "% of total cases)", true)
+            .addField("☠️ New Deaths:", numberWithCommas(continentTodayDeaths) + "(" + continentTodayDeaths / continentDeaths * 100 + "% of total deaths)", true)
+            .addField("🏥 Recovered:", numberWithCommas(continentRecovered) + "(" + continentRecovered / continentCases * 100 + "% of total cases)", true)
             .addField("🧪 Tests Per Million:", numberWithCommas(contientTestsMillion), true)
             .addField("☠️ Deahts Per Million:", numberWithCommas(continentDeahtsMillion), true)
             
@@ -550,7 +527,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.5 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
 
 
 
@@ -560,25 +537,9 @@ bot.on("message", async msg=>  {
 
 
 
-
-
-
-
-
     }
 
     
-
-
-
-
-
-
-    
-    
-    
-
-
 
     
 })
