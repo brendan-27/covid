@@ -539,6 +539,22 @@ bot.on("message", async msg=>  {
 
     }
 
+    if (cmd == `${prefix}ping`) {
+        
+        msg.channel.send("Checking For Ping...").then(m => {
+            var ping = m.createdTimestamp - msg.createdTimestamp;
+            var botPing = Math.round(bot.ping);
+
+
+            m.edit(`Bot Ping: ${ping}`)
+        })
+
+
+
+
+
+    }
+
     
 
     
