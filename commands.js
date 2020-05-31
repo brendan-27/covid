@@ -91,6 +91,7 @@ bot.on("message", async msg=>  {
         .addField("**-update**", "Use to see new features and fixes within the update.")
         .addField("**-resources**", "Use to see COVID-19 rescouces with multiple links.")
         .addField("**-invite**", "Use to get a invite link to get COVID Bot in your server.")
+        .addField("**-ping**", "Shows the ping of the bot. (Response Time).")
         .addField("**Info about the bot:**", "Data, support server and other general info about the bot.", true)
         .addField("**Maintenance and Errors:**", "The Percentages had overflowing decimals is now fixed. Sorry for the incovenience.")
         .addField("**Live Data:**", "Data is updated live about once every 10 minutes.")
@@ -541,7 +542,7 @@ bot.on("message", async msg=>  {
 
     if (cmd == `${prefix}ping`) {
         
-        msg.channel.send("Checking For Ping...").then(m => {
+        msg.channel.send("Connecting To Server...").then(m => {
             var ping = m.createdTimestamp - msg.createdTimestamp;
             var botPing = Math.round(bot.ping);
 
