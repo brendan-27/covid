@@ -335,12 +335,15 @@ bot.on("message", async msg=>  {
 
     if(cmd == `${prefix}stats`) {
 
-
-
-        msg.channel.send("COVIDBOT is in " + numberWithCommas(bot.guilds.cache.size) + " servers, serving " + numberWithCommas(bot.users.cache.size) + " users!");
+        Embed = new discord.MessageEmbed()
+        //msg.channel.send("COVIDBOT is in " + numberWithCommas(bot.guilds.cache.size) + " servers, serving " + numberWithCommas(bot.users.cache.size) + " users!");
+        .setColor(colors.blue)
+        .setAuthor("COVID-19 Bot Stats", bot.user.displayAvatarURL())
+        .setDescription("COVIDBOT is in " + numberWithCommas(bot.guilds.cache.size) + " servers, serving " + numberWithCommas(bot.users.cache.size) + " users!")
         
 
-
+        .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
+        msg.channel.send({embed: Embed});
     }
 
     if (cmd == `${prefix}statesinfo` || cmd == `${prefix}stateinfo` || cmd == `${prefix}state`) {
