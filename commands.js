@@ -6,7 +6,7 @@ const colors = require("./colors.json");
 const DBL = require("dblapi.js");
 const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcwODQwODQ3ODU3Mzc4OTI2NiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTkwNTI0NDkyfQ.ajFs47xxzPA-N5y36CtaSoQBgxo41QcnX0-Fy7n3hWc', bot);
 
-var invite = "Click [Here](https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot)";
+var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 
 dbl.on('posted', () => {
     console.log('Server count posted!');
@@ -323,7 +323,7 @@ bot.on("message", async msg=>  {
         .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
         .addField("Total Members: ", numberWithCommas(bot.users.cache.size))
 
-        .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
+        .setFooter("COVID-19 Bot | 1.6")
         msg.channel.send({embed: Embed});
     }
 
