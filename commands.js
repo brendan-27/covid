@@ -6,7 +6,7 @@ const colors = require("./colors.json");
 const DBL = require("dblapi.js");
 const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcwODQwODQ3ODU3Mzc4OTI2NiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTkwNTI0NDkyfQ.ajFs47xxzPA-N5y36CtaSoQBgxo41QcnX0-Fy7n3hWc', bot);
 
-var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
+var invite = "Click [Here](https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot)";
 
 dbl.on('posted', () => {
     console.log('Server count posted!');
@@ -49,16 +49,9 @@ function numberWithCommas(x) {
 
 
 
-
-
-
-
 bot.on("ready", async () => {
     console.log(`${bot.user.username} is online!`)
     bot.user.setActivity("COVID-19 | -help");
-
-    
-    
 })
 
 
@@ -155,7 +148,8 @@ bot.on("message", async msg=>  {
         .addField("**New:**", "Redid bots embed cards and style.")
         .addField("**New:**", "Added Different link embeds.")
         .addField("**New:**", "Info is now merged with -help")
-        .addField("**New:**", "Added bolding to the starting of the commands.")
+        .addField("**Fixes:**", "Changed the style of the -invite command.")
+        .addField("**Fixes:**", "Removed 2 non-working commands.")
        
         
 
@@ -168,22 +162,7 @@ bot.on("message", async msg=>  {
 
     }
     
-
-    if(cmd === `${prefix}corona`) {
-
-        const response = await fetch("https://thevirustracker.com/free-api?global=stats");
-        const data = await response.json();
-    }
-    if(cmd === `${prefix}totalcases`) {
-        const response = await fetch("https://thevirustracker.com/free-api?global=stats");
-        const data = await response.json();
-        var total = data.results[0];
-        var total2 = total.total_cases;
-        
-
-        msg.channel.send("There are " + total2 + " cases in the world.");
     
-    }
 
 
     if (cmd === `${prefix}global`) {
@@ -216,6 +195,7 @@ bot.on("message", async msg=>  {
             .addField("🧪 Tests: ", numberWithCommas(test), true)
             .addField("🧪 Tests Per One Million: ", numberWithCommas(testPerMillion), true)
             .addField("📊 Active Per One Million", numberWithCommas(activePerMillion), true)
+            
 
 
 
@@ -339,8 +319,9 @@ bot.on("message", async msg=>  {
         //msg.channel.send("COVIDBOT is in " + numberWithCommas(bot.guilds.cache.size) + " servers, serving " + numberWithCommas(bot.users.cache.size) + " users!");
         .setColor(colors.blue)
         .setAuthor("COVID-19 Bot Stats", bot.user.displayAvatarURL())
-        .setDescription("COVIDBOT is in " + numberWithCommas(bot.guilds.cache.size) + " servers, serving " + numberWithCommas(bot.users.cache.size) + " users!")
-        
+        //.setDescription("```COVIDBOT is in " + numberWithCommas(bot.guilds.cache.size) + " servers, serving " + numberWithCommas(bot.users.cache.size) + " users!```")
+        .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
+        .addField("Total Members: ", numberWithCommas(bot.users.cache.size))
 
         .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
         msg.channel.send({embed: Embed});
@@ -436,6 +417,8 @@ bot.on("message", async msg=>  {
         .setAuthor("Invite COVID Bot to your server!", bot.user.displayAvatarURL())
         .setColor(colors.blue)
         .addField("Use this link to invite COVID Bot:", invite)
+
+        .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
 
 
         msg.author.send(Embed);
