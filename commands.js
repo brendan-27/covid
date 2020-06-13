@@ -80,7 +80,7 @@ bot.on("message", async msg=>  {
         .addField("**Example:**", "-statesinfo New York, -state california.", true)
         .addField("**-continentsinfo {continent} or -continent {continent} **", "Use to see COVID stats on different continents.")
         .addField("**Example:**", "-statesinfo New York, -state california.", true)
-        .addField("**-global history:**", "Shows ")
+        .addField("**-worldhistory:**", "Shows info from the previous 6 days so you can track growth.", true)
         .addField("**-stats**", "Use to see amount of servers bot is in.")
         .addField("**-update**", "Use to see new features and fixes within the update.")
         .addField("**-resources**", "Use to see COVID-19 rescouces with multiple links.")
