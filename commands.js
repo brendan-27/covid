@@ -87,7 +87,7 @@ bot.on("message", async msg=>  {
         .addField("**-invite**", "Use to get a invite link to get COVID Bot in your server.")
         .addField("**-ping**", "Shows the ping of the bot. (Response Time).")
         .addField("**Info about the bot:**", "Data, support server and other general info about the bot.", true)
-        .addField("**Maintenance and Errors:**", "The Percentages had overflowing decimals is now fixed. Sorry for the incovenience.")
+        .addField("**Maintenance and Errors:**", "History Commands were not responsive. Sorry for the incovenience.")
         .addField("**Live Data:**", "Data is updated live about once every 10 minutes.")
         .addField("**Data:**", "Data is provided by https://corona.lmao.ninja/")
         .addField("**Support Server:**", "https://discord.gg/kvVr3qU")
