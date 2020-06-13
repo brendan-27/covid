@@ -80,7 +80,7 @@ bot.on("message", async msg=>  {
         .addField("**Example:**", "-statesinfo New York, -state california.", true)
         .addField("**-continentsinfo {continent} or -continent {continent} **", "Use to see COVID stats on different continents.")
         .addField("**Example:**", "-statesinfo New York, -state california.", true)
-        .addField("**-worldhistory:**", "Shows info from the previous 6 days so you can track growth.", true)
+        .addField("**-worldhistory:**", "Shows info from the previous 6 days so you can track growth.", )
         .addField("**-stats**", "Use to see amount of servers bot is in.")
         .addField("**-update**", "Use to see new features and fixes within the update.")
         .addField("**-resources**", "Use to see COVID-19 rescouces with multiple links.")
@@ -570,6 +570,7 @@ bot.on("message", async msg=>  {
         Embed = new discord.MessageEmbed()
         .setColor(colors.blue)
         .setAuthor("Global Historic COVID-19 Information", bot.user.displayAvatarURL())
+        .setThumbnail(bot.user.displayAvatarURL())
 
         .addField("**6 days ago:** ", "📈 Total Cases: " + numberWithCommas(cases[0]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[0]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[0]))
         .addField("**5 days ago:** ", "📈 Total Cases: " + numberWithCommas(cases[1]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[1]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[1]))
