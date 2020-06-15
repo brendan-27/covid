@@ -1,3 +1,4 @@
+
 const botconfig = require("./botconfig.json");
 const discord = require("discord.js");
 const bot = new discord.Client({disableEveryone : true});
@@ -80,9 +81,11 @@ bot.on("message", async msg=>  {
         .addField("**Example:**", "-statesinfo New York, -state california.", true)
         .addField("**-continentsinfo {continent} or -continent {continent} **", "Use to see COVID stats on different continents.")
         .addField("**Example:**", "-continent asia, -continentinfo north america.", true)
+        .addField("**-history {country}:**", "Use to see 6 day info on your selected country.")
+        .addField("Example:**", "-history america, -history sweden", true)
         .addField("**-worldhistory:**", "Shows info from the previous 6 days so you can track growth.", )
         .addField("**-stats**", "Use to see amount of servers bot is in.")
-        .addField("**-update**", "Use to see new features and fixes within the update.")
+        .addField("**-changelog**", "Use to see new features and fixes within the update.")
         .addField("**-resources**", "Use to see COVID-19 rescouces with multiple links.")
         .addField("**-invite**", "Use to get a invite link to get COVID Bot in your server.")
         .addField("**-ping**", "Shows the ping of the bot. (Response Time).")
@@ -98,9 +101,30 @@ bot.on("message", async msg=>  {
 
 
 
-        .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
+        .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
 
         msg.channel.send({embed: Embed});
+
+    }
+
+    if(cmd == `${prefix}api` || cmd == `${prefix}API`){
+        Embed = new discord.MessageEmbed()
+        .setColor(colors.blue)
+        .setAuthor("COVID Bot Help: ", bot.user.displayAvatarURL())
+
+        .addField("**API:**", "API ssed to make COVID-19 Bot is corona corona.lmao.ninja.")
+        .addField("**Updates:**", "Data is live and is updated once every 10 minutes for every command.")
+        .addField("**Innacurate Data:**", "Sometimes API will have internal errors and this causes some feilds to be marked as 0. But This doest happen too much. This is the only known issue.")
+        .addField("**Known Issues:**", "When using -history {country} some of the fields may show 0. This is a API error and should be fixed within 24 hours.")
+
+
+
+
+
+        .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+
+        msg.channel.send({embed: Embed});
+
 
     }
 
@@ -117,7 +141,7 @@ bot.on("message", async msg=>  {
 
 
 
-        .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
+        .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
         msg.channel.send({embed: Embed});
 
     }*/
@@ -133,23 +157,22 @@ bot.on("message", async msg=>  {
         .addField("**World Health Organization:**", "https://www.who.int/emergencies/diseases/novel-coronavirus-2019")
 
 
-        .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
+        .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
         msg.channel.send({embed: Embed});
 
     }
 
 
-    if (cmd == `${prefix}update`) {
+    if (cmd == `${prefix}changelog`) {
 
         Embed = new discord.MessageEmbed()
 
         .setAuthor("COVID Bot Commands: ", bot.user.displayAvatarURL())
         .setColor(colors.blue)
 
-        .addField("**New:**", "Redid bots embed cards and style.")
-        .addField("**New:**", "Added Different link embeds.")
-        .addField("**New:**", "Info is now merged with -help")
-        .addField("**Fixes:**", "Changed the style of the -invite command.")
+        .addField("**New:**", "Added -API see -help for more info.")
+        .addField("**New:**", "Added -worldhistory to see world COVID-19 stats for previous 6 days.")
+        .addField("**New:**", "Added -history {country}")
         .addField("**Fixes:**", "Removed 2 non-working commands.")
        
         
@@ -157,7 +180,7 @@ bot.on("message", async msg=>  {
 
 
 
-        .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
+        .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
 
         msg.channel.send({embed: Embed});
 
@@ -200,7 +223,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
 
 
 
@@ -222,7 +245,7 @@ bot.on("message", async msg=>  {
         
         var argRep = arg2[1].toLowerCase()
         
-        if ("united" == argRep || "south" == argRep || "new" == argRep || "saudi" == argRep || "Sri" == argRep || "costa" == argRep || "san" == argRep)  {
+        if ("united" == argRep || "south" == argRep || "new" == argRep || "saudi" == argRep || "sri" == argRep || "costa" == argRep || "san" == argRep)  {
             
 
             
@@ -270,7 +293,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
 
 
 
@@ -301,7 +324,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
 
 
 
@@ -324,7 +347,7 @@ bot.on("message", async msg=>  {
         .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
         .addField("Total Members: ", numberWithCommas(bot.users.cache.size))
 
-        .setFooter("COVID-19 Bot | 1.6")
+        .setFooter("COVID-19 Bot | 1.7")
         msg.channel.send({embed: Embed});
     }
     
@@ -376,7 +399,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
 
 
 
@@ -403,7 +426,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
 
 
 
@@ -420,7 +443,7 @@ bot.on("message", async msg=>  {
         .setColor(colors.blue)
         .addField("Use this link to invite COVID Bot:", invite)
 
-        .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
+        .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
 
 
         msg.author.send(Embed);
@@ -483,7 +506,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
 
 
 
@@ -507,16 +530,10 @@ bot.on("message", async msg=>  {
             .addField("🏥 Recovered:", numberWithCommas(continentRecovered), true)
             .addField("🧪 Tests Per Million:", numberWithCommas(contientTestsMillion), true)
             .addField("☠️ Deahts Per Million:", numberWithCommas(continentDeahtsMillion), true)
-            
-            
-            
+        
 
 
-           
-
-
-
-            .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
 
 
 
@@ -580,9 +597,99 @@ bot.on("message", async msg=>  {
         .addField("**2 days ago:** ", "📈 Total Cases: " + numberWithCommas(cases[4]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[4]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[4]))
         .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(cases[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[5]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[5]))
 
-        .setFooter("COVID-19 Bot | 1.6 | " + msg.createdAt)
+        .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
         msg.channel.send({embed: Embed});
 
+    }
+
+
+
+    if (cmd == `${prefix}history`) {
+
+        var newStr = "";
+
+        var arg2 = msg.content.slice(prefix.length).split(' ');
+        
+        var argRep = arg2[1].toLowerCase()
+        
+        if ("united" == argRep || "south" == argRep || "new" == argRep || "saudi" == argRep || "sri" == argRep || "costa" == argRep || "san" == argRep)  {
+            
+
+            
+            newStr = arg2[1]  + "%20" + arg2[2];
+
+            
+
+        } else {
+
+            newStr = arg2[1];
+
+        }
+        const data = await fetch(`https://disease.sh/v2/historical/` + newStr + `?lastdays=6`).then(res => res.json());
+        //cases
+        var casesC = data['timeline'];
+        if (casesC == undefined) {
+
+            Embed = new discord.MessageEmbed()
+            .setColor(colors.blue)
+            .setAuthor("Error", bot.user.displayAvatarURL())
+
+            .setThumbnail(bot.user.displayAvatarURL())
+            .setDescription("That is not a valid country!")
+           
+
+
+
+            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+
+
+
+
+            msg.channel.send({embed: Embed});
+            return
+
+        }
+        casesC = casesC.cases;
+        
+        casesC = Object.values(casesC);
+        // use cases[1] to see data
+
+        //deaths
+        var deathsC = data['timeline'];
+        deathsC = deathsC.deaths;
+        deathsC = Object.values(deathsC);
+
+        //recovs
+        var recovs = data['timeline'];
+        recovs = recovs.recovered;
+        recovs = Object.values(recovs);
+
+        //start embed for error
+        var countryName = data['country'];
+        
+
+        
+
+        //start embed 
+
+        Embed = new discord.MessageEmbed()
+        .setColor(colors.blue)
+        .setAuthor(countryName + " Historic COVID-19 Information", bot.user.displayAvatarURL())
+        .setThumbnail(bot.user.displayAvatarURL())
+
+
+        .addField("**6 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesC[0]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsC[0]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[0]))
+        .addField("**5 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesC[1]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsC[1]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[1]))
+        .addField("**4 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesC[2]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsC[2]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[2]))
+
+        .addField("**3 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesC[3]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsC[3]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[3]))
+        .addField("**2 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesC[4]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsC[4]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[4]))
+        .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(casesC[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsC[5]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[5]))
+
+
+
+        .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+        msg.channel.send({embed: Embed});
     }
     
 
