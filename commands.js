@@ -83,6 +83,8 @@ bot.on("message", async msg=>  {
         .addField("**Example:**", "-continent asia, -continentinfo north america.", true)
         .addField("**-history {country}:**", "Use to see 6 day info on your selected country.")
         .addField("**Example:**", "-history america, -history sweden", true)
+        .addField("**-province {province}:**", "Use to see 6 day info on provinces.")
+        .addField("**Example:**", "-province Alberta, -province nova scotia", true)
         .addField("**-worldhistory:**", "Shows info from the previous 6 days so you can track growth.", )
         .addField("**-stats**", "Use to see amount of servers bot is in.")
         .addField("**-changelog**", "Use to see new features and fixes within the update.")
@@ -174,6 +176,7 @@ bot.on("message", async msg=>  {
         .addField("**New:**", "Added -API see -help for more info.")
         .addField("**New:**", "Added -worldhistory to see world COVID-19 stats for previous 6 days.")
         .addField("**New:**", "Added -history {country}")
+        .addField("**New:**", "Added Province 6 day history.")
         .addField("**Fixes:**", "Removed 2 non-working commands.")
        
         
@@ -692,6 +695,126 @@ bot.on("message", async msg=>  {
         .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
         msg.channel.send({embed: Embed});
     }
+
+
+
+    if(cmd == `${prefix}province`) {
+
+        var newStr = "";
+
+        var arg2 = msg.content.slice(prefix.length).split(' ');
+        
+        var argRep = arg2[1].toLowerCase()
+        
+        if ("nova" == argRep || "south" == argRep || "new" == argRep || "saudi" == argRep || "sri" == argRep || "costa" == argRep || "san" == argRep)  {
+            
+
+            
+            newStr = arg2[1]  + "%20" + arg2[2];
+
+            
+
+        } else {
+
+            newStr = arg2[1];
+
+        }
+        const data = await fetch(`https://disease.sh/v2/historical/canada/` + newStr + `?lastdays=6`).then(res => res.json());
+        //cases
+        var casesP = data['timeline'];
+        if (casesP == undefined) {
+
+            Embed = new discord.MessageEmbed()
+            .setColor(colors.blue)
+            .setAuthor("Error", bot.user.displayAvatarURL())
+
+            .setThumbnail(bot.user.displayAvatarURL())
+            .setDescription("That is not a valid province!")
+           
+
+
+
+            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+
+
+
+
+            msg.channel.send({embed: Embed});
+            return
+        }
+        casesP = casesP.cases;
+        
+        casesP = Object.values(casesP);
+
+        
+
+
+
+        //deaths
+        var deathsP = data['timeline'];
+        deathsP = deathsP.deaths;
+        deathsP = Object.values(deathsP);
+        //recovs
+        var recovs = data['timeline'];
+        recovs = recovs.recovered;
+        recovs = Object.values(recovs);
+        var provinceName = data['province'];
+        if (recovs[0], recovs[1], recovs[2], recovs[3], recovs[4], recovs[5] == 0) {
+
+            Embed = new discord.MessageEmbed()
+            .setColor(colors.blue)
+            .setAuthor(provinceName + " Historic COVID-19 Information", bot.user.displayAvatarURL())
+            .setThumbnail(bot.user.displayAvatarURL())
+
+
+            .addField("**6 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[0]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[0]))
+            .addField("**5 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[1]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[1]))
+            .addField("**4 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[2]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[2]))
+
+            .addField("**3 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[3]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[3]))
+            .addField("**2 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[4]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[4]))
+            .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[5]))
+
+
+
+            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+            msg.channel.send({embed: Embed});
+
+
+        } else {
+
+
+            Embed = new discord.MessageEmbed()
+            .setColor(colors.blue)
+            .setAuthor(provinceName + " Historic COVID-19 Information", bot.user.displayAvatarURL())
+            .setThumbnail(bot.user.displayAvatarURL())
+
+
+            .addField("**6 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[0]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[0]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[0]))
+            .addField("**5 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[1]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[1]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[1]))
+            .addField("**4 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[2]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[2]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[2]))
+
+            .addField("**3 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[3]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[3]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[3]))
+            .addField("**2 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[4]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[4]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[4]))
+            .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[5]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[5]))
+
+
+
+            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+            msg.channel.send({embed: Embed});
+        }
+
+        
+
+
+        
+        
+        
+    
+    }
+
+
+    
     
 
     
