@@ -103,7 +103,6 @@ bot.on("message", async msg=>  {
         
 
 
-
         .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
 
         msg.channel.send({embed: Embed});
