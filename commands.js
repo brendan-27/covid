@@ -82,9 +82,9 @@ bot.on("message", async msg=>  {
         .addField("**-continentsinfo {continent} or -continent {continent} **", "Use to see COVID stats on different continents.")
         .addField("**Example:**", "-continent asia, -continentinfo north america.", true)
         .addField("**-history {country}:**", "Use to see 6 day info on your selected country.")
-        .addField("**Example:**", "-history america, -history sweden", true)
+        .addField("**Example:**", "-history america, -countryhistory sweden", true)
         .addField("**-province {province}:**", "Use to see 6 day info on provinces.")
-        .addField("**Example:**", "-province Alberta, -province nova scotia", true)
+        .addField("**Example:**", "-province Alberta, -provincehistory nova scotia", true)
         .addField("**-worldhistory:**", "Shows info from the previous 6 days so you can track growth.", )
         .addField("**-stats**", "Use to see amount of servers bot is in.")
         .addField("**-changelog**", "Use to see new features and fixes within the update.")
@@ -607,7 +607,7 @@ bot.on("message", async msg=>  {
 
 
 
-    if (cmd == `${prefix}history`) {
+    if (cmd == `${prefix}history` || cmd == `${prefix}countryhistory`) {
 
         var newStr = "";
 
@@ -697,7 +697,7 @@ bot.on("message", async msg=>  {
 
 
 
-    if(cmd == `${prefix}province`) {
+    if(cmd == `${prefix}provincehistory` || cmd == `${prefix}province`) {
 
         var newStr = "";
 
