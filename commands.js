@@ -114,7 +114,7 @@ bot.on("message", async msg=>  {
         .setColor(colors.blue)
         .setAuthor("COVID Bot Help: ", bot.user.displayAvatarURL())
 
-        .addField("**API:**", "API ssed to make COVID-19 Bot is corona corona.lmao.ninja.")
+        .addField("**API:**", "API used to make COVID-19 Bot is corona corona.lmao.ninja.")
         .addField("**Updates:**", "Data is live and is updated once every 10 minutes for every command.")
         .addField("**Innacurate Data:**", "Sometimes API will have internal errors and this causes some feilds to be marked as 0. But This doest happen too much. This is the only known issue.")
         .addField("**Known Issues:**", "When using -history {country} some of the fields may show 0. This is a API error and should be fixed within 24 hours.")
