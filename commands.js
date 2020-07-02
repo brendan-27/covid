@@ -673,31 +673,9 @@ bot.on("message", async msg=>  {
 
         
 
-        //start embed 
-
-        if (recovs[0], recovs[1], recovs[2], recovs[3], recovs[4], recovs[5] == 0) {
-
-            Embed = new discord.MessageEmbed()
-            .setColor(colors.blue)
-            .setAuthor(provinceName + " Historic COVID-19 Information", bot.user.displayAvatarURL())
-            .setThumbnail(bot.user.displayAvatarURL())
+        //start embed
 
 
-            .addField("**6 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[0]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[0]))
-            .addField("**5 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[1]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[1]))
-            .addField("**4 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[2]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[2]))
-
-            .addField("**3 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[3]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[3]))
-            .addField("**2 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[4]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[4]))
-            .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[5]))
-
-
-
-            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
-            msg.channel.send({embed: Embed});
-
-
-        } else {
 
 
             Embed = new discord.MessageEmbed()
@@ -718,7 +696,7 @@ bot.on("message", async msg=>  {
 
             .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
             msg.channel.send({embed: Embed});
-        }
+    
     }
 
 
