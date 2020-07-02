@@ -675,24 +675,50 @@ bot.on("message", async msg=>  {
 
         //start embed 
 
-        Embed = new discord.MessageEmbed()
-        .setColor(colors.blue)
-        .setAuthor(countryName + " Historic COVID-19 Information", bot.user.displayAvatarURL())
-        .setThumbnail(bot.user.displayAvatarURL())
+        if (recovs[0], recovs[1], recovs[2], recovs[3], recovs[4], recovs[5] == 0) {
+
+            Embed = new discord.MessageEmbed()
+            .setColor(colors.blue)
+            .setAuthor(provinceName + " Historic COVID-19 Information", bot.user.displayAvatarURL())
+            .setThumbnail(bot.user.displayAvatarURL())
 
 
-        .addField("**6 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesC[0]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsC[0]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[0]))
-        .addField("**5 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesC[1]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsC[1]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[1]))
-        .addField("**4 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesC[2]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsC[2]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[2]))
+            .addField("**6 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[0]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[0]))
+            .addField("**5 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[1]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[1]))
+            .addField("**4 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[2]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[2]))
 
-        .addField("**3 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesC[3]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsC[3]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[3]))
-        .addField("**2 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesC[4]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsC[4]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[4]))
-        .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(casesC[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsC[5]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[5]))
+            .addField("**3 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[3]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[3]))
+            .addField("**2 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[4]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[4]))
+            .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[5]))
 
 
 
-        .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
-        msg.channel.send({embed: Embed});
+            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+            msg.channel.send({embed: Embed});
+
+
+        } else {
+
+
+            Embed = new discord.MessageEmbed()
+            .setColor(colors.blue)
+            .setAuthor(provinceName + " Historic COVID-19 Information", bot.user.displayAvatarURL())
+            .setThumbnail(bot.user.displayAvatarURL())
+
+
+            .addField("**6 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[0]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[0]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[0]))
+            .addField("**5 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[1]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[1]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[1]))
+            .addField("**4 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[2]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[2]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[2]))
+
+            .addField("**3 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[3]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[3]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[3]))
+            .addField("**2 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[4]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[4]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[4]))
+            .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[5]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[5]))
+
+
+
+            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+            msg.channel.send({embed: Embed});
+        }
     }
 
 
