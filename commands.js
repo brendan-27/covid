@@ -7,6 +7,7 @@ const colors = require("./colors.json");
 const DBL = require("dblapi.js");
 const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcwODQwODQ3ODU3Mzc4OTI2NiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTkwNTI0NDkyfQ.ajFs47xxzPA-N5y36CtaSoQBgxo41QcnX0-Fy7n3hWc', bot);
 
+
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 
 dbl.on('posted', () => {
@@ -103,7 +104,7 @@ bot.on("message", async msg=>  {
         
 
 
-        .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+        .setFooter("COVID-19 Bot | 8 | " + msg.createdAt)
 
         msg.channel.send({embed: Embed});
 
@@ -123,7 +124,7 @@ bot.on("message", async msg=>  {
 
 
 
-        .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+        .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
 
         msg.channel.send({embed: Embed});
 
@@ -159,7 +160,7 @@ bot.on("message", async msg=>  {
         .addField("**World Health Organization:**", "https://www.who.int/emergencies/diseases/novel-coronavirus-2019")
 
 
-        .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+        .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
         msg.channel.send({embed: Embed});
 
     }
@@ -183,7 +184,7 @@ bot.on("message", async msg=>  {
 
 
 
-        .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+        .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
 
         msg.channel.send({embed: Embed});
 
@@ -226,7 +227,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
 
 
 
@@ -296,7 +297,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
 
 
 
@@ -327,7 +328,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
 
 
 
@@ -350,7 +351,7 @@ bot.on("message", async msg=>  {
         .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
         .addField("Total Members: ", numberWithCommas(bot.users.cache.size))
 
-        .setFooter("COVID-19 Bot | 1.7")
+        .setFooter("COVID-19 Bot | 1.8")
         msg.channel.send({embed: Embed});
     }
     
@@ -402,7 +403,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
 
 
 
@@ -429,7 +430,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
 
 
 
@@ -446,7 +447,7 @@ bot.on("message", async msg=>  {
         .setColor(colors.blue)
         .addField("Use this link to invite COVID Bot:", invite)
 
-        .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+        .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
 
 
         msg.author.send(Embed);
@@ -509,7 +510,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
 
 
 
@@ -536,7 +537,7 @@ bot.on("message", async msg=>  {
         
 
 
-            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
 
 
 
@@ -600,7 +601,7 @@ bot.on("message", async msg=>  {
         .addField("**2 days ago:** ", "📈 Total Cases: " + numberWithCommas(cases[4]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[4]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[4]))
         .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(cases[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[5]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[5]))
 
-        .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+        .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
         msg.channel.send({embed: Embed});
 
     }
@@ -643,7 +644,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
 
 
 
@@ -694,7 +695,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
             msg.channel.send({embed: Embed});
     
     }
@@ -737,7 +738,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
 
 
 
@@ -780,7 +781,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
             msg.channel.send({embed: Embed});
 
 
@@ -803,7 +804,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setFooter("COVID-19 Bot | 1.7 | " + msg.createdAt)
+            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
             msg.channel.send({embed: Embed});
         }
 
