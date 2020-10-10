@@ -53,9 +53,23 @@ function numberWithCommas(x) {
 
 bot.on("ready", async () => {
     console.log(`${bot.user.username} is online!`)
-    bot.user.setActivity("COVID-19 | -help");
+
+    //bot.user.setActivity("Gaming | g!help");
+    
 })
 
+
+let statuses = [`COVID-19`, `-help`, `Coronavirus`, `API's`, `DATA`]
+
+setInterval(function() {
+
+
+    let status = statuses[Math.floor(Math.random() * statuses.length)];
+
+    bot.user.setActivity(status, {type: "WATCHING"});
+
+
+}, 500000)
 
 bot.on("message", async msg=>  {
     if(msg.author.bot || msg.channel.type == "dm") return;
