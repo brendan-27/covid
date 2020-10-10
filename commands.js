@@ -69,7 +69,7 @@ setInterval(function() {
     bot.user.setActivity(status, {type: "WATCHING"});
 
 
-}, 500000)
+}, 50000)
 
 bot.on("message", async msg=>  {
     if(msg.author.bot || msg.channel.type == "dm") return;
