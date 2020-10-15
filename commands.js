@@ -287,7 +287,7 @@ bot.on("message", async msg=>  {
         var flagCountry = data.flag;
 
 
-        console.log(flagCountry);
+        console.log(data);
         
         var confirmedCases = data.cases;
         var confrimedDeaths = data.deaths;
