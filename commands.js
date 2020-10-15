@@ -117,8 +117,8 @@ bot.on("message", async msg=>  {
 
         
 
-
-        .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
+            .setTimestamp()
+        .setFooter("COVID-19 Bot | 1.8 | ")
 
         msg.channel.send({embed: Embed});
 
@@ -137,8 +137,8 @@ bot.on("message", async msg=>  {
 
 
 
-
-        .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
+            .setTimestamp()
+        .setFooter("COVID-19 Bot | 1.8 | ")
 
         msg.channel.send({embed: Embed});
 
@@ -173,8 +173,8 @@ bot.on("message", async msg=>  {
         .addField("**r/corornavirus: **", "https://www.reddit.com/r/Coronavirus/")
         .addField("**World Health Organization:**", "https://www.who.int/emergencies/diseases/novel-coronavirus-2019")
 
-
-        .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
+            .setTimestamp()
+        .setFooter("COVID-19 Bot | 1.8 | ")
         msg.channel.send({embed: Embed});
 
     }
@@ -197,8 +197,8 @@ bot.on("message", async msg=>  {
 
 
 
-
-        .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
+            .setTimestamp()
+        .setFooter("COVID-19 Bot | 1.8 | ")
 
         msg.channel.send({embed: Embed});
 
@@ -240,8 +240,8 @@ bot.on("message", async msg=>  {
             
 
 
-
-            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
+            .setTimestamp()
+            .setFooter("COVID-19 Bot | 1.8 | ")
 
 
 
@@ -310,8 +310,8 @@ bot.on("message", async msg=>  {
            
 
 
-
-            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
+                .setTimestamp()
+            .setFooter("COVID-19 Bot | 1.8 | ")
 
 
 
@@ -341,8 +341,8 @@ bot.on("message", async msg=>  {
            
 
 
-
-            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
+            .setTimestamp()
+            .setFooter("COVID-19 Bot | 1.8 | " )
 
 
 
@@ -364,8 +364,8 @@ bot.on("message", async msg=>  {
         //.setDescription("```COVIDBOT is in " + numberWithCommas(bot.guilds.cache.size) + " servers, serving " + numberWithCommas(bot.users.cache.size) + " users!```")
         .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
         .addField("Total Members: ", numberWithCommas(bot.users.cache.size))
-
-        .setFooter("COVID-19 Bot | 1.8")
+            .setTimestamp()
+        .setFooter("COVID-19 Bot | 1.8 |")
         msg.channel.send({embed: Embed});
     }
     
@@ -416,8 +416,8 @@ bot.on("message", async msg=>  {
            
 
 
-
-            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
+                .setTimestamp()
+            .setFooter("COVID-19 Bot | 1.8 | ")
 
 
 
@@ -443,8 +443,8 @@ bot.on("message", async msg=>  {
     
 
 
-
-            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
+            .setTimestamp()
+            .setFooter("COVID-19 Bot | 1.8 | ")
 
 
 
@@ -460,8 +460,8 @@ bot.on("message", async msg=>  {
         .setAuthor("Invite COVID Bot to your server!", bot.user.displayAvatarURL())
         .setColor(colors.blue)
         .addField("Use this link to invite COVID Bot:", invite)
-
-        .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
+            .setTimestamp()
+        .setFooter("COVID-19 Bot | 1.8 | " )
 
 
         msg.author.send(Embed);
@@ -523,8 +523,8 @@ bot.on("message", async msg=>  {
            
 
 
-
-            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
+                .setTimestamp()
+            .setFooter("COVID-19 Bot | 1.8 | " )
 
 
 
@@ -550,8 +550,8 @@ bot.on("message", async msg=>  {
             .addField("☠️ Deahts Per Million:", numberWithCommas(continentDeahtsMillion), true)
         
 
-
-            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
+            .setTimestamp()
+            .setFooter("COVID-19 Bot | 1.8 | ")
 
 
 
@@ -614,8 +614,8 @@ bot.on("message", async msg=>  {
         .addField("**3 days ago:** ", "📈 Total Cases: " + numberWithCommas(cases[3]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[3]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[3]))
         .addField("**2 days ago:** ", "📈 Total Cases: " + numberWithCommas(cases[4]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[4]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[4]))
         .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(cases[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[5]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[5]))
-
-        .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
+            .setTimestamp()
+        .setFooter("COVID-19 Bot | 1.8 | ")
         msg.channel.send({embed: Embed});
 
     }
@@ -657,8 +657,8 @@ bot.on("message", async msg=>  {
            
 
 
-
-            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
+                .setTimestamp()
+            .setFooter("COVID-19 Bot | 1.8 | ")
 
 
 
@@ -708,8 +708,8 @@ bot.on("message", async msg=>  {
             .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[5]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[5]))
 
 
-
-            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
+                .setTimestamp()
+            .setFooter("COVID-19 Bot | 1.8 | ")
             msg.channel.send({embed: Embed});
     
     }
@@ -751,8 +751,8 @@ bot.on("message", async msg=>  {
            
 
 
-
-            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
+                .setTimestamp()
+            .setFooter("COVID-19 Bot | 1.8 | ")
 
 
 
@@ -794,8 +794,8 @@ bot.on("message", async msg=>  {
             .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[5]))
 
 
-
-            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
+                .setTimestamp()
+            .setFooter("COVID-19 Bot | 1.8 | ")
             msg.channel.send({embed: Embed});
 
 
@@ -817,8 +817,8 @@ bot.on("message", async msg=>  {
             .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[5]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[5]))
 
 
-
-            .setFooter("COVID-19 Bot | 1.8 | " + msg.createdAt)
+                .setTimestamp()
+            .setFooter("COVID-19 Bot | 1.8 | " )
             msg.channel.send({embed: Embed});
         }
 
