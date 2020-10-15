@@ -285,6 +285,9 @@ bot.on("message", async msg=>  {
         const data = await response.json();
 
         var flagCountry = data.flag;
+
+
+        console.log(flagCountry);
         
         var confirmedCases = data.cases;
         var confrimedDeaths = data.deaths;
@@ -822,20 +825,12 @@ bot.on("message", async msg=>  {
             msg.channel.send({embed: Embed});
         }
 
-        
-
-
-        
-        
+      
         
     
     }
 
 
-    
-    
-
-    
 })
 
 
