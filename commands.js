@@ -837,4 +837,4 @@ bot.on("message", async msg=>  {
 
 
 bot.login(process.env.token);
-//bot.login(botconfig.token);
+// outdated: bot.login(botconfig.token);
