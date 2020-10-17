@@ -335,8 +335,7 @@ bot.on("message", async msg=>  {
             msg.channel.send({ embed: Embed });
 
 
-        }
-        catch (err) {
+        } catch (error) {
 
             Embed = new discord.MessageEmbed()
                 .setColor(colors.blue)
