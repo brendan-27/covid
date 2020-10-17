@@ -284,10 +284,11 @@ bot.on("message", async msg=>  {
         const response = await fetch(website2);
         const data = await response.json();
 
-        var flagCountry = data.flag;
+        var flagCountry = data.countryInfo.flag;
 
-
-        console.log(data);
+        //console.log(data.countryInfo.flag);
+        //console.log(flagCountry);
+        
         
         var confirmedCases = data.cases;
         var confrimedDeaths = data.deaths;
@@ -308,7 +309,7 @@ bot.on("message", async msg=>  {
             .setColor(colors.blue)
             .setAuthor("Error", bot.user.displayAvatarURL())
 
-            .setThumbnail(bot.user.displayAvatarURL())
+            .setThumbnail(flagCountry)
             .setDescription("That is not a valid country!")
            
 
@@ -330,7 +331,7 @@ bot.on("message", async msg=>  {
             .setColor(colors.blue)
             .setAuthor(arg2[1] + " COVID-19 Information", bot.user.displayAvatarURL())
 
-            .setThumbnail(bot.user.displayAvatarURL())
+            .setThumbnail(flagCountry)
             .addField("📈 Positive Cases:", numberWithCommas(confirmedCases), true)
             .addField("💀 Confirmed Deaths:", numberWithCommas(confrimedDeaths), true)
             .addField("💉 Confirmed Recoveries:", numberWithCommas(recoveries), true)
