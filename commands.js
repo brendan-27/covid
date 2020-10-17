@@ -301,6 +301,10 @@ bot.on("message", async msg=>  {
         var casesMillion = data.casesPerOneMillion;
         var testsMillion = data.testsPerOneMillion;
         var recoveredMillion = data.recoveredPerOneMillion;
+
+
+
+     
         
         
 
@@ -309,7 +313,7 @@ bot.on("message", async msg=>  {
             .setColor(colors.blue)
             .setAuthor("Error", bot.user.displayAvatarURL())
 
-            .setThumbnail(flagCountry)
+                .setThumbnail(bot.user.displayAvatarURL())
             .setDescription("That is not a valid country!")
            
 
