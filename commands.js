@@ -286,22 +286,6 @@ bot.on("message", async msg=>  {
 
         var flagCountry = data.countryInfo.flag;
 
-        //console.log(data.countryInfo.flag);
-        //console.log(flagCountry);
-        
-        
-        var confirmedCases = data.cases;
-        var confrimedDeaths = data.deaths;
-        var recoveries = data.recovered;
-
-        var activeCountry = data.active;
-        var criticalCountry = data.critical
-        var testsCountry = data.tests;
-
-        var casesMillion = data.casesPerOneMillion;
-        var testsMillion = data.testsPerOneMillion;
-        var recoveredMillion = data.recoveredPerOneMillion;
-
 
 
         if (flagCountry == undefined) {
@@ -327,6 +311,24 @@ bot.on("message", async msg=>  {
 
 
         }
+
+        //console.log(data.countryInfo.flag);
+        //console.log(flagCountry);
+        
+        
+        var confirmedCases = data.cases;
+        var confrimedDeaths = data.deaths;
+        var recoveries = data.recovered;
+
+        var activeCountry = data.active;
+        var criticalCountry = data.critical
+        var testsCountry = data.tests;
+
+        var casesMillion = data.casesPerOneMillion;
+        var testsMillion = data.testsPerOneMillion;
+        var recoveredMillion = data.recoveredPerOneMillion;
+
+
 
 
 
