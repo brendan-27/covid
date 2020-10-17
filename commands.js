@@ -845,6 +845,6 @@ bot.on("message", async msg=>  {
 
 
 
-bot.login('NzA4NDA4NDc4NTczNzg5MjY2.XrW6zg.ZupX2oKxCZdtLU-rGBMsUr4twJI');
+
 bot.login(process.env.token);
 // outdated: bot.login(botconfig.token);
