@@ -304,6 +304,32 @@ bot.on("message", async msg=>  {
 
 
 
+        if (flagCountry == undefined) {
+
+            Embed = new discord.MessageEmbed()
+                .setColor(colors.blue)
+                .setAuthor("Error", bot.user.displayAvatarURL())
+
+                .setThumbnail(bot.user.displayAvatarURL())
+                .setDescription("That is not a valid country!")
+
+
+
+                .setTimestamp()
+                .setFooter("COVID-19 Bot | 1.8 | ")
+
+
+
+
+            msg.channel.send({ embed: Embed });
+            return
+
+
+
+        }
+
+
+
      
         
         
