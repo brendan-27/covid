@@ -288,29 +288,7 @@ bot.on("message", async msg=>  {
 
 
 
-        if (flagCountry == undefined) {
-
-            Embed = new discord.MessageEmbed()
-                .setColor(colors.blue)
-                .setAuthor("Error", bot.user.displayAvatarURL())
-
-                .setThumbnail(bot.user.displayAvatarURL())
-                .setDescription("That is not a valid country!")
-
-
-
-                .setTimestamp()
-                .setFooter("COVID-19 Bot | 1.8 | ")
-
-
-
-
-            msg.channel.send({ embed: Embed });
-            return
-
-
-
-        }
+     
 
         //console.log(data.countryInfo.flag);
         //console.log(flagCountry);
@@ -329,61 +307,57 @@ bot.on("message", async msg=>  {
         var recoveredMillion = data.recoveredPerOneMillion;
 
 
-
-
-
-     
-        
-        
-
-        if (confirmedCases == undefined) {
+        try {
             Embed = new discord.MessageEmbed()
-            .setColor(colors.blue)
-            .setAuthor("Error", bot.user.displayAvatarURL())
+                .setColor(colors.blue)
+                .setAuthor(arg2[1] + " COVID-19 Information", bot.user.displayAvatarURL())
 
-                .setThumbnail(bot.user.displayAvatarURL())
-            .setDescription("That is not a valid country!")
-           
+                .setThumbnail(flagCountry)
+                .addField("📈 Positive Cases:", numberWithCommas(confirmedCases), true)
+                .addField("💀 Confirmed Deaths:", numberWithCommas(confrimedDeaths), true)
+                .addField("💉 Confirmed Recoveries:", numberWithCommas(recoveries), true)
+                .addField("💹 Active Cases:", numberWithCommas(activeCountry), true)
+                .addField("💀 Critical:", numberWithCommas(criticalCountry), true)
+                .addField("🧪 Tests:", numberWithCommas(testsCountry), true)
+                .addField("📈 Cases Per Million:", numberWithCommas(casesMillion), true)
+                .addField("🧪 Tests Per Million:", numberWithCommas(testsMillion), true)
+                .addField("💉 Recoverd Per Million:", numberWithCommas(recoveredMillion), true)
+
+
 
 
                 .setTimestamp()
-            .setFooter("COVID-19 Bot | 1.8 | ")
+                .setFooter("COVID-19 Bot | 1.8 | ")
 
 
 
 
-            msg.channel.send({embed: Embed});
-            return
-            
+            msg.channel.send({ embed: Embed });
+
+
         }
+        catch (err) {
+
+            Embed = new discord.MessageEmbed()
+                .setColor(colors.blue)
+                .setAuthor("Error", bot.user.displayAvatarURL())
+
+                .setThumbnail(bot.user.displayAvatarURL())
+                .setDescription("That is not a valid country!")
 
 
 
-        Embed = new discord.MessageEmbed()
-            .setColor(colors.blue)
-            .setAuthor(arg2[1] + " COVID-19 Information", bot.user.displayAvatarURL())
-
-            .setThumbnail(flagCountry)
-            .addField("📈 Positive Cases:", numberWithCommas(confirmedCases), true)
-            .addField("💀 Confirmed Deaths:", numberWithCommas(confrimedDeaths), true)
-            .addField("💉 Confirmed Recoveries:", numberWithCommas(recoveries), true)
-            .addField("💹 Active Cases:", numberWithCommas(activeCountry), true)
-            .addField("💀 Critical:", numberWithCommas(criticalCountry), true)
-            .addField("🧪 Tests:", numberWithCommas(testsCountry), true)
-            .addField("📈 Cases Per Million:", numberWithCommas(casesMillion), true)
-            .addField("🧪 Tests Per Million:", numberWithCommas(testsMillion), true)
-            .addField("💉 Recoverd Per Million:", numberWithCommas(recoveredMillion), true)
-
-           
-
-
-            .setTimestamp()
-            .setFooter("COVID-19 Bot | 1.8 | " )
+                .setTimestamp()
+                .setFooter("COVID-19 Bot | 1.8 | ")
 
 
 
 
-        msg.channel.send({embed: Embed});
+            msg.channel.send({ embed: Embed });
+            
+
+
+        }
 
 
 
