@@ -1,4 +1,6 @@
 //started promotion and work on COVID-BOT 11/1/2020.
+
+//added error handling bug report system needed.
 const botconfig = require("./botconfig.json");
 const discord = require("discord.js");
 const bot = new discord.Client({disableEveryone : true});
