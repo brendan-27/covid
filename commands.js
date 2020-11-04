@@ -45,6 +45,14 @@ function textOutput (arg1, arg2) {
 }
 sendMessage();*/
 
+
+
+function errorHandle() {
+
+    //design
+
+}
+
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -900,7 +908,7 @@ bot.on("message", async msg=>  {
            
 
 
-                .setTimestamp()
+            .setTimestamp()
             .setFooter("COVID-19 Bot | 2.1 | " )
 
 
