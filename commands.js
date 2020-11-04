@@ -310,7 +310,7 @@ bot.on("message", async msg=>  {
 
 
         try {
-
+            var flagCountry = data.countryInfo.flag;
 
             function errors() {
 
@@ -640,11 +640,44 @@ bot.on("message", async msg=>  {
             }
 
                
-            
+            if (newStr == "sweden" || newStr == "Sweden") {
+
+                Embed = new discord.MessageEmbed()
+
+                    .setColor(colors.blue)
+                    .setAuthor(arg2[1] + " COVID-19 Information", bot.user.displayAvatarURL())
+
+                    .setThumbnail(flagCountry)
+                    .addField("📈 Positive Cases:", numberWithCommas(confirmedCases), true)
+                    .addField("💀 Confirmed Deaths:", numberWithCommas(confrimedDeaths), true)
+                    //.addField("💉 Confirmed Recoveries:", numberWithCommas(recoveries), true)
+                    .addField("💹 Active Cases:", numberWithCommas(activeCountry), true)
+                    .addField("💀 Critical:", numberWithCommas(criticalCountry), true)
+                    .addField("🧪 Tests:", numberWithCommas(testsCountry), true)
+                    .addField("📈 Cases Per Million:", numberWithCommas(casesMillion), true)
+                    .addField("🧪 Tests Per Million:", numberWithCommas(testsMillion), true)
+                    //.addField("💉 Recoverd Per Million:", numberWithCommas(recoveredMillion), true)
+                    
 
 
-            errors();
-            var flagCountry = data.countryInfo.flag;
+
+
+                    .setTimestamp()
+                    .setFooter("COVID-19 Bot | 2.1 | ")
+
+
+
+
+                msg.channel.send({ embed: Embed });
+
+
+
+
+            }
+
+
+            ///errors();
+           
             Embed = new discord.MessageEmbed()
 
                 .setColor(colors.blue)
