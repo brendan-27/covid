@@ -639,7 +639,7 @@ bot.on("message", async msg=>  {
 
             }
 
-               
+            // print other errors here: FIXED SWEDEN: 5:23 pm 11/3/2020
             if (newStr == "sweden" || newStr == "Sweden") {
 
                 Embed = new discord.MessageEmbed()
