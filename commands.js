@@ -655,7 +655,8 @@ bot.on("message", async msg=>  {
                 Embed = new discord.MessageEmbed()
 
                     .setColor(colors.blue)
-                    .setAuthor(arg2[1] + " COVID-19 Information", bot.user.displayAvatarURL())
+                    .setAuthor(arg2[1] + " COVID-19 Information:", bot.user.displayAvatarURL())
+                    .setDescription("If 0's apppear when they do not seem natural ignore (API Error).")
 
                     .setThumbnail(flagCountry)
                     .addField("📈 Positive Cases:", numberWithCommas(confirmedCases), true)
@@ -691,7 +692,8 @@ bot.on("message", async msg=>  {
             Embed = new discord.MessageEmbed()
 
                 .setColor(colors.blue)
-                .setAuthor(arg2[1] + " COVID-19 Information", bot.user.displayAvatarURL())
+                .setAuthor(arg2[1] + " COVID-19 Information:", bot.user.displayAvatarURL())
+                .setDescription("If 0's apppear when they do not seem natural ignore (API Error).")
 
                 .setThumbnail(flagCountry)
                 .addField("📈 Positive Cases:", numberWithCommas(confirmedCases), true)
