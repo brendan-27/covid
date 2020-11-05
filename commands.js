@@ -122,12 +122,13 @@ bot.on("message", async msg=>  {
         .addField("**Live Data:**", "Data is updated live about once every 10 minutes. 99% percent of the time the data is accurate, but sometimes the API messes up so do not be shocked if you see weird numbers.")
         .addField("**Data:**", "Data is provided by https://corona.lmao.ninja/")
         .addField("**Support Server:**", "https://discord.gg/kvVr3qU")
+        .addField("**Support DM: **", "Add updated#2473 on discord for support or errors or questions.")
         .addField("**Support us by upvoting the bot at:**", "https://top.gg/bot/708408478573789266")
         .addField("**Invite COVID Bot to your server:**", "Click [Here](https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot), or use -invite.")
 
         
 
-            .setTimestamp()
+        .setTimestamp()
         .setFooter("COVID-19 Bot | 2.1 | ")
 
         msg.channel.send({embed: Embed});
@@ -197,12 +198,11 @@ bot.on("message", async msg=>  {
         .setAuthor("COVID Bot Commands: ", bot.user.displayAvatarURL())
         .setColor(colors.blue)
 
-        .addField("**New:**", "Added -API see -help for more info.")
-        .addField("**New:**", "Added -worldhistory to see world COVID-19 stats for previous 6 days.")
-        .addField("**New:**", "Added -history {country}")
-        .addField("**New:**", "Added Province 6 day history.")
-        .addField("**Fixes:**", "Removed 2 non-working commands.")
-        .addField("**New: **", "Added flags to -country and multiple hotfixes.")
+        .setDescription("Updates from 3:37 pm 11/5/2020.")
+        
+        .addField("**Fix: **", "Fixed some countries showing 0 as case count (unrealistic ones).")
+        .addField("**New: **", "Added flags on country updates.")
+        .addField("**Fix/New: **", "Fixed some embeds and added new things to country embeds.")
        
         
 
