@@ -1012,95 +1012,80 @@ bot.on("message", async msg=>  {
 
 
     if (cmd == `${prefix}history` || cmd == `${prefix}countryhistory`) {
+        try {
+            var newStr = "";
 
-        var newStr = "";
-
-        var arg2 = msg.content.slice(prefix.length).split(' ');
-        
-        var argRep = arg2[1].toLowerCase()
-        
-        if ("united" == argRep || "south" == argRep || "new" == argRep || "saudi" == argRep || "sri" == argRep || "costa" == argRep || "san" == argRep)  {
+            var arg2 = msg.content.slice(prefix.length).split(' ');
             
-
+            var argRep = arg2[1].toLowerCase()
             
-            newStr = arg2[1]  + "%20" + arg2[2];
+            if ("united" == argRep || "south" == argRep || "new" == argRep || "saudi" == argRep || "sri" == argRep || "costa" == argRep || "san" == argRep)  {
+                newStr = arg2[1]  + "%20" + arg2[2];
+            } else {
 
+                newStr = arg2[1];
+
+            }
+            const data = await fetch(`https://disease.sh/v2/historical/` + newStr + `?lastdays=6`).then(res => res.json());
+            //cases
+            var casesC = data['timeline'];
             
+            casesC = casesC.cases;
+            
+            casesC = Object.values(casesC);
+            // use cases[1] to see data
 
-        } else {
+            //deaths
+            var deathsC = data['timeline'];
+            deathsC = deathsC.deaths;
+            deathsC = Object.values(deathsC);
 
-            newStr = arg2[1];
+            //recovs
+            var recovs = data['timeline'];
+            recovs = recovs.recovered;
+            recovs = Object.values(recovs);
 
-        }
-        const data = await fetch(`https://disease.sh/v2/historical/` + newStr + `?lastdays=6`).then(res => res.json());
-        //cases
-        var casesC = data['timeline'];
-        if (casesC == undefined) {
+            //start embed for error
+            var countryName = data['country'];
 
-            Embed = new discord.MessageEmbed()
-            .setColor(colors.blue)
-            .setAuthor("Error", bot.user.displayAvatarURL())
+            //start embed
 
-            .setThumbnail(bot.user.displayAvatarURL())
-            .setDescription("That is not a valid country!")
-           
-
-
-                .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.1 | ")
-
-
-
-
-            msg.channel.send({embed: Embed});
-            return
-
-        }
-        casesC = casesC.cases;
-        
-        casesC = Object.values(casesC);
-        // use cases[1] to see data
-
-        //deaths
-        var deathsC = data['timeline'];
-        deathsC = deathsC.deaths;
-        deathsC = Object.values(deathsC);
-
-        //recovs
-        var recovs = data['timeline'];
-        recovs = recovs.recovered;
-        recovs = Object.values(recovs);
-
-        //start embed for error
-        var countryName = data['country'];
-        
-
-        
-
-        //start embed
+                Embed = new discord.MessageEmbed()
+                .setColor(colors.blue)
+                .setAuthor(provinceName + " Historic COVID-19 Information", bot.user.displayAvatarURL())
+                .setThumbnail(bot.user.displayAvatarURL())
 
 
+                .addField("**6 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[0]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[0]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[0]))
+                .addField("**5 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[1]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[1]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[1]))
+                .addField("**4 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[2]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[2]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[2]))
+
+                .addField("**3 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[3]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[3]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[3]))
+                .addField("**2 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[4]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[4]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[4]))
+                .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[5]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[5]))
 
 
-            Embed = new discord.MessageEmbed()
-            .setColor(colors.blue)
-            .setAuthor(provinceName + " Historic COVID-19 Information", bot.user.displayAvatarURL())
-            .setThumbnail(bot.user.displayAvatarURL())
+                    .setTimestamp()
+                .setFooter("COVID-19 Bot | 2.1 | ")
+                msg.channel.send({embed: Embed});
 
+        } catch {
 
-            .addField("**6 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[0]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[0]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[0]))
-            .addField("**5 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[1]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[1]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[1]))
-            .addField("**4 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[2]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[2]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[2]))
-
-            .addField("**3 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[3]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[3]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[3]))
-            .addField("**2 days ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[4]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[4]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[4]))
-            .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[5]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[5]))
-
-
-                .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.1 | ")
-            msg.channel.send({embed: Embed});s
+                Embed = new discord.MessageEmbed()
+                .setColor(colors.blue)
+                .setAuthor("Error", bot.user.displayAvatarURL())
     
+                .setThumbnail(bot.user.displayAvatarURL())
+                .setDescription("That is not a valid country!")
+    
+                    .setTimestamp()
+                .setFooter("COVID-19 Bot | 2.1 | ")
+    
+                msg.channel.send({embed: Embed});
+                return
+
+        }
+        
     }
 
 
