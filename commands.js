@@ -238,7 +238,7 @@ bot.on("message", async msg=>  {
             .setColor(colors.blue)
             .setAuthor("Global COVID-19 Information", bot.user.displayAvatarURL())
 
-            .setThumbnail(bot.user.displayAvatarURL())
+            .setThumbnail('https://cdn.discordapp.com/attachments/755553823962955878/775054002864783400/3uCD4xxY_400x400.png')
             .addField("📈 Total Cases:", numberWithCommas(totalCases) + "(+" + numberWithCommas(newCases) + " today)", true)
             .addField("☠️ Total Deaths:", numberWithCommas(deaths) + "(+" + numberWithCommas(newDeaths) + " today)", true)
             .addField("💉 Total Recovered: ", numberWithCommas(recovered), true)
@@ -994,7 +994,7 @@ bot.on("message", async msg=>  {
         Embed = new discord.MessageEmbed()
         .setColor(colors.blue)
         .setAuthor("Global Historic COVID-19 Information", bot.user.displayAvatarURL())
-        .setThumbnail(bot.user.displayAvatarURL())
+        .setThumbnail('https://cdn.discordapp.com/attachments/755553823962955878/775054002864783400/3uCD4xxY_400x400.png')
 
         .addField("**6 days ago:** ", "📈 Total Cases: " + numberWithCommas(cases[0]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[0]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[0]))
         .addField("**5 days ago:** ", "📈 Total Cases: " + numberWithCommas(cases[1]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[1]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[1]))
