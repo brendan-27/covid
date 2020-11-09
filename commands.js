@@ -129,7 +129,7 @@ bot.on("message", async msg=>  {
         
 
         .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.1 | ")
+        .setFooter("COVID-19 Bot | 2.2 | ")
 
         msg.channel.send({embed: Embed});
 
@@ -149,7 +149,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.1 | ")
+        .setFooter("COVID-19 Bot | 2.2 | ")
 
         msg.channel.send({embed: Embed});
 
@@ -185,7 +185,7 @@ bot.on("message", async msg=>  {
         .addField("**World Health Organization:**", "https://www.who.int/emergencies/diseases/novel-coronavirus-2019")
 
             .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.1 | ")
+        .setFooter("COVID-19 Bot | 2.2 | ")
         msg.channel.send({embed: Embed});
 
     }
@@ -209,7 +209,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.1 | ")
+        .setFooter("COVID-19 Bot | 2.2 | ")
 
         msg.channel.send({embed: Embed});
 
@@ -252,7 +252,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.1 | ")
+            .setFooter("COVID-19 Bot | 2.2 | ")
 
 
 
@@ -347,7 +347,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.1 | ")
+                        .setFooter("COVID-19 Bot | 2.2 | ")
 
 
 
@@ -380,7 +380,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.1 | ")
+                        .setFooter("COVID-19 Bot | 2.2 | ")
 
 
 
@@ -412,7 +412,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.1 | ")
+                        .setFooter("COVID-19 Bot | 2.2 | ")
 
 
 
@@ -445,7 +445,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.1 | ")
+                        .setFooter("COVID-19 Bot | 2.2 | ")
 
 
 
@@ -476,7 +476,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.1 | ")
+                        .setFooter("COVID-19 Bot | 2.2 | ")
 
 
 
@@ -509,7 +509,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.1 | ")
+                        .setFooter("COVID-19 Bot | 2.2 | ")
 
 
 
@@ -541,7 +541,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.1 | ")
+                        .setFooter("COVID-19 Bot | 2.2 | ")
 
 
 
@@ -572,7 +572,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.1 | ")
+                        .setFooter("COVID-19 Bot | 2.2 | ")
 
 
 
@@ -604,7 +604,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.1 | ")
+                        .setFooter("COVID-19 Bot | 2.2 | ")
 
 
 
@@ -637,7 +637,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.1 | ")
+                        .setFooter("COVID-19 Bot | 2.2 | ")
 
 
 
@@ -674,7 +674,7 @@ bot.on("message", async msg=>  {
 
 
                     .setTimestamp()
-                    .setFooter("COVID-19 Bot | 2.1 | ")
+                    .setFooter("COVID-19 Bot | 2.2 | ")
 
 
 
@@ -710,7 +710,7 @@ bot.on("message", async msg=>  {
 
 
                 .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.1 | ")
+                .setFooter("COVID-19 Bot | 2.2 | ")
 
 
 
@@ -730,7 +730,7 @@ bot.on("message", async msg=>  {
 
 
                 .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.1 | ")
+                .setFooter("COVID-19 Bot | 2.2 | ")
 
 
 
@@ -754,7 +754,7 @@ bot.on("message", async msg=>  {
         .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
         .addField("Total Members: ", numberWithCommas(bot.users.cache.size))
             .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.1 |")
+        .setFooter("COVID-19 Bot | 2.2 |")
         msg.channel.send({embed: Embed});
     }
     
@@ -806,7 +806,7 @@ bot.on("message", async msg=>  {
 
 
                 .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.1 | ")
+            .setFooter("COVID-19 Bot | 2.2 | ")
 
 
 
@@ -833,7 +833,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.1 | ")
+            .setFooter("COVID-19 Bot | 2.2 | ")
 
 
 
@@ -850,7 +850,7 @@ bot.on("message", async msg=>  {
         .setColor(colors.blue)
         .addField("Use this link to invite COVID Bot:", invite)
             .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.1 | " )
+        .setFooter("COVID-19 Bot | 2.2 | " )
 
 
         msg.author.send(Embed);
@@ -913,7 +913,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.1 | " )
+            .setFooter("COVID-19 Bot | 2.2 | " )
 
 
 
@@ -940,7 +940,7 @@ bot.on("message", async msg=>  {
         
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.1 | ")
+            .setFooter("COVID-19 Bot | 2.2 | ")
 
 
 
@@ -1004,7 +1004,7 @@ bot.on("message", async msg=>  {
         .addField("**2 days ago:** ", "📈 Total Cases: " + numberWithCommas(cases[4]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[4]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[4]))
         .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(cases[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[5]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[5]))
             .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.1 | ")
+        .setFooter("COVID-19 Bot | 2.2 | ")
         msg.channel.send({embed: Embed});
 
     }
@@ -1066,7 +1066,7 @@ bot.on("message", async msg=>  {
 
 
                     .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.1 | ")
+                .setFooter("COVID-19 Bot | 2.2 | ")
                 msg.channel.send({embed: Embed});
 
         } catch {
@@ -1079,7 +1079,7 @@ bot.on("message", async msg=>  {
                 .setDescription("That is not a valid country!")
     
                     .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.1 | ")
+                .setFooter("COVID-19 Bot | 2.2 | ")
     
                 msg.channel.send({embed: Embed});
                 return
@@ -1126,7 +1126,7 @@ bot.on("message", async msg=>  {
 
 
                 .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.1 | ")
+            .setFooter("COVID-19 Bot | 2.2 | ")
 
 
 
@@ -1169,7 +1169,7 @@ bot.on("message", async msg=>  {
 
 
                 .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.1 | ")
+            .setFooter("COVID-19 Bot | 2.2 | ")
             msg.channel.send({embed: Embed});
 
 
@@ -1192,7 +1192,7 @@ bot.on("message", async msg=>  {
 
 
                 .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.1 | " )
+            .setFooter("COVID-19 Bot | 2.2 | " )
             msg.channel.send({embed: Embed});
         }
 
