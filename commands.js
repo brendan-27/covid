@@ -938,7 +938,7 @@ bot.on("message", async msg=>  {
             .addField("🏥 Recovered:", numberWithCommas(continentRecovered), true)
             .addField("🧪 Tests Per Million:", numberWithCommas(contientTestsMillion), true)
             .addField("☠️ Deahts Per Million:", numberWithCommas(continentDeahtsMillion), true)
-        
+    
 
             .setTimestamp()
             .setFooter("COVID-19 Bot | 2.2 | ")
