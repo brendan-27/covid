@@ -143,7 +143,7 @@ bot.on("message", async msg=>  {
         .addField("**API:**", "API used to make COVID-19 Bot is corona corona.lmao.ninja.")
         .addField("**Updates:**", "Data is live and is updated once every 10 minutes for every command.")
         .addField("**Innacurate Data:**", "Sometimes API will have internal errors and this causes some feilds to be marked as 0. But This doest happen too much. This is the only known issue.")
-        .addField("**Known Issues:**", "When using -history {country} some of the fields may show 0. This is a API error and should be fixed within 24 hours.")
+        .addField("**Known Issues:**", "When using -history {country} some of the fields may show 0. This is a API error and some fixes have started to role in but need more error handling.")
 
 
 
@@ -203,12 +203,13 @@ bot.on("message", async msg=>  {
         .addField("**Fix: **", "Fixed some countries showing 0 as case count (unrealistic ones).")
         .addField("**New: **", "Added flags on country updates.")
         .addField("**Fix/New: **", "Fixed some embeds and added new things to country embeds.")
+        .addField("**New: **", "Added a world visualization for all stats commands. (ex: -global)")
        
         
 
 
 
-            .setTimestamp()
+        .setTimestamp()
         .setFooter("COVID-19 Bot | 2.2 | ")
 
         msg.channel.send({embed: Embed});
