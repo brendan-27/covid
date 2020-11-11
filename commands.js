@@ -144,7 +144,7 @@ bot.on("message", async msg=>  {
         .addField("**Updates:**", "Data is live and is updated once every 10 minutes for every command.")
         .addField("**Innacurate Data:**", "Sometimes API will have internal errors and this causes some feilds to be marked as 0. But This doest happen too much. This is the only known issue.")
         .addField("**Known Issues:**", "When using -history {country} some of the fields may show 0. This is a API error and some fixes have started to role in but need more error handling.")
-
+        
 
 
 
@@ -204,10 +204,8 @@ bot.on("message", async msg=>  {
         .addField("**New: **", "Added flags on country updates.")
         .addField("**Fix/New: **", "Fixed some embeds and added new things to country embeds.")
         .addField("**New: **", "Added a world visualization for all stats commands. (ex: -global)")
-       
+        .addField("**Removed: **", "Removed country history due to API issues.")
         
-
-
 
         .setTimestamp()
         .setFooter("COVID-19 Bot | 2.2 | ")
@@ -1021,7 +1019,7 @@ bot.on("message", async msg=>  {
 
 
     if (cmd == `${prefix}history` || cmd == `${prefix}countryhistory`) {
-
+        try {
             var newStr = "";
 
             var arg2 = msg.content.slice(prefix.length).split(' ');
@@ -1078,22 +1076,22 @@ bot.on("message", async msg=>  {
                 .setFooter("COVID-19 Bot | 2.2 | ")
                 msg.channel.send({embed: Embed});
 
-        
+        } catch {
 
                 Embed = new discord.MessageEmbed()
                 .setColor(colors.blue)
                 .setAuthor("Error", bot.user.displayAvatarURL())
     
                 .setThumbnail(bot.user.displayAvatarURL())
-                .setDescription("That is not a valid country!")
+                .setDescription("Command Currently down due to API errors. Should be returned shortly. Last updated 11/11/20.")
     
-                    .setTimestamp()
+                .setTimestamp()
                 .setFooter("COVID-19 Bot | 2.2 | ")
     
                 msg.channel.send({embed: Embed});
                 return
 
-        
+        }
         
     }
 
