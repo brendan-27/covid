@@ -761,42 +761,70 @@ bot.on("message", async msg=>  {
     
 
     if (cmd == `${prefix}statesinfo` || cmd == `${prefix}stateinfo` || cmd == `${prefix}state`) {
+        try {
+            var newStr = "";
 
-        var newStr = "";
+            var arg2 = msg.content.slice(prefix.length).split(' ');
+            
+            var argRep = arg2[1].toLowerCase()
+            
+            if ("new" == argRep || "south" == argRep || "north" == argRep || "west" == argRep)  {
+                
 
-        var arg2 = msg.content.slice(prefix.length).split(' ');
-        
-        var argRep = arg2[1].toLowerCase()
-        
-        if ("new" == argRep || "south" == argRep || "north" == argRep || "west" == argRep)  {
+                
+                newStr = arg2[1]  + "%20" + arg2[2];
+
+                
+
+            } else {
+
+                newStr = arg2[1];
+
+            }
+            
+            
+            
+            var website2 = "https://corona.lmao.ninja/v2/states/" + newStr;
+            const response = await fetch(website2);
+            const data2 = await response.json();
+
+            var casesState = data2.cases;
+            var deahtsState = data2.deaths;
+            var tests = data2.tests;
+            var activeCases = data2.active;
+            var state = data2.state;
+            var deathsMillion = data2.deathsPerOneMillion;
+            var testsStateMillion = data2.testsPerOneMillion;
+
             
 
-            
-            newStr = arg2[1]  + "%20" + arg2[2];
+            Embed = new discord.MessageEmbed()
+                .setColor(colors.blue)
+                .setAuthor(state + " COVID-19 Information", bot.user.displayAvatarURL())
 
-            
+                .setThumbnail(bot.user.displayAvatarURL())
+                .addField("📈Positive Cases:", numberWithCommas(casesState), true)
+                .addField("☠️Confirmed Deaths:", numberWithCommas(deahtsState), true)
+                .addField("🧪Tests:", numberWithCommas(tests), true)
+                .addField("💹Active:", numberWithCommas(activeCases), true)
+                .addField("☠️Deaths Per Million:", numberWithCommas(deathsMillion), true)
+                .addField("🧪Tests Per Million:", numberWithCommas(testsStateMillion), true)
 
-        } else {
 
-            newStr = arg2[1];
-
-        }
         
-        
-        
-        var website2 = "https://corona.lmao.ninja/v2/states/" + newStr;
-        const response = await fetch(website2);
-        const data2 = await response.json();
 
-        var casesState = data2.cases;
-        var deahtsState = data2.deaths;
-        var tests = data2.tests;
-        var activeCases = data2.active;
-        var state = data2.state;
-        var deathsMillion = data2.deathsPerOneMillion;
-        var testsStateMillion = data2.testsPerOneMillion;
 
-        if (casesState == undefined) {
+                .setTimestamp()
+                .setFooter("COVID-19 Bot | 2.2 | ")
+
+
+
+
+            msg.channel.send({embed: Embed});
+
+
+        } catch {
+
             Embed = new discord.MessageEmbed()
             .setColor(colors.blue)
             .setAuthor("Error", bot.user.displayAvatarURL())
@@ -806,7 +834,7 @@ bot.on("message", async msg=>  {
            
 
 
-                .setTimestamp()
+            .setTimestamp()
             .setFooter("COVID-19 Bot | 2.2 | ")
 
 
@@ -815,31 +843,11 @@ bot.on("message", async msg=>  {
             msg.channel.send({embed: Embed});
             return
             
+
+
+
+
         }
-
-        Embed = new discord.MessageEmbed()
-            .setColor(colors.blue)
-            .setAuthor(state + " COVID-19 Information", bot.user.displayAvatarURL())
-
-            .setThumbnail(bot.user.displayAvatarURL())
-            .addField("📈Positive Cases:", numberWithCommas(casesState), true)
-            .addField("☠️Confirmed Deaths:", numberWithCommas(deahtsState), true)
-            .addField("🧪Tests:", numberWithCommas(tests), true)
-            .addField("💹Active:", numberWithCommas(activeCases), true)
-            .addField("☠️Deaths Per Million:", numberWithCommas(deathsMillion), true)
-            .addField("🧪Tests Per Million:", numberWithCommas(testsStateMillion), true)
-
-
-    
-
-
-            .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.2 | ")
-
-
-
-
-        msg.channel.send({embed: Embed});
 
     }
 
