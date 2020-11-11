@@ -1021,7 +1021,7 @@ bot.on("message", async msg=>  {
 
 
     if (cmd == `${prefix}history` || cmd == `${prefix}countryhistory`) {
-        try {
+
             var newStr = "";
 
             var arg2 = msg.content.slice(prefix.length).split(' ');
@@ -1078,7 +1078,7 @@ bot.on("message", async msg=>  {
                 .setFooter("COVID-19 Bot | 2.2 | ")
                 msg.channel.send({embed: Embed});
 
-        } catch {
+        
 
                 Embed = new discord.MessageEmbed()
                 .setColor(colors.blue)
@@ -1093,7 +1093,7 @@ bot.on("message", async msg=>  {
                 msg.channel.send({embed: Embed});
                 return
 
-        }
+        
         
     }
 
