@@ -47,14 +47,6 @@ function textOutput (arg1, arg2) {
 }
 sendMessage();*/
 
-
-
-function errorHandle() {
-
-    //design
-
-}
-
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -135,6 +127,31 @@ bot.on("message", async msg=>  {
 
     }
 
+
+    if(cmd == `${prefix}daily`) {
+        const response = await fetch("https://corona.lmao.ninja/v2/all");
+        const data = await response.json();
+
+        var newCases = data.todayCases;
+        var newDeaths = data.todayDeaths;
+        var newRecovs = data.todatRecovered;
+
+
+
+        Embed = new discord.MessageEmbed()
+        .setColor(colors.blue)
+        .setAuthor("Global COVID-19 Information", bot.user.displayAvatarURL())
+
+
+
+
+
+        .setTimestamp()
+        .setFooter("COVID-19 Bot | 2.2 | ")
+
+
+    }
+
     if(cmd == `${prefix}api` || cmd == `${prefix}API`){
         Embed = new discord.MessageEmbed()
         .setColor(colors.blue)
@@ -148,7 +165,7 @@ bot.on("message", async msg=>  {
 
 
 
-            .setTimestamp()
+        .setTimestamp()
         .setFooter("COVID-19 Bot | 2.2 | ")
 
         msg.channel.send({embed: Embed});
