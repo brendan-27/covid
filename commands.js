@@ -142,8 +142,9 @@ bot.on("message", async msg=>  {
         .setColor(colors.blue)
         .setAuthor("Global COVID-19 Information", bot.user.displayAvatarURL())
 
-
-
+        .addField("📈 New Case Count (Today):", numberWithCommas(newCases))
+        .addField("☠️ New Deaths (Today):", numberWithCommas(newDeaths))
+        .addField("💉 New Recoveries (Today):", numberWithCommas(newRecovs))
 
 
         .setTimestamp()
