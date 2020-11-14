@@ -173,6 +173,7 @@ bot.on("message", async msg=>  {
 
             .setTimestamp()
             .setFooter("COVID-19 Bot | 2.2 | ")
+            msg.channel.send({embed: Embed});
         } catch {
             //console.log(newRecovs);
             Embed = new discord.MessageEmbed()
