@@ -148,9 +148,13 @@ bot.on("message", async msg=>  {
             var newRecovs = data.todayRecovered;
 
 
-            var percentCases = Math.floor((newCases / totalCases) * 100);
-            var percentDeaths = Math.floor((newDeaths / deaths) * 100);
-            var percentRecovs = Math.floor((newRecovs / recovered) * 100);
+            var percentCases = newCases / totalCases;
+            var percentDeaths = newDeaths / deaths;
+            var percentRecovs = newRecovs / recovered;
+
+            var caseClean = Math.round(percentCases * 100)
+            var deathClean = Math.round(percentDeaths * 100)
+            var recovClean = Math.round(percentRecovs * 100)
 
             
 
@@ -163,9 +167,9 @@ bot.on("message", async msg=>  {
             .addField("☠️ New Deaths (Today):", numberWithCommas(newDeaths))
             .addField("💉 New Recoveries (Today):", numberWithCommas(newRecovs))
 
-            .addField("Cases Percent Increase: ", percentCases)
-            .addField("Deaths Percent Increase: ", percentDeaths)
-            .addField("Recovs Percent Increase: ", percentRecovs)
+            .addField("Cases Percent Increase: ", caseClean)
+            .addField("Deaths Percent Increase: ", deathClean)
+            .addField("Recovs Percent Increase: ", recovClean)
 
 
             
