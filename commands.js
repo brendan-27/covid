@@ -129,27 +129,39 @@ bot.on("message", async msg=>  {
 
 
     if(cmd == `${prefix}daily`) {
-        const response = await fetch("https://corona.lmao.ninja/v2/all");
-        const data = await response.json();
 
-        var newCases = data.todayCases;
-        var newDeaths = data.todayDeaths;
-        var newRecovs = data.todatRecovered;
+        try {
+            const response = await fetch("https://corona.lmao.ninja/v2/all");
+            const data = await response.json();
 
-
-
-        Embed = new discord.MessageEmbed()
-        .setColor(colors.blue)
-        .setAuthor("Global COVID-19 Information", bot.user.displayAvatarURL())
-
-        .addField("📈 New Case Count (Today):", numberWithCommas(newCases))
-        .addField("☠️ New Deaths (Today):", numberWithCommas(newDeaths))
-        .addField("💉 New Recoveries (Today):", numberWithCommas(newRecovs))
+            var newCases = data.todayCases;
+            var newDeaths = data.todayDeaths;
+            var newRecovs = data.todatRecovered;
 
 
-        .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.2 | ")
 
+            Embed = new discord.MessageEmbed()
+            .setColor(colors.blue)
+            .setAuthor("Global COVID-19 Information", bot.user.displayAvatarURL())
+
+            .addField("📈 New Case Count (Today):", numberWithCommas(newCases))
+            .addField("☠️ New Deaths (Today):", numberWithCommas(newDeaths))
+            .addField("💉 New Recoveries (Today):", numberWithCommas(newRecovs))
+
+
+            .setTimestamp()
+            .setFooter("COVID-19 Bot | 2.2 | ")
+        } catch {
+            console.log(newCases);
+            Embed = new discord.MessageEmbed()
+            .setColor(colors.blue)
+            .setAuthor("Error:", bot.user.displayAvatarURL())
+
+            .setDescription("This command is still under construction.")
+
+            .setTimestamp()
+            .setFooter("COVID-19 Bot | 2.2 | ")
+        }
 
     }
 
