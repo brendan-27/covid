@@ -155,13 +155,13 @@ bot.on("message", async msg=>  {
 
             
 
-            var caseClean = Math.round(percentCases * 100)
+            /*var caseClean = Math.round(percentCases * 100)
             var deathClean = Math.round(percentDeaths * 100)
-            var recovClean = Math.round(percentRecovs * 100)
+            var recovClean = Math.round(percentRecovs * 100)*/
 
-            console.log(caseClean);
+            console.log(percentCases);
             console.log(deathClean);
-            console.log(recovClean);
+            console.log(percentRecovs);
 
 
             Embed = new discord.MessageEmbed()
