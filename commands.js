@@ -160,7 +160,7 @@ bot.on("message", async msg=>  {
             var recovClean = Math.round(percentRecovs * 100)*/
 
             console.log(percentCases);
-            console.log(deathClean);
+            console.log(percentDeaths);
             console.log(percentRecovs);
 
 
