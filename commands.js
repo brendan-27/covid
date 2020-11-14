@@ -134,10 +134,25 @@ bot.on("message", async msg=>  {
             const response = await fetch("https://corona.lmao.ninja/v2/all");
             const data = await response.json();
 
+
+
+            var totalCases = data.cases;
+            var deaths = data.deaths
+            var recovered = data.recovered;
+
+
+
+
             var newCases = data.todayCases;
             var newDeaths = data.todayDeaths;
             var newRecovs = data.todayRecovered;
 
+
+            var percentCases = Math.floor((newCases / totalCases) * 100);
+            var percentDeaths = Math.floor((newDeaths / deaths) * 100);
+            var percentRecovs = Math.floor((newRecovs / recovered) * 100);
+
+            
 
 
             Embed = new discord.MessageEmbed()
@@ -147,6 +162,13 @@ bot.on("message", async msg=>  {
             .addField("📈 New Case Count (Today):", numberWithCommas(newCases))
             .addField("☠️ New Deaths (Today):", numberWithCommas(newDeaths))
             .addField("💉 New Recoveries (Today):", numberWithCommas(newRecovs))
+
+            .addField("Cases Percent Increase: ", percentCases)
+            .addField("Deaths Percent Increase: ", percentDeaths)
+            .addField("Recovs Percent Increase: ", percentRecovs)
+
+
+            
 
 
             .setTimestamp()
@@ -256,7 +278,7 @@ bot.on("message", async msg=>  {
         var totalCases = data.cases;
         var deaths = data.deaths
         var newCases = data.todayCases;
-        var recovered = data.recovered
+        var recovered = data.recovered;
         var newDeaths = data.todayDeaths;
         var totalCountries = data.affectedCountries;
         var test = data.tests;
