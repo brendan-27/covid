@@ -152,6 +152,11 @@ bot.on("message", async msg=>  {
             var percentDeaths = newDeaths / deaths;
             var percentRecovs = newRecovs / recovered;
 
+
+            console.log(percentCases);
+            console.log(percentDeaths);
+            console.log(percentRecovs);
+
             var caseClean = Math.round(percentCases * 100)
             var deathClean = Math.round(percentDeaths * 100)
             var recovClean = Math.round(percentRecovs * 100)
