@@ -136,7 +136,7 @@ bot.on("message", async msg=>  {
 
             var newCases = data.todayCases;
             var newDeaths = data.todayDeaths;
-            var newRecovs = data.todatRecovered;
+            var newRecovs = data.todayRecovered;
 
 
 
@@ -152,7 +152,7 @@ bot.on("message", async msg=>  {
             .setTimestamp()
             .setFooter("COVID-19 Bot | 2.2 | ")
         } catch {
-            console.log(newRecovs);
+            //console.log(newRecovs);
             Embed = new discord.MessageEmbed()
             .setColor(colors.blue)
             .setAuthor("Error:", bot.user.displayAvatarURL())
