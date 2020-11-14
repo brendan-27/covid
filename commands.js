@@ -148,20 +148,20 @@ bot.on("message", async msg=>  {
             var newRecovs = data.todayRecovered;
 
 
-            var percentCases = newCases / totalCases;
-            var percentDeaths = newDeaths / deaths;
-            var percentRecovs = newRecovs / recovered;
+            var percentCases = newCases / totalCases * 100;
+            var percentDeaths = newDeaths / deaths * 100;
+            var percentRecovs = newRecovs / recovered * 100;
 
 
-            console.log(percentCases);
-            console.log(percentDeaths);
-            console.log(percentRecovs);
+            
 
             var caseClean = Math.round(percentCases * 100)
             var deathClean = Math.round(percentDeaths * 100)
             var recovClean = Math.round(percentRecovs * 100)
 
-            
+            console.log(caseClean);
+            console.log(deathClean);
+            console.log(recovClean);
 
 
             Embed = new discord.MessageEmbed()
