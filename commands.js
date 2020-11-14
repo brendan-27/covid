@@ -152,7 +152,7 @@ bot.on("message", async msg=>  {
             .setTimestamp()
             .setFooter("COVID-19 Bot | 2.2 | ")
         } catch {
-            console.log(newCases);
+            console.log(newDeaths);
             Embed = new discord.MessageEmbed()
             .setColor(colors.blue)
             .setAuthor("Error:", bot.user.displayAvatarURL())
@@ -161,6 +161,7 @@ bot.on("message", async msg=>  {
 
             .setTimestamp()
             .setFooter("COVID-19 Bot | 2.2 | ")
+            msg.channel.send({embed: Embed});
         }
 
     }
