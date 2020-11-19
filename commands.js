@@ -128,6 +128,7 @@ bot.on("message", async msg=>  {
     }
 
 
+    //still needs testing
     if(cmd == `${prefix}daily`) {
 
         try {
