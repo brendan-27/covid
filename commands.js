@@ -149,33 +149,36 @@ bot.on("message", async msg=>  {
             var newRecovs = data.todayRecovered;
 
 
-            var percentCases = newCases / totalCases * 100;
-            var percentDeaths = newDeaths / deaths * 100;
-            var percentRecovs = newRecovs / recovered * 100;
+            var percentCases = newCases / totalCases;
+            var percentDeaths = newDeaths / deaths;
+            var percentRecovs = newRecovs / recovered;
+
+            var caseClean = percentCases.toFixed(4);
+            var deathClean = percentDeaths.toFixed(4);
+            var recovClean = percentRecovs.toFixed(4);
 
 
-            
+            var caseCleana = caseClean * 100;
+            var deathCleana = deathClean * 100;
+            var recovCleana = recovClean * 100;
 
-            /*var caseClean = Math.round(percentCases * 100)
-            var deathClean = Math.round(percentDeaths * 100)
-            var recovClean = Math.round(percentRecovs * 100)*/
-
-            console.log(percentCases);
-            console.log(percentDeaths);
-            console.log(percentRecovs);
+            console.log(caseCleana);
+            console.log(deathCleana);
+            console.log(recovCleana);
 
 
             Embed = new discord.MessageEmbed()
             .setColor(colors.blue)
             .setAuthor("Global COVID-19 Information", bot.user.displayAvatarURL())
+            .setThumbnail('https://cdn.discordapp.com/attachments/755553823962955878/779161873991860224/US_coronavirus_cases.png')
 
             .addField("📈 New Case Count (Today):", numberWithCommas(newCases))
             .addField("☠️ New Deaths (Today):", numberWithCommas(newDeaths))
             .addField("💉 New Recoveries (Today):", numberWithCommas(newRecovs))
 
-            .addField("Cases Percent Increase: ", caseClean)
-            .addField("Deaths Percent Increase: ", deathClean)
-            .addField("Recovs Percent Increase: ", recovClean)
+            .addField("Cases Percent Increase: ", caseCleana + "%")
+            .addField("Deaths Percent Increase: ", deathCleana + "%")
+            .addField("Recovs Percent Increase: ", recovCleana + "%")
 
 
             
@@ -1279,4 +1282,5 @@ bot.on("message", async msg=>  {
 
 
 bot.login(process.env.token);
+
 // outdated: bot.login(botconfig.token);
