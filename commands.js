@@ -102,6 +102,7 @@ bot.on("message", async msg=>  {
         .addField("**Example:**", "-history america, -countryhistory sweden", true)
         .addField("**-province {province}:**", "Use to see 6 day info on provinces.")
         .addField("**Example:**", "-province Alberta, -provincehistory nova scotia", true)
+        .addField("**-daily:**", "Shows all info from that day and updates every 24 hours. (BROKEN RN DUE TO API).")
         .addField("**-worldhistory:**", "Shows info from the previous 6 days so you can track growth.", )
         .addField("**-stats**", "Use to see amount of servers bot is in.")
         .addField("**-changelog**", "Use to see new features and fixes within the update.")
