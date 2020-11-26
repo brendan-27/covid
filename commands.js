@@ -133,7 +133,7 @@ bot.on("message", async msg=>  {
     if(cmd == `${prefix}daily`) {
 
         try {
-            const response = await fetch("https://corona.lmao.ninja/v2/all");
+            /*const response = await fetch("https://corona.lmao.ninja/v2/all");
             const data = await response.json();
 
 
@@ -167,23 +167,14 @@ bot.on("message", async msg=>  {
             console.log(deathCleana);
             console.log(recovCleana);
 
-
+            */
             Embed = new discord.MessageEmbed()
             .setColor(colors.blue)
-            .setAuthor("Global COVID-19 Information", bot.user.displayAvatarURL())
-            .setThumbnail('https://cdn.discordapp.com/attachments/755553823962955878/779161873991860224/US_coronavirus_cases.png')
-            .addField("New 24 hour numbers: ", "--------------------------")
-            .addField("📈 New Case Count (Today):", numberWithCommas(newCases))
-            .addField("☠️ New Deaths (Today):", numberWithCommas(newDeaths))
-            .addField("💉 New Recoveries (Today):", numberWithCommas(newRecovs) + "\n--------------------------")
-            .addField("New 24 hour percentages: ", "--------------------------")
-            .addField("Cases Percent Increase: ", caseCleana + "%")
-            .addField("Deaths Percent Increase: ", deathCleana + "%")
-            .addField("Recovs Percent Increase: ", recovCleana + "%\n--------------------------")
-
-
+            .setAuthor("Error: ", bot.user.displayAvatarURL())
+            .setDescription("This command is down due to errors and maintenance.")
             
 
+    
 
             .setTimestamp()
             .setFooter("COVID-19 Bot | 2.3 | ")
