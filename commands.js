@@ -130,10 +130,12 @@ bot.on("message", async msg=>  {
 
 
     //still needs testing
+    //not functioning API is bad.
+
     if(cmd == `${prefix}daily`) {
 
         try {
-            /*const response = await fetch("https://corona.lmao.ninja/v2/all");
+            const response = await fetch("https://corona.lmao.ninja/v2/all");
             const data = await response.json();
 
 
@@ -163,17 +165,30 @@ bot.on("message", async msg=>  {
             var deathCleana = deathClean * 100;
             var recovCleana = recovClean * 100;
 
-            console.log(caseCleana);
-            console.log(deathCleana);
-            console.log(recovCleana);
+            //console.log(caseCleana);
+            //console.log(deathCleana);
+            //console.log(recovCleana);
 
-            */
+            
             Embed = new discord.MessageEmbed()
             .setColor(colors.blue)
-            .setAuthor("Error: ", bot.user.displayAvatarURL())
-            .setDescription("This command is down due to errors and maintenance.")
-            //test 
+            .setAuthor("Daily COVID 19 information: ", bot.user.displayAvatarURL())
+            .setThumbnail('https://cdn.discordapp.com/attachments/755553823962955878/779161873991860224/US_coronavirus_cases.png')
+            //cases
+            .addField("New 24 hour numbers: \n--------------------------")
 
+            .addField("📈 New Case Count (Today): " + numberWithCommas(newCases))
+            .addField("☠️ New Death Count (Today): " + numberWithCommas(newDeaths))
+            .addField("💉 New Recoveries Count (Today): " + numberWithCommas(newRecovs) + "\n--------------------------")
+
+            .addField("New 24 hour percentages: \n--------------------------")
+
+            .addField("Cases percent increase: " + caseCleana)
+            .addField("Deaths percent increase: " + deathCleana)
+            .addField("Recovs Percent Increase: " + recovCleana)
+            
+
+    
     
 
             .setTimestamp()
