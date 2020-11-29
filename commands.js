@@ -183,9 +183,9 @@ bot.on("message", async msg=>  {
 
             .addField("New 24 hour percentages: ",  "\n--------------------------")
 
-            .addField("Cases percent increase: ", caseCleana)
-            .addField("Deaths percent increase: ", deathCleana)
-            .addField("Recovs Percent Increase: ", recovCleana)
+            .addField("Cases percent increase: ", caseCleana + "%")
+            .addField("Deaths percent increase: ", deathCleana + "%")
+            .addField("Recovs Percent Increase: ", recovCleana + "%\n--------------------------")
             
 
     
