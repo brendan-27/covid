@@ -172,7 +172,7 @@ bot.on("message", async msg=>  {
             .setColor(colors.blue)
             .setAuthor("Error: ", bot.user.displayAvatarURL())
             .setDescription("This command is down due to errors and maintenance.")
-            
+            //test 
 
     
 
