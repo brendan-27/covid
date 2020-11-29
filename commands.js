@@ -175,17 +175,17 @@ bot.on("message", async msg=>  {
             .setAuthor("Daily COVID 19 information: ", bot.user.displayAvatarURL())
             .setThumbnail('https://cdn.discordapp.com/attachments/755553823962955878/779161873991860224/US_coronavirus_cases.png')
             //cases
-            .addField("New 24 hour numbers: \n--------------------------")
+            .setDescription("New 24 hour numbers: \n--------------------------")
 
-            .addField("📈 New Case Count (Today): " + numberWithCommas(newCases))
-            .addField("☠️ New Death Count (Today): " + numberWithCommas(newDeaths))
-            .addField("💉 New Recoveries Count (Today): " + numberWithCommas(newRecovs) + "\n--------------------------")
+            .addField("📈 New Case Count (Today): ", numberWithCommas(newCases))
+            .addField("☠️ New Death Count (Today): ", numberWithCommas(newDeaths))
+            .addField("💉 New Recoveries Count (Today): ", numberWithCommas(newRecovs) + "\n--------------------------")
 
             .addField("New 24 hour percentages: \n--------------------------")
 
-            .addField("Cases percent increase: " + caseCleana)
-            .addField("Deaths percent increase: " + deathCleana)
-            .addField("Recovs Percent Increase: " + recovCleana)
+            .addField("Cases percent increase: ", caseCleana)
+            .addField("Deaths percent increase: ", deathCleana)
+            .addField("Recovs Percent Increase: ", recovCleana)
             
 
     
