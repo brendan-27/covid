@@ -181,7 +181,7 @@ bot.on("message", async msg=>  {
             .addField("☠️ New Death Count (Today): ", numberWithCommas(newDeaths))
             .addField("💉 New Recoveries Count (Today): ", numberWithCommas(newRecovs) + "\n--------------------------")
 
-            .addField("New 24 hour percentages: \n--------------------------")
+            .addField("New 24 hour percentages: ",  "\n--------------------------")
 
             .addField("Cases percent increase: ", caseCleana)
             .addField("Deaths percent increase: ", deathCleana)
