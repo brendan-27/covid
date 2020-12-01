@@ -139,11 +139,10 @@ bot.on("message", async msg=>  {
             const data = await response.json();
 
 
-
+            // fixed cmd activ
             var totalCases = data.cases;
             var deaths = data.deaths
             var recovered = data.recovered;
-
 
 
 
