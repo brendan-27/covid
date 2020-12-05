@@ -144,7 +144,7 @@ bot.on("message", async msg=>  {
             var deaths = data.deaths
             var recovered = data.recovered;
 
-
+            //test
 
             var newCases = data.todayCases;
             var newDeaths = data.todayDeaths;
