@@ -279,6 +279,7 @@ bot.on("message", async msg=>  {
         .addField("**New: **", "Added a world visualization for all stats commands. (ex: -global)")
         .addField("**Removed: **", "Removed country history due to API issues.")
         .addField("**New: **", "Added daily command and updated cmds.")
+        .addField("**FIX**:", "Fixed -daily command and it is now fully functional.")
         
 
         .setTimestamp()
