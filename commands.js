@@ -9,6 +9,8 @@ const bot = new discord.Client({disableEveryone : true});
 const fetch = require("node-fetch");
 const colors = require("./colors.json");
 const DBL = require("dblapi.js");
+
+//bot token might have to update soon.
 const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcwODQwODQ3ODU3Mzc4OTI2NiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTkwNTI0NDkyfQ.ajFs47xxzPA-N5y36CtaSoQBgxo41QcnX0-Fy7n3hWc', bot);
 
 
@@ -104,7 +106,7 @@ bot.on("message", async msg=>  {
         .addField("**Example:**", "-history america, -countryhistory sweden", true)
         .addField("**-province {province}:**", "Use to see 6 day info on provinces.")
         .addField("**Example:**", "-province Alberta, -provincehistory nova scotia", true)
-        .addField("**-daily:**", "Shows all info from that day and updates every 24 hours. (BROKEN RN DUE TO API).")
+        .addField("**-daily:**", "Shows all info from that day and updates every 24 hours. (Fixed API is now wroking again. DELAYED MESSAGE).")
         .addField("**-worldhistory:**", "Shows info from the previous 6 days so you can track growth.", )
         .addField("**-stats**", "Use to see amount of servers bot is in.")
         .addField("**-changelog**", "Use to see new features and fixes within the update.")
