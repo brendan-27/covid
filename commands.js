@@ -2,6 +2,8 @@
 
 //leaning back work on this bot and starting new future ( more complex projects, less updates. STARTED: 4:36 PM 12/9/2020)
 
+
+//backup using  errors.
 //added error handling bug report system needed.
 const botconfig = require("./botconfig.json");
 const discord = require("discord.js");
