@@ -3,6 +3,9 @@
 //leaning back work on this bot and starting new future ( more complex projects, less updates. STARTED: 4:36 PM 12/9/2020)
 
 
+//leaning back work lots of school projects right now for computer science.
+
+
 //backup using  errors.
 //added error handling bug report system needed.
 const botconfig = require("./botconfig.json");
@@ -94,7 +97,6 @@ bot.on("message", async msg=>  {
         Embed = new discord.MessageEmbed()
         .setColor(colors.blue)
 
-
         .setAuthor("COVID Bot Help: ", bot.user.displayAvatarURL())
         .addField("**Commands for COVID Bot**:", "By state, by country, global, and by continent.", true)
         .addField("**-global**", "Displays Global COVID-19 stats.")
@@ -108,7 +110,7 @@ bot.on("message", async msg=>  {
         .addField("**Example:**", "-history america, -countryhistory sweden", true)
         .addField("**-province {province}:**", "Use to see 6 day info on provinces.")
         .addField("**Example:**", "-province Alberta, -provincehistory nova scotia", true)
-        .addField("**-daily:**", "Shows all info from that day and updates every 24 hours. (Fixed API is now wroking again. DELAYED MESSAGE).")
+        .addField("**-daily:**", "(Not Funntional) Shows all info from that day and updates every 24 hours. (Fixed API is now wroking again. DELAYED MESSAGE).")
         .addField("**-worldhistory:**", "Shows info from the previous 6 days so you can track growth.", )
         .addField("**-stats**", "Use to see amount of servers bot is in.")
         .addField("**-changelog**", "Use to see new features and fixes within the update.")
@@ -125,8 +127,6 @@ bot.on("message", async msg=>  {
         .addField("**Support us by upvoting the bot at:**", "https://top.gg/bot/708408478573789266")
         .addField("**Invite COVID Bot to your server:**", "Click [Here](https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot), or use -invite.")
 
-        
-
         .setTimestamp()
         .setFooter("COVID-19 Bot | 2.4 | ")
 
@@ -140,7 +140,7 @@ bot.on("message", async msg=>  {
 
     if(cmd == `${prefix}daily`) {
 
-        try {
+        /*try {
             const response = await fetch("https://corona.lmao.ninja/v2/all");
             const data = await response.json();
 
@@ -193,7 +193,7 @@ bot.on("message", async msg=>  {
             .addField("Recovs Percent Increase: ", recovCleana + "%\n--------------------------")
             
 
-    
+            
     
 
             .setTimestamp()
@@ -210,7 +210,17 @@ bot.on("message", async msg=>  {
             .setTimestamp()
             .setFooter("COVID-19 Bot | 2.4 | ")
             msg.channel.send({embed: Embed});
-        }
+        }*/
+
+        Embed = new discord.MessageEmbed()
+            .setColor(colors.blue)
+            .setAuthor("Error:", bot.user.displayAvatarURL())
+
+            .setDescription("This command is still under construction.")
+
+            .setTimestamp()
+            .setFooter("COVID-19 Bot | 2.4 | ")
+        msg.channel.send({embed: Embed});
 
     }
 
@@ -285,7 +295,7 @@ bot.on("message", async msg=>  {
         .addField("**New: **", "Added a world visualization for all stats commands. (ex: -global)")
         .addField("**Removed: **", "Removed country history due to API issues.")
         .addField("**New: **", "Added daily command and updated cmds.")
-        .addField("**FIX**:", "Fixed -daily command and it is now fully functional.")
+        .addField("**Fix**:", "Daily cases count not functional.")
         
 
         .setTimestamp()
@@ -297,8 +307,8 @@ bot.on("message", async msg=>  {
     
     
 
-
-    if (cmd === `${prefix}global`) {
+    //changed to world 
+    if (cmd === `${prefix}global` || cmd === `${prefix}world`) {
         const response = await fetch("https://corona.lmao.ninja/v2/all");
         const data = await response.json();
 
