@@ -140,7 +140,7 @@ bot.on("message", async msg=>  {
 
     if(cmd == `${prefix}daily`) {
 
-        /*try {
+        try {
             const response = await fetch("https://corona.lmao.ninja/v2/all");
             const data = await response.json();
 
@@ -149,6 +149,10 @@ bot.on("message", async msg=>  {
             var totalCases = data.cases;
             var deaths = data.deaths
             var recovered = data.recovered;
+
+            console.log(totalCases);
+            console.log(deaths);
+            console.log(recovered);
 
             //test
 
@@ -170,9 +174,7 @@ bot.on("message", async msg=>  {
             var deathCleana = deathClean * 100;
             var recovCleana = recovClean * 100;
 
-            //console.log(caseCleana);
-            //console.log(deathCleana);
-            //console.log(recovCleana);
+            
 
             
             Embed = new discord.MessageEmbed()
@@ -210,17 +212,9 @@ bot.on("message", async msg=>  {
             .setTimestamp()
             .setFooter("COVID-19 Bot | 2.4 | ")
             msg.channel.send({embed: Embed});
-        }*/
+        }
 
-        Embed = new discord.MessageEmbed()
-            .setColor(colors.blue)
-            .setAuthor("Error:", bot.user.displayAvatarURL())
-
-            .setDescription("This command is still under construction.")
-
-            .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.4 | ")
-        msg.channel.send({embed: Embed});
+     
 
     }
 
@@ -233,10 +227,7 @@ bot.on("message", async msg=>  {
         .addField("**Updates:**", "Data is live and is updated once every 10 minutes for every command.")
         .addField("**Innacurate Data:**", "Sometimes API will have internal errors and this causes some feilds to be marked as 0. But This doest happen too much. This is the only known issue.")
         .addField("**Known Issues:**", "When using -history {country} some of the fields may show 0. This is a API error and some fixes have started to role in but need more error handling.")
-        
-
-
-
+    
         .setTimestamp()
         .setFooter("COVID-19 Bot | 2.4 | ")
 
@@ -295,7 +286,7 @@ bot.on("message", async msg=>  {
         .addField("**New: **", "Added a world visualization for all stats commands. (ex: -global)")
         .addField("**Removed: **", "Removed country history due to API issues.")
         .addField("**New: **", "Added daily command and updated cmds.")
-        .addField("**Fix**:", "Daily cases count not functional.")
+        .addField("**Fix**:", "Daily cases count not functional. API issue.")
         
 
         .setTimestamp()
@@ -406,9 +397,7 @@ bot.on("message", async msg=>  {
 
         // hotfixes made 10/16/20 11:06 pm 
 
-        
-
-
+    
         try {
             var flagCountry = data.countryInfo.flag;
 
