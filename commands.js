@@ -150,9 +150,9 @@ bot.on("message", async msg=>  {
             var deaths = data.deaths
             var recovered = data.recovered;
 
-            console.log(totalCases);
+            /*console.log(totalCases);
             console.log(deaths);
-            console.log(recovered);
+            console.log(recovered);*/
 
             //test
 
