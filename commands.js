@@ -144,7 +144,7 @@ bot.on("message", async msg=>  {
             const response = await fetch("https://corona.lmao.ninja/v2/all");
             const data = await response.json();
 
-
+            //a
             // fixed cmd activ
             var totalCases = data.cases;
             var deaths = data.deaths
