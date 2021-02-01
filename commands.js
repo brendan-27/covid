@@ -317,7 +317,7 @@ bot.on("message", async msg=>  {
 
         Embed = new discord.MessageEmbed()
             .setColor(colors.blue)
-            .setAuthor("Global COVID-19 Information", bot.user.displayAvatarURL())
+            .setAuthor("Global COVID-19 Information:", bot.user.displayAvatarURL())
 
             .setThumbnail('https://cdn.discordapp.com/attachments/755553823962955878/775054002864783400/3uCD4xxY_400x400.png')
             .addField("📈 Total Cases:", numberWithCommas(totalCases) + "(+" + numberWithCommas(newCases) + " today)", true)
@@ -387,7 +387,7 @@ bot.on("message", async msg=>  {
         var recoveries = data.recovered;
 
         var activeCountry = data.active;
-        var criticalCountry = data.critical
+        var criticalCountry = data.critical;
         var testsCountry = data.tests;
 
         var casesMillion = data.casesPerOneMillion;
@@ -1242,7 +1242,7 @@ bot.on("message", async msg=>  {
 
             Embed = new discord.MessageEmbed()
             .setColor(colors.blue)
-            .setAuthor(provinceName + " Historic COVID-19 Information", bot.user.displayAvatarURL())
+            .setAuthor(provinceName.toUpperCase() + " Historic COVID-19 Information", bot.user.displayAvatarURL())
             .setThumbnail(bot.user.displayAvatarURL())
 
 
@@ -1265,7 +1265,7 @@ bot.on("message", async msg=>  {
 
             Embed = new discord.MessageEmbed()
             .setColor(colors.blue)
-            .setAuthor(provinceName + " Historic COVID-19 Information", bot.user.displayAvatarURL())
+            .setAuthor(provinceName.toUpperCase() + " Historic COVID-19 Information", bot.user.displayAvatarURL())
             .setThumbnail(bot.user.displayAvatarURL())
 
 
