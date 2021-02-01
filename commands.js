@@ -1031,7 +1031,6 @@ bot.on("message", async msg=>  {
 
 
 
-
         msg.channel.send({embed: Embed});
 
 
@@ -1152,7 +1151,7 @@ bot.on("message", async msg=>  {
                 .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[5]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[5]))
 
 
-                    .setTimestamp()
+                .setTimestamp()
                 .setFooter("COVID-19 Bot | 2.4 | ")
                 msg.channel.send({embed: Embed});
 
@@ -1212,7 +1211,7 @@ bot.on("message", async msg=>  {
            
 
 
-                .setTimestamp()
+            .setTimestamp()
             .setFooter("COVID-19 Bot | 2.4 | ")
 
 
@@ -1255,7 +1254,7 @@ bot.on("message", async msg=>  {
             .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[5]))
 
 
-                .setTimestamp()
+            .setTimestamp()
             .setFooter("COVID-19 Bot | 2.4 | ")
             msg.channel.send({embed: Embed});
 
@@ -1278,7 +1277,7 @@ bot.on("message", async msg=>  {
             .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(casesP[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deathsP[5]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[5]))
 
 
-                .setTimestamp()
+            .setTimestamp()
             .setFooter("COVID-19 Bot | 2.4 | " )
             msg.channel.send({embed: Embed});
         }
