@@ -254,7 +254,7 @@ bot.on("message", async msg=>  {
 
     }*/
 
-    if (cmd == `${prefix}resources`) {
+    if (cmd == `${prefix}resources` || cmd == `${prefix}news`) {
         Embed = new discord.MessageEmbed()
         .setAuthor("COVID Bot ", bot.user.displayAvatarURL())
         .setColor(colors.blue)
@@ -271,7 +271,7 @@ bot.on("message", async msg=>  {
     }
 
 
-    if (cmd == `${prefix}changelog`) {
+    if (cmd == `${prefix}changelog` || cmd == `${prefix}update`) {
 
         Embed = new discord.MessageEmbed()
 
