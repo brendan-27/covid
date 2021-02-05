@@ -114,7 +114,7 @@ bot.on("message", async msg=>  {
         .addField("**-worldhistory:**", "Shows info from the previous 6 days so you can track growth.", )
         .addField("**-stats**", "Use to see amount of servers bot is in.")
         .addField("**-changelog**", "Use to see new features and fixes within the update.")
-        .addField("**-resources**", "Use to see COVID-19 rescouces with multiple links.")
+        .addField("**-resources**", "Use to see COVID-19 rescouces with multiple links. Gets updated when there are new or outdated scources.")
         .addField("**-invite**", "Use to get a invite link to get COVID Bot in your server.")
         .addField("**-API:**", "Shows information about the API COVID-19 Bot runs off.")
         .addField("**-ping**", "Shows the ping of the bot. (Response Time).")
@@ -122,8 +122,8 @@ bot.on("message", async msg=>  {
         .addField("**Maintenance and Errors:**", "History Commands were not responsive. Sorry for the incovenience.")
         .addField("**Live Data:**", "Data is updated live about once every 10 minutes. 99% percent of the time the data is accurate, but sometimes the API messes up so do not be shocked if you see weird numbers.")
         .addField("**Data:**", "Data is provided by https://corona.lmao.ninja/")
-        .addField("**Support Server:**", "https://discord.gg/kvVr3qU")
-        .addField("**Support DM: **", "Add updated#2473 on discord for support or errors or questions.")
+        .addField("**Support Server:**", "https://discord.gg/kvVr3qU // INACTIVE")
+        .addField("**Support DM: **", "Add savior#1337 on discord for support or errors or questions.")
         .addField("**Support us by upvoting the bot at:**", "https://top.gg/bot/708408478573789266")
         .addField("**Invite COVID Bot to your server:**", "Click [Here](https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot), or use -invite.")
 
@@ -261,10 +261,10 @@ bot.on("message", async msg=>  {
 
         .setDescription("COVID-19 resources:")
         .addField("**CDC:** ", "https://www.cdc.gov/coronavirus/2019-ncov/index.html")
-        .addField("**r/corornavirus: **", "https://www.reddit.com/r/Coronavirus/")
+        .addField("**r/corornavirus: **", "https://www.reddit.com/r/Coronavirus/ (Reddit so be careful)")
         .addField("**World Health Organization:**", "https://www.who.int/emergencies/diseases/novel-coronavirus-2019")
 
-            .setTimestamp()
+        .setTimestamp()
         .setFooter("COVID-19 Bot | 2.5 | ")
         msg.channel.send({embed: Embed});
 
@@ -281,6 +281,7 @@ bot.on("message", async msg=>  {
         .setDescription("Updates from 1:02 pm 2/2/2021.")
         
         .addField("New: ", "Added more custom statuses.")
+        .addField("New: ", "Changed some of the wording for the help command.")
         
         
 
