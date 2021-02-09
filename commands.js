@@ -194,7 +194,7 @@ bot.on("message", async msg=>  {
             .addField("Deaths percent increase: ", deathCleana + "%")
             .addField("Recovs Percent Increase: ", recovCleana + "%\n--------------------------")
             
-
+            //
             
     
 
