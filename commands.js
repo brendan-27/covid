@@ -125,6 +125,7 @@ bot.on("message", async msg=>  {
         .setFooter("COVID-19 Bot | 2.5 | ")
 
         msg.channel.send({embed: Embed});
+        uptimecmds++;
 
     }
 
@@ -167,7 +168,7 @@ bot.on("message", async msg=>  {
         .setFooter("COVID-19 Bot | 2.5 | ")
 
         msg.channel.send({embed: Embed});
-
+        uptimecmds++;
     }
 
 
@@ -251,7 +252,7 @@ bot.on("message", async msg=>  {
         }
 
      
-
+        uptimecmds++;
     }
 
     if(cmd == `${prefix}api` || cmd == `${prefix}API`){
@@ -269,7 +270,7 @@ bot.on("message", async msg=>  {
 
         msg.channel.send({embed: Embed});
 
-
+        uptimecmds++;
     }
 
     /*if (cmd == `${prefix}info`) {
@@ -303,7 +304,7 @@ bot.on("message", async msg=>  {
         .setTimestamp()
         .setFooter("COVID-19 Bot | 2.5 | ")
         msg.channel.send({embed: Embed});
-
+        uptimecmds++;
     }
 
 
@@ -325,7 +326,7 @@ bot.on("message", async msg=>  {
         .setFooter("COVID-19 Bot | 2.5 | ")
 
         msg.channel.send({embed: Embed});
-
+        uptimecmds++;
     }
     
     
@@ -371,7 +372,7 @@ bot.on("message", async msg=>  {
 
 
         msg.channel.send({embed: Embed});
-
+        uptimecmds++;
 
     }
 
@@ -852,7 +853,7 @@ bot.on("message", async msg=>  {
 
 
         }
-    
+        uptimecmds++;
     }
 
     if(cmd == `${prefix}stats`) {
@@ -867,6 +868,7 @@ bot.on("message", async msg=>  {
             .setTimestamp()
         .setFooter("COVID-19 Bot | 2.5 |")
         msg.channel.send({embed: Embed});
+        uptimecmds++;
     }
     
 
@@ -958,6 +960,7 @@ bot.on("message", async msg=>  {
 
 
         }
+        uptimecmds++;
 
     }
 
@@ -973,6 +976,7 @@ bot.on("message", async msg=>  {
 
 
         msg.author.send(Embed);
+        uptimecmds++;
 
     }
 
@@ -1064,6 +1068,7 @@ bot.on("message", async msg=>  {
 
 
         msg.channel.send({embed: Embed});
+        uptimecmds++;
 
 
 
@@ -1083,7 +1088,7 @@ bot.on("message", async msg=>  {
 
 
 
-
+        uptimecmds++;
     }
 
     if (cmd == `${prefix}historyall` || cmd == `${prefix}worldhistory`) {
@@ -1124,6 +1129,7 @@ bot.on("message", async msg=>  {
             .setTimestamp()
         .setFooter("COVID-19 Bot | 2.5 | ")
         msg.channel.send({embed: Embed});
+        uptimecmds++;
 
     }
 
@@ -1203,6 +1209,7 @@ bot.on("message", async msg=>  {
                 return
 
         }
+        uptimecmds++;
         
     }
 
@@ -1316,7 +1323,7 @@ bot.on("message", async msg=>  {
 
       
         
-    
+        uptimecmds++;
     }
 
 
