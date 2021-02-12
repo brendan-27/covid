@@ -24,7 +24,7 @@ var uptimecmds = 0;
 
 var uptime = bot.uptime;
 //stack overflow code:
-let totalSeconds = (client.uptime / 1000);
+let totalSeconds = (bot.uptime / 1000);
 let days = Math.floor(totalSeconds / 86400);
 totalSeconds %= 86400;
 let hours = Math.floor(totalSeconds / 3600);
