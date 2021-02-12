@@ -31,7 +31,7 @@ let hours = Math.floor(totalSeconds / 3600);
 totalSeconds %= 3600;
 let minutes = Math.floor(totalSeconds / 60);
 let seconds = Math.floor(totalSeconds % 60);
-//end
+//end-up
 dbl.on('posted', () => {
     console.log('Server count posted!');
   })
@@ -110,7 +110,8 @@ bot.on("message", async msg=>  {
         .setColor(colors.blue)
 
         .setAuthor("Uptime: ", bot.user.displayAvatarURL())
-        .setDescription(days + ":" + hours + ":" + minutes + ":" + seconds)
+        //.setDescription(days + ":" + hours + ":" + minutes + ":" + seconds)
+        .setDescription(bot.uptime)
 
         .setTimestamp()
         .setFooter("COVID-19 Bot | 2.5 | ")
