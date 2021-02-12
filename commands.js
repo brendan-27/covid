@@ -20,7 +20,18 @@ const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcwODQwODQ3OD
 
 
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
+var uptimecmds = 0;
 
+var uptime = bot.uptime;
+//stack overflow code:
+let totalSeconds = (client.uptime / 1000);
+let days = Math.floor(totalSeconds / 86400);
+totalSeconds %= 86400;
+let hours = Math.floor(totalSeconds / 3600);
+totalSeconds %= 3600;
+let minutes = Math.floor(totalSeconds / 60);
+let seconds = Math.floor(totalSeconds % 60);
+//end
 dbl.on('posted', () => {
     console.log('Server count posted!');
   })
@@ -91,6 +102,22 @@ bot.on("message", async msg=>  {
     
     //let args = msgArray.slice[0];
     // cmd
+
+
+
+    if (cmd == `${prefix}uptime`) {
+        Embed = new discord.MessageEmbed()
+        .setColor(colors.blue)
+
+        .setAuthor("Uptime: ", bot.user.displayAvatarURL())
+        .setDescription(days + ":" + hours + ":" + minutes + ":" + seconds)
+
+        .setTimestamp()
+        .setFooter("COVID-19 Bot | 2.5 | ")
+
+        msg.channel.send({embed: Embed});
+
+    }
 
 
     if (cmd == `${prefix}help`) {
