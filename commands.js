@@ -106,12 +106,20 @@ bot.on("message", async msg=>  {
 
 
     if (cmd == `${prefix}uptime`) {
+        let totalSeconds = (bot.uptime / 1000);
+        let days = Math.floor(totalSeconds / 86400);
+        totalSeconds %= 86400;
+        let hours = Math.floor(totalSeconds / 3600);
+        totalSeconds %= 3600;
+        let minutes = Math.floor(totalSeconds / 60);
+        let seconds = Math.floor(totalSeconds % 60);
         Embed = new discord.MessageEmbed()
         .setColor(colors.blue)
 
         .setAuthor("Uptime: ", bot.user.displayAvatarURL())
-        //.setDescription(days + ":" + hours + ":" + minutes + ":" + seconds)
-        .setDescription(bot.uptime)
+        .setDescription(days + ":" + hours + ":" + minutes + ":" + seconds)
+    
+        //.setDescription(bot.uptime)
 
         .setTimestamp()
         .setFooter("COVID-19 Bot | 2.5 | ")
