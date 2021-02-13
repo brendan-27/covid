@@ -129,6 +129,26 @@ bot.on("message", async msg=>  {
 
     }
 
+    if(cmd == `${prefix}uptimecommands`) {
+
+        Embed = new discord.MessageEmbed()
+        .setColor(colors.blue)
+
+        .setAuthor("Total Commands since the bot restarted (uptime): ", bot.user.displayAvatarURL())
+        .setDescription("Total Commands: " + uptimecmds)
+    
+        //.setDescription(bot.uptime)
+
+        .setTimestamp()
+        .setFooter("COVID-19 Bot | 2.5 | ")
+
+        msg.channel.send({embed: Embed});
+        uptimecmds++;
+
+
+
+    }
+
 
     if (cmd == `${prefix}help`) {
         Embed = new discord.MessageEmbed()
