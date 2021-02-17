@@ -116,7 +116,7 @@ bot.on("message", async msg=>  {
         Embed = new discord.MessageEmbed()
         .setColor(colors.blue)
 
-        .setAuthor("Uptime: ", bot.user.displayAvatarURL())
+        .setAuthor("Uptime (To the second): ", bot.user.displayAvatarURL())
         .setDescription(days + ":" + hours + ":" + minutes + ":" + seconds)
     
         //.setDescription(bot.uptime)
@@ -135,7 +135,7 @@ bot.on("message", async msg=>  {
         .setColor(colors.blue)
 
         .setAuthor("Total Commands since the bot restarted (uptime): ", bot.user.displayAvatarURL())
-        .setDescription("Total Commands: " + uptimecmds)
+        .setDescription("Total Commands: " + uptimecmds + ".")
     
         //.setDescription(bot.uptime)
 
