@@ -105,7 +105,7 @@ bot.on("message", async msg=>  {
 
 
 
-    if (cmd == `${prefix}uptime`) {
+    if (cmd == `${prefix}uptime` || cmd == `${prefix}ut`) {
         let totalSeconds = (bot.uptime / 1000);
         let days = Math.floor(totalSeconds / 86400);
         totalSeconds %= 86400;
@@ -129,7 +129,7 @@ bot.on("message", async msg=>  {
 
     }
 
-    if(cmd == `${prefix}uptimecommands`) {
+    if(cmd == `${prefix}uptimecommands` || cmd == `${prefix}uptimecm` || cmd == `${prefix}cm`) {
 
         Embed = new discord.MessageEmbed()
         .setColor(colors.blue)
