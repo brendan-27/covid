@@ -129,7 +129,7 @@ bot.on("message", async msg=>  {
 
     }
 
-    if(cmd == `${prefix}uptimecommands` || cmd == `${prefix}uptimecm` || cmd == `${prefix}cm`) {
+    if(cmd == `${prefix}uptimecommands` || cmd == `${prefix}uptimecm` || cmd == `${prefix}cm` || cmd == `${prefix}uc`) {
 
         Embed = new discord.MessageEmbed()
         .setColor(colors.blue)
