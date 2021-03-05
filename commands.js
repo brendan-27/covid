@@ -16,6 +16,7 @@ const colors = require("./colors.json");
 const DBL = require("dblapi.js");
 const mongoose = require('mongoose');
 
+
 //bot token might have to update soon.
 const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcwODQwODQ3ODU3Mzc4OTI2NiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTkwNTI0NDkyfQ.ajFs47xxzPA-N5y36CtaSoQBgxo41QcnX0-Fy7n3hWc', bot);
 
@@ -109,7 +110,8 @@ bot.on("message", async msg=>  {
     //let args = msgArray.slice[0];
     // cmd
 
-
+    //testing AREA DELETE IF BREAK;
+   
 
     if (cmd == `${prefix}uptime` || cmd == `${prefix}ut`) {
         let totalSeconds = (bot.uptime / 1000);
