@@ -203,7 +203,7 @@ bot.on("message", async msg=>  {
     //still needs testing
     //not functioning API is bad.
 
-    if(cmd == `${prefix}daily`) {
+    if(cmd == `${prefix}daily` || cmd == `${prefix}d`) {
 
         try {
             const response = await fetch("https://corona.lmao.ninja/v2/all");
@@ -360,7 +360,7 @@ bot.on("message", async msg=>  {
     
 
     //changed to world 
-    if (cmd === `${prefix}global` || cmd === `${prefix}world`) {
+    if (cmd === `${prefix}global` || cmd === `${prefix}world` || cmd == `${prefix}g`) {
         const response = await fetch("https://corona.lmao.ninja/v2/all");
         const data = await response.json();
 
@@ -407,7 +407,7 @@ bot.on("message", async msg=>  {
 
 
 
-    if (cmd == `${prefix}countryinfo` || cmd == `${prefix}country`) {
+    if (cmd == `${prefix}countryinfo` || cmd == `${prefix}country` || cmd == `${prefix}c`) {
 
 
         var newStr = "";
@@ -900,7 +900,7 @@ bot.on("message", async msg=>  {
     }
     
 
-    if (cmd == `${prefix}statesinfo` || cmd == `${prefix}stateinfo` || cmd == `${prefix}state`) {
+    if (cmd == `${prefix}statesinfo` || cmd == `${prefix}stateinfo` || cmd == `${prefix}state` || cmd == `${prefix}s`) {
         try {
             var newStr = "";
 
@@ -1008,7 +1008,7 @@ bot.on("message", async msg=>  {
 
     }
 
-    if(cmd == `${prefix}continentsinfo` || cmd == `${prefix}continentinfo` || cmd == `${prefix}continent`) {
+    if(cmd == `${prefix}continentsinfo` || cmd == `${prefix}continentinfo` || cmd == `${prefix}continent` || cmd == `${prefix}cont`) {
 
         var newStr = "";
 
