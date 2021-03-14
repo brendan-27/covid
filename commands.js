@@ -158,7 +158,7 @@ bot.on("message", async msg=>  {
     }
 
 
-    if (cmd == `${prefix}help`) {
+    if (cmd == `${prefix}help` || cmd == `${prefix}he`) {
         Embed = new discord.MessageEmbed()
         .setColor(colors.blue)
 
