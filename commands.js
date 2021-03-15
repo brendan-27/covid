@@ -124,7 +124,7 @@ bot.on("message", async msg=>  {
         Embed = new discord.MessageEmbed()
         .setColor(colors.blue)
 
-        .setAuthor("Uptime (To the second): ", bot.user.displayAvatarURL())
+        .setAuthor("Uptime (to the second): ", bot.user.displayAvatarURL())
         .setDescription(days + ":" + hours + ":" + minutes + ":" + seconds)
     
         //.setDescription(bot.uptime)
@@ -142,7 +142,7 @@ bot.on("message", async msg=>  {
         Embed = new discord.MessageEmbed()
         .setColor(colors.blue)
 
-        .setAuthor("Total Commands since the bot restarted (uptime): ", bot.user.displayAvatarURL())
+        .setAuthor("Total commands since the bot restarted (uptime): ", bot.user.displayAvatarURL())
         .setDescription("Total Commands: " + uptimecmds + ".")
     
         //.setDescription(bot.uptime)
@@ -1243,7 +1243,7 @@ bot.on("message", async msg=>  {
 
 
 
-    if(cmd == `${prefix}provincehistory` || cmd == `${prefix}province`) {
+    if(cmd == `${prefix}provincehistory` || cmd == `${prefix}province` || cmd == `${prefix}p`) {
 
         var newStr = "";
 
