@@ -245,7 +245,7 @@ bot.on("message", async msg=>  {
             Embed = new discord.MessageEmbed()
             .setColor(colors.blue)
             .setAuthor("Daily COVID 19 information: ", bot.user.displayAvatarURL())
-            .setThumbnail('https://cdn.discordapp.com/attachments/755553823962955878/779161873991860224/US_coronavirus_cases.png')
+            .setThumbnail('https://cdn.discordapp.com/attachments/761009105053286430/822329693901815838/20210130_woc574.png')
             //cases
             .setDescription("**New 24 hour numbers:**")
 
@@ -253,8 +253,7 @@ bot.on("message", async msg=>  {
             .addField("☠️ New Death Count (Today): ", numberWithCommas(newDeaths))
             .addField("💉 New Recoveries Count (Today): ", numberWithCommas(newRecovs))
 
-            .addField("**New 24 hour percentages: **")
-
+            
             .addField("Cases percent increase: ", caseCleana + "%")
             .addField("Deaths percent increase: ", deathCleana + "%")
             .addField("Recovs Percent Increase: ", recovCleana + "%")
@@ -326,7 +325,7 @@ bot.on("message", async msg=>  {
 
         .setDescription("COVID-19 resources:")
         .addField("**CDC:** ", "https://www.cdc.gov/coronavirus/2019-ncov/index.html")
-        .addField("**r/corornavirus: **", "https://www.reddit.com/r/Coronavirus/ (Reddit so be careful)")
+        .addField("**r/corornavirus: **", "https://www.reddit.com/r/Coronavirus/")
         .addField("**World Health Organization:**", "https://www.who.int/emergencies/diseases/novel-coronavirus-2019")
 
         .setTimestamp()
@@ -343,10 +342,10 @@ bot.on("message", async msg=>  {
         .setAuthor("COVID Bot Commands: ", bot.user.displayAvatarURL())
         .setColor(colors.blue)
 
-        .setDescription("Updates from 1:02 pm 2/2/2021.")
+        .setDescription("Updates from 9:45 pm 3/18/2021.")
         
-        .addField("New: ", "Added more custom statuses.")
-        .addField("New: ", "Changed some of the wording for the help command.")
+    
+        .addField("Fix: ", "Fixed Daily Command not having undefined feild.")
         
         
 
