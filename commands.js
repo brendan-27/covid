@@ -346,6 +346,7 @@ bot.on("message", async msg=>  {
         
     
         .addField("Fix: ", "Fixed Daily Command not having undefined feild.")
+        .addField("Added: ", "Loads of new prefixes that make the bot easier to use.")
         
         
 
