@@ -20,7 +20,7 @@ const mongoose = require('mongoose');
 //bot token might have to update soon.
 const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcwODQwODQ3ODU3Mzc4OTI2NiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTkwNTI0NDkyfQ.ajFs47xxzPA-N5y36CtaSoQBgxo41QcnX0-Fy7n3hWc', bot);
 
-
+//database starting setup soon for custom prefix.
 mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/test', {useNewUrlParser: true, useUnifiedTopology: true})
 
 
