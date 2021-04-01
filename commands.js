@@ -247,8 +247,7 @@ bot.on("message", async msg=>  {
             .setAuthor("Daily COVID 19 information: ", bot.user.displayAvatarURL())
             .setThumbnail('https://cdn.discordapp.com/attachments/761009105053286430/822329693901815838/20210130_woc574.png')
             //cases
-            .setDescription("**New 24 hour numbers:**")
-
+        
             .addField("📈 New Case Count (Today): ", numberWithCommas(newCases))
             .addField("☠️ New Death Count (Today): ", numberWithCommas(newDeaths))
             .addField("💉 New Recoveries Count (Today): ", numberWithCommas(newRecovs))
@@ -258,10 +257,6 @@ bot.on("message", async msg=>  {
             .addField("Deaths percent increase: ", deathCleana + "%")
             .addField("Recovs Percent Increase: ", recovCleana + "%")
             
-            //
-            
-    
-
             .setTimestamp()
             .setFooter("COVID-19 Bot | 2.7 | ")
             msg.channel.send({embed: Embed});
