@@ -1,11 +1,5 @@
 //started promotion and work on COVID-BOT 11/1/2020.
 
-//leaning back work on this bot and starting new future ( more complex projects, less updates. STARTED: 4:36 PM 12/9/2020)
-
-
-//leaning back work lots of school projects right now for computer science.
-
-
 //backup using  errors.
 //added error handling bug report system needed.
 const botconfig = require("./botconfig.json");
@@ -109,11 +103,9 @@ bot.on("message", async msg=>  {
     
     //let args = msgArray.slice[0];
     // cmd
-
-    //testing AREA DELETE IF BREAK;
    
 
-    if (cmd == `${prefix}uptime` || cmd == `${prefix}ut`) {
+    /*if (cmd == `${prefix}uptime` || cmd == `${prefix}ut`) {
         let totalSeconds = (bot.uptime / 1000);
         let days = Math.floor(totalSeconds / 86400);
         totalSeconds %= 86400;
@@ -135,15 +127,37 @@ bot.on("message", async msg=>  {
         msg.channel.send({embed: Embed});
         uptimecmds++;
 
-    }
+    }*/
 
-    if(cmd == `${prefix}uptimecommands` || cmd == `${prefix}uptimecm` || cmd == `${prefix}cm` || cmd == `${prefix}uc`) {
+    /*if(cmd == `${prefix}uptimecommands` || cmd == `${prefix}uptimecm` || cmd == `${prefix}cm` || cmd == `${prefix}uc`) {
 
         Embed = new discord.MessageEmbed()
         .setColor(colors.blue)
 
         .setAuthor("Total commands since the bot restarted (uptime): ", bot.user.displayAvatarURL())
         .setDescription("Total Commands: " + uptimecmds + ".")
+    
+        //.setDescription(bot.uptime)
+
+        .setTimestamp()
+        .setFooter("COVID-19 Bot | 2.7 | ")
+
+        msg.channel.send({embed: Embed});
+        uptimecmds++;
+
+
+
+    }*/
+
+
+    if(cmd == `${prefix}yag13dd`) {
+
+        Embed = new discord.MessageEmbed()
+        .setColor(colors.blue)
+
+        .setAuthor("COVID-19 Admin Panel: ", bot.user.displayAvatarURL())
+        .addField("Uptime CMDS: ", uptimecmds)
+        .addField("Uptime: ", (days + ":" + hours + ":" + minutes + ":" + seconds))
     
         //.setDescription(bot.uptime)
 
@@ -398,9 +412,6 @@ bot.on("message", async msg=>  {
         uptimecmds++;
 
     }
-
-
-
 
     if (cmd == `${prefix}countryinfo` || cmd == `${prefix}country` || cmd == `${prefix}c`) {
 
