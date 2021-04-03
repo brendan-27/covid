@@ -23,15 +23,7 @@ mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/tes
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 var uptimecmds = 0;
 
-var uptime = bot.uptime;
-//stack overflow code:
-let totalSeconds = (bot.uptime / 1000);
-let days = Math.floor(totalSeconds / 86400);
-totalSeconds %= 86400;
-let hours = Math.floor(totalSeconds / 3600);
-totalSeconds %= 3600;
-let minutes = Math.floor(totalSeconds / 60);
-let seconds = Math.floor(totalSeconds % 60);
+
 //end-up
 dbl.on('posted', () => {
     console.log('Server count posted!');
@@ -149,8 +141,17 @@ bot.on("message", async msg=>  {
 
     }*/
 
-
+    // starting to est admin panel
     if(cmd == `${prefix}yag13dd`) {
+        var uptime = bot.uptime;
+        //stack overflow code:
+        let totalSeconds = (bot.uptime / 1000);
+        let days = Math.floor(totalSeconds / 86400);
+        totalSeconds %= 86400;
+        let hours = Math.floor(totalSeconds / 3600);
+        totalSeconds %= 3600;
+        let minutes = Math.floor(totalSeconds / 60);
+        let seconds = Math.floor(totalSeconds % 60);
 
         Embed = new discord.MessageEmbed()
         .setColor(colors.blue)
