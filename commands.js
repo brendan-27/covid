@@ -19,7 +19,7 @@ mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/tes
 
 
 
-
+var rager = 265266889712730122;
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 var uptimecmds = 0;
 
@@ -142,6 +142,22 @@ bot.on("message", async msg=>  {
     }*/
 
     // starting to est admin panel
+    const embed2 = new discord.MessageEmbed()
+            .setColor(colors.blue)
+
+            .setAuthor("COVID-19 Admin Panel: ", bot.user.displayAvatarURL())
+            .addField("Uptime CMDS: ", uptimecmds)
+            .addField("Uptime: ", (days + ":" + hours + ":" + minutes + ":" + seconds))
+            .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
+            .addField("Total Members: ", numberWithCommas(bot.users.cache.size))
+            .addField("Whitelisted Covid-19 users: ", "1")
+                
+            //.setDescription(bot.uptime)
+
+            .setTimestamp()
+            .setFooter("COVID-19 Bot | 2.7 | ")
+
+
     if(cmd == `${prefix}yag13dd`) {
         var uptime = bot.uptime;
         //stack overflow code:
@@ -152,24 +168,33 @@ bot.on("message", async msg=>  {
         totalSeconds %= 3600;
         let minutes = Math.floor(totalSeconds / 60);
         let seconds = Math.floor(totalSeconds % 60);
+        msg.channel.send("Connecting To Server...").then(m => {
+            if(msg.author.id === rager) {
+                m.edit(embed2);
+            }
 
-        Embed = new discord.MessageEmbed()
-        .setColor(colors.blue)
+        })
+        
+        
 
-        .setAuthor("COVID-19 Admin Panel: ", bot.user.displayAvatarURL())
-        .addField("Uptime CMDS: ", uptimecmds)
-        .addField("Uptime: ", (days + ":" + hours + ":" + minutes + ":" + seconds))
-    
-        //.setDescription(bot.uptime)
-
-        .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.7 | ")
-
-        msg.channel.send({embed: Embed});
+        
         uptimecmds++;
 
 
 
+    }
+
+    if (cmd == `${prefix}ping`) {
+        
+        msg.channel.send("Connecting To Server...").then(m => {
+            var ping = m.createdTimestamp - msg.createdTimestamp;
+            var botPing = Math.round(bot.ping);
+
+
+            m.edit(`Bot Ping: ${ping}`)
+        })
+
+        uptimecmds++;
     }
 
 
@@ -1110,21 +1135,7 @@ bot.on("message", async msg=>  {
 
     }
 
-    if (cmd == `${prefix}ping`) {
-        
-        msg.channel.send("Connecting To Server...").then(m => {
-            var ping = m.createdTimestamp - msg.createdTimestamp;
-            var botPing = Math.round(bot.ping);
-
-
-            m.edit(`Bot Ping: ${ping}`)
-        })
-
-
-
-
-        uptimecmds++;
-    }
+    
 
     if (cmd == `${prefix}historyall` || cmd == `${prefix}worldhistory`) {
 
