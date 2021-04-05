@@ -169,9 +169,9 @@ bot.on("message", async msg=>  {
         let minutes = Math.floor(totalSeconds / 60);
         let seconds = Math.floor(totalSeconds % 60);
         msg.channel.send("Connecting To Server...").then(m => {
-            if(msg.author.id === rager) {
+            
                 m.edit(embed2);
-            }
+            
 
         })
         
