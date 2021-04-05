@@ -142,7 +142,7 @@ bot.on("message", async msg=>  {
     }*/
 
     // starting to est admin panel
-    const embed2 = new discord.MessageEmbed()
+    /*const embed2 = new discord.MessageEmbed()
             .setColor(colors.blue)
 
             .setAuthor("COVID-19 Admin Panel: ", bot.user.displayAvatarURL())
@@ -155,7 +155,7 @@ bot.on("message", async msg=>  {
             //.setDescription(bot.uptime)
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.7 | ")
+            .setFooter("COVID-19 Bot | 2.7 | ")*/
 
 
     if(cmd == `${prefix}yag13dd`) {
@@ -170,7 +170,7 @@ bot.on("message", async msg=>  {
         let seconds = Math.floor(totalSeconds % 60);
         msg.channel.send("Connecting To Server...").then(m => {
             
-                m.edit(embed2);
+                m.edit("helo");
             
 
         })
