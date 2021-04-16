@@ -2,6 +2,7 @@
 
 //backup using  errors.
 //added error handling bug report system needed.
+//add
 const botconfig = require("./botconfig.json");
 const discord = require("discord.js");
 const bot = new discord.Client({disableEveryone : true});
@@ -158,7 +159,7 @@ bot.on("message", async msg=>  {
             .setFooter("COVID-19 Bot | 2.7 | ")*/
 
 
-    if(cmd == `${prefix}yag13dd`) {
+    /*if(cmd == `${prefix}yag13dd`) {
         var uptime = bot.uptime;
         //stack overflow code:
         let totalSeconds = (bot.uptime / 1000);
@@ -182,7 +183,7 @@ bot.on("message", async msg=>  {
 
 
 
-    }
+    }*/
 
     if (cmd == `${prefix}ping`) {
         
