@@ -142,24 +142,10 @@ bot.on("message", async msg=>  {
 
     }*/
 
-    // starting to est admin panel
-    /*const embed2 = new discord.MessageEmbed()
-            .setColor(colors.blue)
-
-            .setAuthor("COVID-19 Admin Panel: ", bot.user.displayAvatarURL())
-            .addField("Uptime CMDS: ", uptimecmds)
-            .addField("Uptime: ", (days + ":" + hours + ":" + minutes + ":" + seconds))
-            .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
-            .addField("Total Members: ", numberWithCommas(bot.users.cache.size))
-            .addField("Whitelisted Covid-19 users: ", "1")
-                
-            //.setDescription(bot.uptime)
-
-            .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.7 | ")*/
+    
 
 
-    /*if(cmd == `${prefix}yag13dd`) {
+    if(cmd == `${prefix}yag13dd`) {
         var uptime = bot.uptime;
         //stack overflow code:
         let totalSeconds = (bot.uptime / 1000);
@@ -169,21 +155,19 @@ bot.on("message", async msg=>  {
         totalSeconds %= 3600;
         let minutes = Math.floor(totalSeconds / 60);
         let seconds = Math.floor(totalSeconds % 60);
-        msg.channel.send("Connecting To Server...").then(m => {
-            
-                m.edit("helo");
-            
-
-        })
-        
-        
-
-        
+        Embed = new discord.MessageEmbed()
+        .setColor(colors.blue)
+        .setAuthor("COVID-19 Admin Panel: ", bot.user.displayAvatarURL())
+        .addField("Uptime CMDS: ", uptimecmds)
+        .addField("Uptime: ", (days + ":" + hours + ":" + minutes + ":" + seconds))
+        .setTimestamp()
+        .setFooter("COVID-19 Bot | ADMIN PANEL | ")
+        msg.channel.send({embed: Embed});
         uptimecmds++;
 
 
 
-    }*/
+    }
 
     if (cmd == `${prefix}ping`) {
         
