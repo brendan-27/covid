@@ -143,7 +143,7 @@ bot.on("message", async msg=>  {
     }*/
 
     
-
+    //working on this starting now.
 
     if(cmd == `${prefix}yag13dd`) {
         var uptime = bot.uptime;
