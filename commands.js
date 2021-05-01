@@ -109,8 +109,7 @@ bot.on("message", async msg=>  {
         totalSeconds %= 3600;
         let minutes = Math.floor(totalSeconds / 60);
         let seconds = Math.floor(totalSeconds % 60);
-        var ping = m.createdTimestamp - msg.createdTimestamp;
-        var botPing = Math.round(bot.ping);
+        
         
 
         Embed = new discord.MessageEmbed()
