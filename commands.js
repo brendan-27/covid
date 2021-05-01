@@ -23,7 +23,7 @@ mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/tes
 var rager = 265266889712730122;
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 var uptimecmds = 0;
-var updates = 181; //update every time.
+var updates = 182; //update every time. (current)
 
 //end-up
 dbl.on('posted', () => {
@@ -95,53 +95,7 @@ bot.on("message", async msg=>  {
     let cmd = msgArray[0];
     
     //let args = msgArray.slice[0];
-    // cmd
-   
-
-    /*if (cmd == `${prefix}uptime` || cmd == `${prefix}ut`) {
-        let totalSeconds = (bot.uptime / 1000);
-        let days = Math.floor(totalSeconds / 86400);
-        totalSeconds %= 86400;
-        let hours = Math.floor(totalSeconds / 3600);
-        totalSeconds %= 3600;
-        let minutes = Math.floor(totalSeconds / 60);
-        let seconds = Math.floor(totalSeconds % 60);
-        Embed = new discord.MessageEmbed()
-        .setColor(colors.blue)
-
-        .setAuthor("Uptime (to the second): ", bot.user.displayAvatarURL())
-        .setDescription(days + ":" + hours + ":" + minutes + ":" + seconds)
     
-        //.setDescription(bot.uptime)
-
-        .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.7 | ")
-
-        msg.channel.send({embed: Embed});
-        uptimecmds++;
-
-    }*/
-
-    /*if(cmd == `${prefix}uptimecommands` || cmd == `${prefix}uptimecm` || cmd == `${prefix}cm` || cmd == `${prefix}uc`) {
-
-        Embed = new discord.MessageEmbed()
-        .setColor(colors.blue)
-
-        .setAuthor("Total commands since the bot restarted (uptime): ", bot.user.displayAvatarURL())
-        .setDescription("Total Commands: " + uptimecmds + ".")
-    
-        //.setDescription(bot.uptime)
-
-        .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.7 | ")
-
-        msg.channel.send({embed: Embed});
-        uptimecmds++;
-
-
-
-    }*/
-
     
     //working on this starting now.
 
@@ -160,11 +114,11 @@ bot.on("message", async msg=>  {
         .setAuthor("COVID-19 Admin Panel: ", bot.user.displayAvatarURL())
         .addField("Commands Since Uptime: ", uptimecmds)
         .addField("Uptime: ", (days + ":" + hours + ":" + minutes + ":" + seconds))
-        .addField("Updates Since Bot Release: ", "181 (Current).")
+        .addField("Updates Since Bot Release: ", updates + " (Current).")
         .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
         .addField("Total Members: ", numberWithCommas(bot.users.cache.size))
         .setTimestamp()
-        .setFooter("COVID-19 Bot | ADMIN PANEL | ")
+        .setFooter("COVID-19 Bot | ADMIN PANEL (PRIVATE) | ")
         msg.channel.send({embed: Embed});
         uptimecmds++;
 
@@ -183,6 +137,18 @@ bot.on("message", async msg=>  {
         })
 
         uptimecmds++;
+    }
+
+    if(cmd == `${prefix}form`) {
+        msg.channel.send("Getting updated link...").then(m => {
+            
+
+
+            m.edit(`Click this link and respond to the form: https://forms.gle/dqgmZjBPorkii3mf7`)
+        })
+
+        uptimecmds++;
+
     }
 
 
@@ -210,6 +176,7 @@ bot.on("message", async msg=>  {
         .addField("**-resources**", "Use to see COVID-19 rescouces with multiple links. Gets updated when there are new or outdated scources.")
         .addField("**-invite**", "Use to get a invite link to get COVID Bot in your server.")
         .addField("**-API:**", "Shows information about the API COVID-19 Bot runs off.")
+        .addField("**-form**", "Gives the user a link where they can report bugs, ask questions, and make suggestions (click misc for suggestions).")
         .addField("**-ping**", "Shows the ping of the bot. (Response Time).")
         .addField("**Info about the bot:**", "Data, support server and other general info about the bot.", true)
         .addField("**Maintenance and Errors:**", "History Commands were not responsive. Sorry for the incovenience.")
@@ -221,7 +188,7 @@ bot.on("message", async msg=>  {
         .addField("**Invite COVID Bot to your server:**", "Click [Here](https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot), or use -invite.")
 
         .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.7 | ")
+        .setFooter("COVID-19 Bot | 2.8 | ")
 
         msg.channel.send({embed: Embed});
         uptimecmds++;
@@ -286,7 +253,7 @@ bot.on("message", async msg=>  {
             .addField("Recovs Percent Increase: ", recovCleana + "%")
             
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.7 | ")
+            .setFooter("COVID-19 Bot | 2.8 | ")
             msg.channel.send({embed: Embed});
         } catch {
             //console.log(newRecovs);
@@ -297,7 +264,7 @@ bot.on("message", async msg=>  {
             .setDescription("This command is still under construction.")
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.7 | ")
+            .setFooter("COVID-19 Bot | 2.8 | ")
             msg.channel.send({embed: Embed});
         }
 
@@ -310,13 +277,13 @@ bot.on("message", async msg=>  {
         .setColor(colors.blue)
         .setAuthor("COVID Bot Help: ", bot.user.displayAvatarURL())
 
-        .addField("**API:**", "API used to make COVID-19 Bot is corona corona.lmao.ninja.")
+        .addField("**API:**", "API used to make COVID-19 Bot is corona corona.lmao.ninja")
         .addField("**Updates:**", "Data is live and is updated once every 10 minutes for every command.")
         .addField("**Innacurate Data:**", "Sometimes API will have internal errors and this causes some feilds to be marked as 0. But This doest happen too much. This is the only known issue.")
         .addField("**Known Issues:**", "When using -history {country} some of the fields may show 0. This is a API error and some fixes have started to role in but need more error handling.")
     
         .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.7 | ")
+        .setFooter("COVID-19 Bot | 2.8 | ")
 
         msg.channel.send({embed: Embed});
 
@@ -352,7 +319,7 @@ bot.on("message", async msg=>  {
         .addField("**World Health Organization:**", "https://www.who.int/emergencies/diseases/novel-coronavirus-2019")
 
         .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.7 | ")
+        .setFooter("COVID-19 Bot | 2.8 | ")
         msg.channel.send({embed: Embed});
         uptimecmds++;
     }
@@ -368,13 +335,12 @@ bot.on("message", async msg=>  {
         .setDescription("Updates from 9:45 pm 3/18/2021.")
         
     
-        .addField("Fix: ", "Fixed Daily Command not having undefined feild.")
-        .addField("Added: ", "Loads of new prefixes that make the bot easier to use.")
+        .addField("Forms: ", "If a used does -form a google forms link will show up where they can report things and ask questions.")
         
         
 
         .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.7 | ")
+        .setFooter("COVID-19 Bot | 2.8 | ")
 
         msg.channel.send({embed: Embed});
         uptimecmds++;
@@ -417,7 +383,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.7 | ")
+            .setFooter("COVID-19 Bot | 2.8 | ")
 
 
 
@@ -507,7 +473,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.7 | ")
+                        .setFooter("COVID-19 Bot | 2.8 | ")
 
 
 
@@ -540,7 +506,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.7 | ")
+                        .setFooter("COVID-19 Bot | 2.8 | ")
 
 
 
@@ -572,7 +538,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.7 | ")
+                        .setFooter("COVID-19 Bot | 2.8 | ")
 
 
 
@@ -605,7 +571,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.7 | ")
+                        .setFooter("COVID-19 Bot | 2.8 | ")
 
 
 
@@ -636,7 +602,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.7 | ")
+                        .setFooter("COVID-19 Bot | 2.8 | ")
 
 
 
@@ -669,7 +635,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.7 | ")
+                        .setFooter("COVID-19 Bot | 2.8 | ")
 
 
 
@@ -701,7 +667,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.7 | ")
+                        .setFooter("COVID-19 Bot | 2.8 | ")
 
 
 
@@ -732,7 +698,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.7 | ")
+                        .setFooter("COVID-19 Bot | 2.8 | ")
 
 
 
@@ -764,7 +730,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.7 | ")
+                        .setFooter("COVID-19 Bot | 2.8 | ")
 
 
 
@@ -797,7 +763,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.7 | ")
+                        .setFooter("COVID-19 Bot | 2.8 | ")
 
 
 
@@ -834,7 +800,7 @@ bot.on("message", async msg=>  {
 
 
                     .setTimestamp()
-                    .setFooter("COVID-19 Bot | 2.7 | ")
+                    .setFooter("COVID-19 Bot | 2.8 | ")
 
 
 
@@ -870,7 +836,7 @@ bot.on("message", async msg=>  {
 
 
                 .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.7 | ")
+                .setFooter("COVID-19 Bot | 2.8 | ")
 
 
 
@@ -890,7 +856,7 @@ bot.on("message", async msg=>  {
 
 
                 .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.7 | ")
+                .setFooter("COVID-19 Bot | 2.8 | ")
 
 
 
@@ -914,7 +880,7 @@ bot.on("message", async msg=>  {
         .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
         .addField("Total Members: ", numberWithCommas(bot.users.cache.size))
             .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.7 |")
+        .setFooter("COVID-19 Bot | 2.8 |")
         msg.channel.send({embed: Embed});
         uptimecmds++;
     }
@@ -975,7 +941,7 @@ bot.on("message", async msg=>  {
 
 
                 .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.7 | ")
+                .setFooter("COVID-19 Bot | 2.8 | ")
 
 
 
@@ -995,7 +961,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.7 | ")
+            .setFooter("COVID-19 Bot | 2.8 | ")
 
 
 
@@ -1020,7 +986,7 @@ bot.on("message", async msg=>  {
         .setColor(colors.blue)
         .addField("Use this link to invite COVID Bot:", invite)
             .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.7 | " )
+        .setFooter("COVID-19 Bot | 2.8 | " )
 
 
         msg.author.send(Embed);
@@ -1084,7 +1050,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.7 | " )
+            .setFooter("COVID-19 Bot | 2.8 | " )
 
 
 
@@ -1111,7 +1077,7 @@ bot.on("message", async msg=>  {
     
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.7 | ")
+            .setFooter("COVID-19 Bot | 2.8 | ")
 
 
 
@@ -1161,7 +1127,7 @@ bot.on("message", async msg=>  {
         .addField("**2 days ago:** ", "📈 Total Cases: " + numberWithCommas(cases[4]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[4]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[4]))
         .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(cases[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[5]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[5]))
             .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.7 | ")
+        .setFooter("COVID-19 Bot | 2.8 | ")
         msg.channel.send({embed: Embed});
         uptimecmds++;
 
@@ -1224,7 +1190,7 @@ bot.on("message", async msg=>  {
 
 
                 .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.7 | ")
+                .setFooter("COVID-19 Bot | 2.8 | ")
                 msg.channel.send({embed: Embed});
 
         } catch {
@@ -1237,7 +1203,7 @@ bot.on("message", async msg=>  {
                 .setDescription("Command Currently down due to API errors. Should be returned shortly. Last updated 11/11/20.")
     
                 .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.7 | ")
+                .setFooter("COVID-19 Bot | 2.8 | ")
     
                 msg.channel.send({embed: Embed});
                 return
@@ -1285,7 +1251,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.7 | ")
+            .setFooter("COVID-19 Bot | 2.8 | ")
 
 
 
@@ -1328,7 +1294,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.7 | ")
+            .setFooter("COVID-19 Bot | 2.8 | ")
             msg.channel.send({embed: Embed});
 
 
@@ -1351,7 +1317,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.7 | " )
+            .setFooter("COVID-19 Bot | 2.8 | " )
             msg.channel.send({embed: Embed});
         }
 
