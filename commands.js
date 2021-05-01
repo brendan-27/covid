@@ -109,6 +109,10 @@ bot.on("message", async msg=>  {
         totalSeconds %= 3600;
         let minutes = Math.floor(totalSeconds / 60);
         let seconds = Math.floor(totalSeconds % 60);
+        var ping = m.createdTimestamp - msg.createdTimestamp;
+        var botPing = Math.round(bot.ping);
+        
+
         Embed = new discord.MessageEmbed()
         .setColor(colors.blue)
         .setAuthor("COVID-19 Admin Panel: ", bot.user.displayAvatarURL())
@@ -117,6 +121,7 @@ bot.on("message", async msg=>  {
         .addField("Updates Since Bot Release: ", updates + " (Current).")
         .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
         .addField("Total Members: ", numberWithCommas(bot.users.cache.size))
+        .addField("Ping: ", `Bot Ping: ${ping}`)
         .setTimestamp()
         .setFooter("COVID-19 Bot | ADMIN PANEL (PRIVATE) | ")
         msg.channel.send({embed: Embed});
@@ -332,7 +337,7 @@ bot.on("message", async msg=>  {
         .setAuthor("COVID Bot Commands: ", bot.user.displayAvatarURL())
         .setColor(colors.blue)
 
-        .setDescription("Updates from 9:45 pm 3/18/2021.")
+        .setDescription("Updates from 1:55 pm 4/30/2021.")
         
     
         .addField("Forms: ", "If a used does -form a google forms link will show up where they can report things and ask questions.")
