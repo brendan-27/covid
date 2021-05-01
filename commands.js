@@ -121,7 +121,7 @@ bot.on("message", async msg=>  {
         .addField("Updates Since Bot Release: ", updates + " (Current).")
         .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
         .addField("Total Members: ", numberWithCommas(bot.users.cache.size))
-        .addField("Ping: ", `Bot Ping: ${ping}`)
+        .addField("Ping: ", `API Ping: ${bot.ws.ping}`)
         .setTimestamp()
         .setFooter("COVID-19 Bot | ADMIN PANEL (PRIVATE) | ")
         msg.channel.send({embed: Embed});
