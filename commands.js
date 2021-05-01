@@ -23,7 +23,7 @@ mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/tes
 var rager = 265266889712730122;
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 var uptimecmds = 0;
-var updates = 182; //update every time. (current)
+var updates = 184; //update every time. (current)
 
 //end-up
 dbl.on('posted', () => {
@@ -120,7 +120,7 @@ bot.on("message", async msg=>  {
         .addField("Updates Since Bot Release: ", updates + " (Current).")
         .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
         .addField("Total Members: ", numberWithCommas(bot.users.cache.size))
-        .addField("Ping: ", `API Ping: ${bot.ws.ping}`)
+        .addField("API Latency: ", `API: ${bot.ws.ping}`)
         .setTimestamp()
         .setFooter("COVID-19 Bot | ADMIN PANEL (PRIVATE) | ")
         msg.channel.send({embed: Embed});
