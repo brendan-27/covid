@@ -23,7 +23,7 @@ mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/tes
 var rager = 265266889712730122;
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 var uptimecmds = 0;
-var updates = 188; //update every time. (current)
+var updates = 190; //update every time. (current)
 
 //end-up
 dbl.on('posted', () => {
@@ -69,6 +69,7 @@ function numberWithCommas(x) {
 
 bot.on("ready", async () => {
     console.log(`${bot.user.username} is online!`)
+    bot.channels.cache.get('839286832784867378').send("```BOT ONLINE```")
 
     //bot.user.setActivity("Gaming | g!help");
     
@@ -118,7 +119,7 @@ bot.on("message", async msg=>  {
         .addField("Updates Since Bot Release: ", updates + " (Current).")
         .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
         .addField("Total Members: ", numberWithCommas(bot.users.cache.size))
-        .addField("API Latency (DIFFERENT THAN BOT PING): ", `API: ${bot.ws.ping}`)
+        .addField("API Latency (DIFFERENT THEN BOT PING): ", `API: ${bot.ws.ping}`)
         .addField("Admin Commands: ", "-yag13dd (CURRENT), (SOON) -logs")
         .setTimestamp()
         .setFooter("COVID-19 Bot | ADMIN PANEL (PRIVATE) | ")
