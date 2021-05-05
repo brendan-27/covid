@@ -132,7 +132,10 @@ bot.on("message", async msg=>  {
         .addField("Command Used: ", "Admin Panel")
         .addField("Time At: ", msg.createdAt)
         .addField("Command # (Uptime): ", uptimecmds)
-        .addField("Guild In: ", msg.guild.name)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        .addField("Channel ID: ", msg.guild.channel.id)
+        .addField("Channel Name: ", msg.guild.channel.name)
 
         .setTimestamp()
         .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
