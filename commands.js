@@ -155,6 +155,21 @@ bot.on("message", async msg=>  {
         })
 
         uptimecmds++;
+
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "-ping")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        //.addField("Channel ID: ", msg.guild.channel.id)
+        //.addField("Channel Name: ", msg.guild.channel.name)
+
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
     }
 
     if(cmd == `${prefix}form`) {
@@ -166,6 +181,21 @@ bot.on("message", async msg=>  {
         })
 
         uptimecmds++;
+
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "-form")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        //.addField("Channel ID: ", msg.guild.channel.id)
+        //.addField("Channel Name: ", msg.guild.channel.name)
+
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
 
     }
 
@@ -206,10 +236,26 @@ bot.on("message", async msg=>  {
         .addField("**Invite COVID Bot to your server:**", "Click [Here](https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot), or use -invite.")
 
         .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.8 | ")
+        .setFooter("COVID-19 Bot | 2.9 | ")
 
         msg.channel.send({embed: Embed});
         uptimecmds++;
+
+
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "-help")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        //.addField("Channel ID: ", msg.guild.channel.id)
+        //.addField("Channel Name: ", msg.guild.channel.name)
+
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
     }
 
 
@@ -271,7 +317,7 @@ bot.on("message", async msg=>  {
             .addField("Recovs Percent Increase: ", recovCleana + "%")
             
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | ")
+            .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | ")
             msg.channel.send({embed: Embed});
         } catch {
             //console.log(newRecovs);
@@ -282,12 +328,28 @@ bot.on("message", async msg=>  {
             .setDescription("This command is still under construction.")
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | ")
+            .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | ")
             msg.channel.send({embed: Embed});
         }
 
      
         uptimecmds++;
+
+
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "-daily")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        //.addField("Channel ID: ", msg.guild.channel.id)
+        //.addField("Channel Name: ", msg.guild.channel.name)
+
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
     }
 
     if(cmd == `${prefix}api` || cmd == `${prefix}API`){
@@ -301,11 +363,26 @@ bot.on("message", async msg=>  {
         .addField("**Known Issues:**", "When using -history {country} some of the fields may show 0. This is a API error and some fixes have started to role in but need more error handling.")
     
         .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | ")
+        .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | ")
 
         msg.channel.send({embed: Embed});
 
         uptimecmds++;
+
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "-api")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        //.addField("Channel ID: ", msg.guild.channel.id)
+        //.addField("Channel Name: ", msg.guild.channel.name)
+
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
     }
 
     /*if (cmd == `${prefix}info`) {
@@ -337,9 +414,24 @@ bot.on("message", async msg=>  {
         .addField("**World Health Organization:**", "https://www.who.int/emergencies/diseases/novel-coronavirus-2019")
 
         .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | ")
+        .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | ")
         msg.channel.send({embed: Embed});
         uptimecmds++;
+
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "-news")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        //.addField("Channel ID: ", msg.guild.channel.id)
+        //.addField("Channel Name: ", msg.guild.channel.name)
+
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
     }
 
 
@@ -358,10 +450,25 @@ bot.on("message", async msg=>  {
         
 
         .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | ")
+        .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | ")
 
         msg.channel.send({embed: Embed});
         uptimecmds++;
+
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "-changelog")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        //.addField("Channel ID: ", msg.guild.channel.id)
+        //.addField("Channel Name: ", msg.guild.channel.name)
+
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
     }
     
     
@@ -401,13 +508,28 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | ")
+            .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | ")
 
 
 
 
         msg.channel.send({embed: Embed});
         uptimecmds++;
+
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "-global")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        //.addField("Channel ID: ", msg.guild.channel.id)
+        //.addField("Channel Name: ", msg.guild.channel.name)
+
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
 
     }
 
@@ -491,7 +613,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.8 | ")
+                        .setFooter("COVID-19 Bot | 2.9 | ")
 
 
 
@@ -524,7 +646,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.8 | ")
+                        .setFooter("COVID-19 Bot | 2.9 | ")
 
 
 
@@ -556,7 +678,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed | ")
+                        .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed | ")
 
 
 
@@ -589,7 +711,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed | ")
+                        .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed | ")
 
 
 
@@ -620,7 +742,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed | ")
+                        .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed | ")
 
 
 
@@ -653,7 +775,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed | ")
+                        .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed | ")
 
 
 
@@ -685,7 +807,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed | ")
+                        .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed | ")
 
 
 
@@ -716,7 +838,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.8 | ")
+                        .setFooter("COVID-19 Bot | 2.9 | ")
 
 
 
@@ -748,7 +870,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.8 | ")
+                        .setFooter("COVID-19 Bot | 2.9 | ")
 
 
 
@@ -781,7 +903,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.8 | ")
+                        .setFooter("COVID-19 Bot | 2.9 | ")
 
 
 
@@ -818,7 +940,7 @@ bot.on("message", async msg=>  {
 
 
                     .setTimestamp()
-                    .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | ")
+                    .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | ")
 
 
 
@@ -854,7 +976,7 @@ bot.on("message", async msg=>  {
 
 
                 .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | ")
+                .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | ")
 
 
 
@@ -874,7 +996,7 @@ bot.on("message", async msg=>  {
 
 
                 .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.8 | ")
+                .setFooter("COVID-19 Bot | 2.9 | ")
 
 
 
@@ -886,6 +1008,22 @@ bot.on("message", async msg=>  {
 
         }
         uptimecmds++;
+
+
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "-country")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        //.addField("Channel ID: ", msg.guild.channel.id)
+        //.addField("Channel Name: ", msg.guild.channel.name)
+
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
     }
 
     if(cmd == `${prefix}stats`) {
@@ -898,9 +1036,24 @@ bot.on("message", async msg=>  {
         .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
         .addField("Total Members: ", numberWithCommas(bot.users.cache.size))
             .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.8 |")
+        .setFooter("COVID-19 Bot | 2.9 |")
         msg.channel.send({embed: Embed});
         uptimecmds++;
+
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "-stats")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        //.addField("Channel ID: ", msg.guild.channel.id)
+        //.addField("Channel Name: ", msg.guild.channel.name)
+
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
     }
     
 
@@ -959,7 +1112,7 @@ bot.on("message", async msg=>  {
 
 
                 .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | ")
+                .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | ")
 
 
 
@@ -979,7 +1132,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | ")
+            .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | ")
 
 
 
@@ -994,6 +1147,22 @@ bot.on("message", async msg=>  {
         }
         uptimecmds++;
 
+
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "-state")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        //.addField("Channel ID: ", msg.guild.channel.id)
+        //.addField("Channel Name: ", msg.guild.channel.name)
+
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
+
     }
 
     if (cmd == `${prefix}invite`) {
@@ -1004,11 +1173,26 @@ bot.on("message", async msg=>  {
         .setColor(colors.blue)
         .addField("Use this link to invite COVID Bot:", invite)
             .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | " )
+        .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | " )
 
 
         msg.author.send(Embed);
         uptimecmds++;
+
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "-invite")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        //.addField("Channel ID: ", msg.guild.channel.id)
+        //.addField("Channel Name: ", msg.guild.channel.name)
+
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
 
     }
 
@@ -1068,7 +1252,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | " )
+            .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | " )
 
 
 
@@ -1095,12 +1279,27 @@ bot.on("message", async msg=>  {
     
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | ")
+            .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | ")
 
 
 
         msg.channel.send({embed: Embed});
         uptimecmds++;
+
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "-continent")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        //.addField("Channel ID: ", msg.guild.channel.id)
+        //.addField("Channel Name: ", msg.guild.channel.name)
+
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
 
 
 
@@ -1145,9 +1344,24 @@ bot.on("message", async msg=>  {
         .addField("**2 days ago:** ", "📈 Total Cases: " + numberWithCommas(cases[4]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[4]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[4]))
         .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(cases[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[5]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[5]))
             .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | ")
+        .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | ")
         msg.channel.send({embed: Embed});
         uptimecmds++;
+
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "-historyall")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        //.addField("Channel ID: ", msg.guild.channel.id)
+        //.addField("Channel Name: ", msg.guild.channel.name)
+
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
 
     }
 
@@ -1208,7 +1422,7 @@ bot.on("message", async msg=>  {
 
 
                 .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | ")
+                .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | ")
                 msg.channel.send({embed: Embed});
 
         } catch {
@@ -1221,13 +1435,27 @@ bot.on("message", async msg=>  {
                 .setDescription("Command Currently down due to API errors. Should be returned shortly. Last updated 11/11/20.")
     
                 .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | ")
+                .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | ")
     
                 msg.channel.send({embed: Embed});
                 return
 
         }
         uptimecmds++;
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "-countryhistory")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        //.addField("Channel ID: ", msg.guild.channel.id)
+        //.addField("Channel Name: ", msg.guild.channel.name)
+
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
         
     }
 
@@ -1269,7 +1497,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | ")
+            .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | ")
 
 
 
@@ -1312,7 +1540,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | ")
+            .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | ")
             msg.channel.send({embed: Embed});
 
 
@@ -1335,13 +1563,28 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.8 | Use -help to see the new commands we have developed. | " )
+            .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed. | " )
             msg.channel.send({embed: Embed});
         }
 
       
         
         uptimecmds++;
+
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "-provincehistory")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        //.addField("Channel ID: ", msg.guild.channel.id)
+        //.addField("Channel Name: ", msg.guild.channel.name)
+
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
     }
 
 
