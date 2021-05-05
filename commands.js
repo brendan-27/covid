@@ -126,6 +126,8 @@ bot.on("message", async msg=>  {
         msg.channel.send({embed: Embed});
         uptimecmds++;
 
+        msg.channel.send('Test');
+
 
 
     }
