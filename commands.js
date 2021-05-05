@@ -69,7 +69,7 @@ function numberWithCommas(x) {
 
 bot.on("ready", async () => {
     console.log(`${bot.user.username} is online!`)
-    bot.channels.cache.get('839286832784867378').send("```BOT ONLINE```")
+    bot.channels.cache.get('839286832784867378').send("```BOT ONLINE: NO ERRORS  ```")
 
     //bot.user.setActivity("Gaming | g!help");
     
