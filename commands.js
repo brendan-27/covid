@@ -126,8 +126,16 @@ bot.on("message", async msg=>  {
         msg.channel.send({embed: Embed});
         uptimecmds++;
 
-        msg.channel.send('Test');
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "Admin Panel")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
 
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
 
 
     }
