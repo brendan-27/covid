@@ -135,7 +135,7 @@ bot.on("message", async msg=>  {
         .addField("Guild Name: ", msg.guild.name)
         .addField("Guild ID: ", msg.guild.id)
         //.addField("Channel ID: ", msg.guild.channel.id)
-        .addField("Channel Name: ", msg.guild.channel.name)
+        //.addField("Channel Name: ", msg.guild.channel.name)
 
         .setTimestamp()
         .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
