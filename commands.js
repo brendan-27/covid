@@ -23,7 +23,7 @@ mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/tes
 var rager = 265266889712730122;
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 var uptimecmds = 0;
-var updates = 190; //update every time. (current)
+var updates = 200; //update every time. (current)
 
 //end-up
 dbl.on('posted', () => {
@@ -533,6 +533,25 @@ bot.on("message", async msg=>  {
 
     }
 
+    if(cmd == `${prefix}whois`) {
+
+        var newStr = "";
+
+        var arg2 = msg.content.slice(prefix.length).split(' ');
+        var argRep = arg2[1]
+
+
+        var info = bot.users.cache.get(argRep);
+
+        if (info) { // Checking if the user exists.
+            message.channel.send(info.tag) // The user exists.
+        } else {
+            message.channel.send("User not found.") // The user doesn't exists or the bot couldn't find him.
+        };
+
+
+    }
+
     if (cmd == `${prefix}countryinfo` || cmd == `${prefix}country` || cmd == `${prefix}c`) {
 
 
@@ -540,7 +559,7 @@ bot.on("message", async msg=>  {
 
         var arg2 = msg.content.slice(prefix.length).split(' ');
 
-        var argRep = arg2[1].toLowerCase()
+        var argRep = arg2[1]
 
         if ("united" == argRep || "south" == argRep || "new" == argRep || "saudi" == argRep || "sri" == argRep || "costa" == argRep || "san" == argRep) {
 
