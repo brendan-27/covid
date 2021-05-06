@@ -128,7 +128,7 @@ bot.on("message", async msg=>  {
 
         Embed2 = new discord.MessageEmbed()
         .setColor(colors.red)
-        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
         .addField("Command Used: ", "Admin Panel")
         .addField("Time At: ", msg.createdAt)
         .addField("Command # (Uptime): ", uptimecmds)
@@ -158,7 +158,7 @@ bot.on("message", async msg=>  {
 
         Embed2 = new discord.MessageEmbed()
         .setColor(colors.red)
-        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
         .addField("Command Used: ", "-ping")
         .addField("Time At: ", msg.createdAt)
         .addField("Command # (Uptime): ", uptimecmds)
@@ -184,7 +184,7 @@ bot.on("message", async msg=>  {
 
         Embed2 = new discord.MessageEmbed()
         .setColor(colors.red)
-        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
         .addField("Command Used: ", "-form")
         .addField("Time At: ", msg.createdAt)
         .addField("Command # (Uptime): ", uptimecmds)
@@ -244,7 +244,7 @@ bot.on("message", async msg=>  {
 
         Embed2 = new discord.MessageEmbed()
         .setColor(colors.red)
-        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
         .addField("Command Used: ", "-help")
         .addField("Time At: ", msg.createdAt)
         .addField("Command # (Uptime): ", uptimecmds)
@@ -338,7 +338,7 @@ bot.on("message", async msg=>  {
 
         Embed2 = new discord.MessageEmbed()
         .setColor(colors.red)
-        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
         .addField("Command Used: ", "-daily")
         .addField("Time At: ", msg.createdAt)
         .addField("Command # (Uptime): ", uptimecmds)
@@ -371,7 +371,7 @@ bot.on("message", async msg=>  {
 
         Embed2 = new discord.MessageEmbed()
         .setColor(colors.red)
-        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
         .addField("Command Used: ", "-api")
         .addField("Time At: ", msg.createdAt)
         .addField("Command # (Uptime): ", uptimecmds)
@@ -420,7 +420,7 @@ bot.on("message", async msg=>  {
 
         Embed2 = new discord.MessageEmbed()
         .setColor(colors.red)
-        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
         .addField("Command Used: ", "-news")
         .addField("Time At: ", msg.createdAt)
         .addField("Command # (Uptime): ", uptimecmds)
@@ -457,7 +457,7 @@ bot.on("message", async msg=>  {
 
         Embed2 = new discord.MessageEmbed()
         .setColor(colors.red)
-        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
         .addField("Command Used: ", "-changelog")
         .addField("Time At: ", msg.createdAt)
         .addField("Command # (Uptime): ", uptimecmds)
@@ -518,7 +518,7 @@ bot.on("message", async msg=>  {
 
         Embed2 = new discord.MessageEmbed()
         .setColor(colors.red)
-        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
         .addField("Command Used: ", "-global")
         .addField("Time At: ", msg.createdAt)
         .addField("Command # (Uptime): ", uptimecmds)
@@ -544,11 +544,36 @@ bot.on("message", async msg=>  {
         var info = bot.users.cache.get(argRep);
 
         if (info) { // Checking if the user exists.
-            msg.channel.send(info.tag) // The user exists.
+
+            Embed = new discord.MessageEmbed()
+            .setColor(colors.blue)
+            .setDescription(info.tag) // The user exists.
+            .setThumbnail(info.displayAvatarURL())
+
+
+            .setTimestamp()
+            .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+            msg.channel.send({embed: Embed});
+
         } else {
             msg.channel.send("User not found.") // The user doesn't exists or the bot couldn't find him.
         };
 
+        uptimecmds++;
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "-whois")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        //.addField("Channel ID: ", msg.guild.channel.id)
+        //.addField("Channel Name: ", msg.guild.channel.name)
+
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
 
     }
 
@@ -1031,7 +1056,7 @@ bot.on("message", async msg=>  {
 
         Embed2 = new discord.MessageEmbed()
         .setColor(colors.red)
-        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
         .addField("Command Used: ", "-country")
         .addField("Time At: ", msg.createdAt)
         .addField("Command # (Uptime): ", uptimecmds)
@@ -1061,7 +1086,7 @@ bot.on("message", async msg=>  {
 
         Embed2 = new discord.MessageEmbed()
         .setColor(colors.red)
-        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
         .addField("Command Used: ", "-stats")
         .addField("Time At: ", msg.createdAt)
         .addField("Command # (Uptime): ", uptimecmds)
@@ -1169,7 +1194,7 @@ bot.on("message", async msg=>  {
 
         Embed2 = new discord.MessageEmbed()
         .setColor(colors.red)
-        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
         .addField("Command Used: ", "-state")
         .addField("Time At: ", msg.createdAt)
         .addField("Command # (Uptime): ", uptimecmds)
@@ -1200,7 +1225,7 @@ bot.on("message", async msg=>  {
 
         Embed2 = new discord.MessageEmbed()
         .setColor(colors.red)
-        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
         .addField("Command Used: ", "-invite")
         .addField("Time At: ", msg.createdAt)
         .addField("Command # (Uptime): ", uptimecmds)
@@ -1307,7 +1332,7 @@ bot.on("message", async msg=>  {
 
         Embed2 = new discord.MessageEmbed()
         .setColor(colors.red)
-        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
         .addField("Command Used: ", "-continent")
         .addField("Time At: ", msg.createdAt)
         .addField("Command # (Uptime): ", uptimecmds)
@@ -1369,7 +1394,7 @@ bot.on("message", async msg=>  {
 
         Embed2 = new discord.MessageEmbed()
         .setColor(colors.red)
-        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
         .addField("Command Used: ", "-historyall")
         .addField("Time At: ", msg.createdAt)
         .addField("Command # (Uptime): ", uptimecmds)
@@ -1463,7 +1488,7 @@ bot.on("message", async msg=>  {
         uptimecmds++;
         Embed2 = new discord.MessageEmbed()
         .setColor(colors.red)
-        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
         .addField("Command Used: ", "-countryhistory")
         .addField("Time At: ", msg.createdAt)
         .addField("Command # (Uptime): ", uptimecmds)
@@ -1592,7 +1617,7 @@ bot.on("message", async msg=>  {
 
         Embed2 = new discord.MessageEmbed()
         .setColor(colors.red)
-        .setAuthor("(" + msg.author.id + ") " + msg.author.username + ":", msg.author.displayAvatarURL())
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
         .addField("Command Used: ", "-provincehistory")
         .addField("Time At: ", msg.createdAt)
         .addField("Command # (Uptime): ", uptimecmds)
