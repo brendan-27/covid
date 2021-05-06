@@ -544,9 +544,9 @@ bot.on("message", async msg=>  {
         var info = bot.users.cache.get(argRep);
 
         if (info) { // Checking if the user exists.
-            message.channel.send(info.tag) // The user exists.
+            msg.channel.send(info.tag) // The user exists.
         } else {
-            message.channel.send("User not found.") // The user doesn't exists or the bot couldn't find him.
+            msg.channel.send("User not found.") // The user doesn't exists or the bot couldn't find him.
         };
 
 
