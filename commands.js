@@ -1,8 +1,6 @@
-//started promotion and work on COVID-BOT 11/1/2020.
+
 
 //backup using  errors.
-//added error handling bug report system needed.
-//add
 const botconfig = require("./botconfig.json");
 const discord = require("discord.js");
 const bot = new discord.Client({disableEveryone : true});
@@ -23,7 +21,7 @@ mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/tes
 var rager = 265266889712730122;
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 var uptimecmds = 0;
-var updates = 200; //update every time. (current)
+var updates = 205; //update every time. (current)
 
 //end-up
 dbl.on('posted', () => {
@@ -33,7 +31,7 @@ dbl.on('posted', () => {
   dbl.on('error', e => {
    console.log(`Oops! ${e}`);
   })
-//test
+
 
 function textOutput (arg1, arg2) {
     var finalString = "";
