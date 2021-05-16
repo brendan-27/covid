@@ -31,7 +31,7 @@ dbl.on('posted', () => {
   dbl.on('error', e => {
    console.log(`Oops! ${e}`);
   })
-
+//
 
 function textOutput (arg1, arg2) {
     var finalString = "";
