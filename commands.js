@@ -21,7 +21,7 @@ mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/tes
 var rager = 265266889712730122;
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 var uptimecmds = 0;
-var updates = 205; //update every time. (current)
+var updates = 207; //update every time. (current)
 
 //end-up
 dbl.on('posted', () => {
@@ -32,6 +32,7 @@ dbl.on('posted', () => {
    console.log(`Oops! ${e}`);
   })
 //
+
 
 function textOutput (arg1, arg2) {
     var finalString = "";
@@ -1087,7 +1088,7 @@ bot.on("message", async msg=>  {
         .setAuthor("COVID-19 Bot Stats:", bot.user.displayAvatarURL())
         //.setDescription("```COVIDBOT is in " + numberWithCommas(bot.guilds.cache.size) + " servers, serving " + numberWithCommas(bot.users.cache.size) + " users!```")
         .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
-        .addField("Total Members: ", numberWithCommas(bot.users.cache.size))
+        .addField("Total Members: ", numberWithCommas(bot.users.cache.size) + "(Very Innacurate)")
         .addField("Verification Satus: ", "Submitted and Pending.")
         .setTimestamp()
         .setFooter("COVID-19 Bot | 2.9 |")
