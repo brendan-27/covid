@@ -75,7 +75,7 @@ bot.on("ready", async () => {
 })
 
 
-let statuses = [`COVID-19`, `-help`, `Coronavirus`, `API's`, `Data`, `-invite`, `News`, `Health`, `-world`, `Statistics`, `discord.js`]
+let statuses = [`COVID-19`, `-help`, `Coronavirus`, `API's`, `Data`, `-invite`, `The News`, `Health`, `-world`, `Statistics`, `discord.js`]
 
 setInterval(function() {
 
