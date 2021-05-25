@@ -363,7 +363,7 @@ bot.on("message", async msg=>  {
 
         .addField("**API:**", "API used to make COVID-19 Bot is corona corona.lmao.ninja")
         .addField("**Updates:**", "Data is live and is updated once every 10 minutes for every command.")
-        .addField("**Innacurate Data:**", "Sometimes API will have internal errors and this causes some feilds to be marked as 0. But This doest happen too much. This is the only known issue.")
+        .addField("**Inacurate Data:**", "Sometimes API will have internal errors and this causes some feilds to be marked as 0. But This doest happen too much. This is the only known issue.")
         .addField("**Known Issues:**", "When using -history {country} some of the fields may show 0. This is a API error and some fixes have started to role in but need more error handling.")
     
         .setTimestamp()
@@ -1088,7 +1088,7 @@ bot.on("message", async msg=>  {
         .setAuthor("COVID-19 Bot Stats:", bot.user.displayAvatarURL())
         //.setDescription("```COVIDBOT is in " + numberWithCommas(bot.guilds.cache.size) + " servers, serving " + numberWithCommas(bot.users.cache.size) + " users!```")
         .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
-        .addField("Total Members: ", numberWithCommas(bot.users.cache.size) + "(Very Innacurate)")
+        .addField("Total Members: ", numberWithCommas(bot.users.cache.size) + "(Very Inacurate)")
         .addField("Verification Satus: ", "Submitted and Pending.")
         .setTimestamp()
         .setFooter("COVID-19 Bot | 2.9 |")
