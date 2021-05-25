@@ -33,7 +33,7 @@ totalSeconds %= 3600;
 let minutes = Math.floor(totalSeconds / 60);
 let seconds = Math.floor(totalSeconds % 60);
 
-var uptime = (days + ":" + hours + ":" + minutes + ":" + seconds)
+var uptime = days + ":" + hours + ":" + minutes + ":" + seconds;
 
 //end-up
 dbl.on('posted', () => {
