@@ -25,20 +25,7 @@ var updates = 207; //update every time. (current)
 
 //var uptime = bot.uptime;
 //stack overflow code:
-let totalSeconds = (bot.uptime / 1000);
-let days = Math.floor(totalSeconds / 86400);
-totalSeconds %= 86400;
-let hours = Math.floor(totalSeconds / 3600);
-totalSeconds %= 3600;
-let minutes = Math.floor(totalSeconds / 60);
-let seconds = Math.floor(totalSeconds % 60);
-console.log(totalSeconds);
-console.log(days);
-console.log(hours);
-console.log(minutes);
-console.log(seconds);
 
-var uptime = days + ":" + hours + ":" + minutes + ":" + seconds;
 
 //end-up
 dbl.on('posted', () => {
@@ -112,6 +99,18 @@ bot.on("message", async msg=>  {
     let cmd = msgArray[0];
     
     //let args = msgArray.slice[0];
+
+
+    let totalSeconds = (bot.uptime / 1000);
+    let days = Math.floor(totalSeconds / 86400);
+    totalSeconds %= 86400;
+    let hours = Math.floor(totalSeconds / 3600);
+    totalSeconds %= 3600;
+    let minutes = Math.floor(totalSeconds / 60);
+    let seconds = Math.floor(totalSeconds % 60);
+    
+
+    var uptime = (days + ":" + hours + ":" + minutes + ":" + seconds);
     
     
     //working on this starting now.
