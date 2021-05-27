@@ -21,7 +21,7 @@ mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/tes
 var rager = 265266889712730122;
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 var uptimecmds = 0;
-var updates = 215; //update every time. (current)
+var updates = 216; //update every time. (current)
 
 //var uptime = bot.uptime;
 //stack overflow code:
@@ -323,7 +323,7 @@ bot.on("message", async msg=>  {
             Embed = new discord.MessageEmbed()
             .setColor(colors.blue)
             .setAuthor("Daily COVID 19 information: ", bot.user.displayAvatarURL())
-            .setThumbnail('https://cdn.discordapp.com/attachments/761009105053286430/822329693901815838/20210130_woc574.png')
+            .setThumbnail('https://cdn.discordapp.com/attachments/761009105053286430/847522140294610975/dashboard-electric-blue.png')
             //cases
         
             .addField("📈 New Case Count (Today): ", numberWithCommas(newCases))
@@ -468,6 +468,7 @@ bot.on("message", async msg=>  {
         
     
         .addField("Forms: ", "If a used does -form a google forms link will show up where they can report things and ask questions.")
+        .addField("Bug Fixes: ", "Bug Fixes, Typos, Changed -daily look etc.")
         
         
 
@@ -656,7 +657,7 @@ bot.on("message", async msg=>  {
     
         try {
             var flagCountry = data.countryInfo.flag;
-
+            //THIS FUNCTION IS NOT BEING USED RN
             function errors() {
 
 
@@ -1104,7 +1105,7 @@ bot.on("message", async msg=>  {
         .setAuthor("COVID-19 Bot Stats:", bot.user.displayAvatarURL())
         //.setDescription("```COVIDBOT is in " + numberWithCommas(bot.guilds.cache.size) + " servers, serving " + numberWithCommas(bot.users.cache.size) + " users!```")
         .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
-        .addField("Total Members: ", numberWithCommas(bot.users.cache.size) + "(Very Inacurate)")
+        .addField("Total Members: ", numberWithCommas(bot.users.cache.size) + " (Very Inacurate)")
         .addField("Uptime: ", uptime)
         .addField("Verification Satus: ", "Submitted and Pending.")
         .setTimestamp()
