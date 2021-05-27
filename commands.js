@@ -189,6 +189,28 @@ bot.on("message", async msg=>  {
         bot.channels.cache.get('839286832784867378').send({embed: Embed2});
     }
 
+    if(cmd == `${prefix}privacy`) {
+
+        msg.channel.send("Being Constructed.")
+        uptimecmds++;
+        Embed2 = new discord.MessageEmbed()
+        .setColor(colors.red)
+        .setAuthor("(" + msg.author.id + ") " + msg.author.tag + ":", msg.author.displayAvatarURL())
+        .addField("Command Used: ", "-privacy")
+        .addField("Time At: ", msg.createdAt)
+        .addField("Command # (Uptime): ", uptimecmds)
+        .addField("Guild Name: ", msg.guild.name)
+        .addField("Guild ID: ", msg.guild.id)
+        .addField("Guild Users: ", msg.guild.memberCount)
+        //.addField("Channel ID: ", msg.guild.channel.id)
+        //.addField("Channel Name: ", msg.guild.channel.name)
+
+        .setTimestamp()
+        .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
+        bot.channels.cache.get('839286832784867378').send({embed: Embed2});
+
+    }
+
     if(cmd == `${prefix}form`) {
         msg.channel.send("Getting updated link...").then(m => {
             
@@ -1666,6 +1688,10 @@ bot.on("message", async msg=>  {
         .setFooter("Bot Uptime: " + uptime + " | Build: " + updates)
         bot.channels.cache.get('839286832784867378').send({embed: Embed2});
     }
+
+
+    // start of vaccination stuff:
+
 
 
 })
