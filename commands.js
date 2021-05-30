@@ -1624,7 +1624,7 @@ bot.on("message", async msg=>  {
         recovs = Object.values(recovs);
         var provinceName = data['province'];
         if (recovs[0], recovs[1], recovs[2], recovs[3], recovs[4], recovs[5] == 0) {
-
+            //
             Embed = new discord.MessageEmbed()
             .setColor(colors.blue)
             .setAuthor(provinceName.toUpperCase() + " Historic COVID-19 Information", bot.user.displayAvatarURL())
