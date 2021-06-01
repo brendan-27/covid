@@ -19,7 +19,7 @@ mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/tes
 var rager = 265266889712730122;
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 var uptimecmds = 0;
-var updates = 223; //update every time. (current)
+var updates = 227; //update every time. (current)
 
 //var uptime = bot.uptime;
 //stack overflow code:
@@ -487,8 +487,7 @@ bot.on("message", async msg=>  {
         .setDescription("Updates from 1:55 pm 4/30/2021.")
         
     
-        .addField("Forms: ", "If a used does -form a google forms link will show up where they can report things and ask questions.")
-        .addField("Bug Fixes: ", "Bug Fixes, Typos, Changed -daily look etc.")
+        .addField("Bug Fix: ", "Fixed Update Number.")
         
         
 
