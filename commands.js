@@ -13,7 +13,7 @@ const mongoose = require('mongoose');
 //bot token might have to update soon.
 const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcwODQwODQ3ODU3Mzc4OTI2NiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTkwNTI0NDkyfQ.ajFs47xxzPA-N5y36CtaSoQBgxo41QcnX0-Fy7n3hWc', bot);
 
-//database starting setup soon for custom prefix.
+//connected to database not in use rn.
 mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/test', {useNewUrlParser: true, useUnifiedTopology: true})
 
 
@@ -21,7 +21,7 @@ mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/tes
 var rager = 265266889712730122;
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 var uptimecmds = 0;
-var updates = 216; //update every time. (current)
+var updates = 220; //update every time. (current)
 
 //var uptime = bot.uptime;
 //stack overflow code:
@@ -135,7 +135,7 @@ bot.on("message", async msg=>  {
         .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
         .addField("Total Members: ", numberWithCommas(bot.users.cache.size))
         .addField("API Latency (DIFFERENT THEN BOT PING): ", `API: ${bot.ws.ping}`)
-        .addField("Admin Commands: ", "-yag13dd (CURRENT), (SOON) -logs")
+        .addField("Admin Commands: ", "All commands log in #covid-logs")
         .setTimestamp()
         .setFooter("COVID-19 Bot | ADMIN PANEL (PRIVATE) | ")
         msg.channel.send({embed: Embed});
