@@ -1,4 +1,4 @@
-# covid
+# COVID-19
 COVID-19 discord bot:
 
 Shows live covid stats that get updated every 5-10 mins. You can see country, continent, state, world, canadian province, and historical data.
