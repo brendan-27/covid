@@ -15,7 +15,7 @@ Shows live covid stats that get updated every 5-10 mins. You can see country, co
 
 
 
-Any other commands will be in -help.
+Any other commands can be found in -help.
 
 
 
