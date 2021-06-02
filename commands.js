@@ -19,13 +19,10 @@ mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/tes
 var rager = 265266889712730122;
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 var uptimecmds = 0;
-var updates = 227; //update every time. (current)
-
-//var uptime = bot.uptime;
-//stack overflow code:
+var updates = 231; //update every time. (current)
 
 
-//end-up
+//top.gg server count
 dbl.on('posted', () => {
     console.log('Server count posted!');
   })
@@ -61,7 +58,7 @@ function textOutput (arg1, arg2) {
 
 }
 sendMessage();*/
-
+//commas
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -246,15 +243,15 @@ bot.on("message", async msg=>  {
         .addField("**Commands for COVID Bot**:", "By state, by country, global, and by continent.", true)
         .addField("**-global**", "Displays Global COVID-19 stats.")
         .addField("**-countryinfo {state} or -country {country}**", "Use  to see country by country COVID info.")
-        .addField("**Example:**", "-countryinfo US, -country sweden.", true)
+        .addField("**Example (Country):**", "-countryinfo US, -country sweden.", true)
         .addField("**-statesinfo {state} or -state {state}**", "Use to see state by state COVID info.")
-        .addField("**Example:**", "-statesinfo New York, -state california.", true)
+        .addField("**Example (State):**", "-statesinfo New York, -state california.", true)
         .addField("**-continentsinfo {continent} or -continent {continent} **", "Use to see COVID stats on different continents.")
-        .addField("**Example:**", "-continent asia, -continentinfo north america.", true)
+        .addField("**Example (Continent):**", "-continent asia, -continentinfo north america.", true)
         .addField("**-history {country}:**", "Use to see 6 day info on your selected country.")
-        .addField("**Example:**", "-history america, -countryhistory sweden", true)
+        .addField("**Example (History):**", "-history america, -countryhistory sweden", true)
         .addField("**-province {province}:**", "Use to see 6 day info on provinces.")
-        .addField("**Example:**", "-province Alberta, -provincehistory nova scotia", true)
+        .addField("**Example (Province):**", "-province Alberta, -provincehistory nova scotia", true)
         .addField("**-daily:**", "(Not Funntional) Shows all info from that day and updates every 24 hours. (Fixed API is now wroking again. DELAYED MESSAGE).")
         .addField("**-worldhistory:**", "Shows info from the previous 6 days so you can track growth.", )
         .addField("**-stats**", "Use to see amount of servers bot is in.")
