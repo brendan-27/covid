@@ -19,7 +19,7 @@ mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/tes
 var rager = 265266889712730122;
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 var uptimecmds = 0;
-var updates = 231; //update every time. (current)
+var updates = 233; //update every time. (current)
 
 
 //top.gg server count
@@ -72,7 +72,17 @@ bot.on("ready", async () => {
     //bot.user.setActivity("Gaming | g!help");
     
 })
+//stack overflow tests
+bot.on("guildCreate", guild => {
+    // This event triggers when the bot joins a guild.
+    bot.channels.cache.get('849742141088727060').send(`New server joined: ${guild.name} (id: ${guild.id}). This server has ${guild.memberCount} members!`);
+});
 
+bot.on("guildDelete", guild => {
+    // this event triggers when the bot is removed from a guild.
+    bot.channels.cache.get('849742141088727060').send(`I have been removed from: ${guild.name} (id: ${guild.id})`);
+});
+//stack end
 
 let statuses = [`COVID-19`, `-help`, `Coronavirus`, `API's`, `Data`, `-invite`, `The News`, `Health`, `-world`, `Statistics`, `discord.js`]
 
