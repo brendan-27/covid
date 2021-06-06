@@ -1133,7 +1133,7 @@ bot.on("message", async msg=>  {
         .addField("Total Servers: ", numberWithCommas(bot.guilds.cache.size))
         .addField("Total Members: ", numberWithCommas(bot.users.cache.size) + " (Very Inacurate)")
         .addField("Uptime: ", uptime)
-        .addField("Verification Satus: ", "Submitted and Pending.")
+        .addField("Verification Satus: ", "Verified")
         .setTimestamp()
         .setFooter("COVID-19 Bot | 2.9 |")
         msg.channel.send({embed: Embed});
