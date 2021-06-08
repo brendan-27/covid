@@ -15,7 +15,7 @@ const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcwODQwODQ3OD
 mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/test', {useNewUrlParser: true, useUnifiedTopology: true})
 
 
-
+//channel id for logs
 var rager = 265266889712730122;
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 var uptimecmds = 0;
