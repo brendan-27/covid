@@ -279,6 +279,7 @@ bot.on("message", async msg=>  {
         .addField("**Support DM: **", "Add savior#0018 on discord for support or errors or questions.")
         .addField("**Support us by upvoting the bot at:**", "https://top.gg/bot/708408478573789266")
         .addField("**Invite COVID Bot to your server:**", "Click [Here](https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot), or use -invite.")
+        .addField("**Verification Status:**", "Verified as of 6/5.")
 
         .setTimestamp()
         .setFooter("COVID-19 Bot | 2.9 | ")
