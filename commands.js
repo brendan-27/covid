@@ -19,7 +19,7 @@ mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/tes
 var rager = 265266889712730122;
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 var uptimecmds = 0;
-var updates = 233; //update every time. (current)
+var updates = 236; //update every time. (current)
 
 
 //top.gg server count
@@ -84,7 +84,7 @@ bot.on("guildDelete", guild => {
 });
 //stack end
 
-let statuses = [`COVID-19`, `-help`, `Coronavirus`, `API's`, `Data`, `-invite`, `The News`, `Health`, `-world`, `Statistics`, `discord.js`]
+let statuses = [`COVID-19`, `-help`, `Coronavirus`, `API's`, `Data`, `-invite`, `The News`, `Health`, `-world`, `Statistics`, `discord.js`, `Verification`]
 
 setInterval(function() {
 
