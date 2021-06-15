@@ -19,7 +19,7 @@ mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/tes
 var rager = 265266889712730122;
 var invite = "https://discord.com/api/oauth2/authorize?client_id=708408478573789266&permissions=0&scope=bot";
 var uptimecmds = 0;
-var updates = 236; //update every time. (current)
+var updates = 237; //update every time. (current)
 
 
 //top.gg server count
@@ -244,7 +244,7 @@ bot.on("message", async msg=>  {
 
     }
 
-
+    // max amount of feilds for -help
     if (cmd == `${prefix}help` || cmd == `${prefix}he`) {
         Embed = new discord.MessageEmbed()
         .setColor(colors.blue)
@@ -282,7 +282,7 @@ bot.on("message", async msg=>  {
         .addField("**Verification Status:**", "Verified as of 6/5.")
 
         .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.9 | ")
+        .setFooter("COVID-19 Bot | 3.0 | ")
 
         msg.channel.send({embed: Embed});
         uptimecmds++;
@@ -364,7 +364,7 @@ bot.on("message", async msg=>  {
             .addField("Recovs Percent Increase: ", recovCleana + "%")
             
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | ")
+            .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | ")
             msg.channel.send({embed: Embed});
         } catch {
             //console.log(newRecovs);
@@ -375,7 +375,7 @@ bot.on("message", async msg=>  {
             .setDescription("This command is still under construction.")
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | ")
+            .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | ")
             msg.channel.send({embed: Embed});
         }
 
@@ -411,7 +411,7 @@ bot.on("message", async msg=>  {
         .addField("**Known Issues:**", "When using -history {country} some of the fields may show 0. This is a API error and some fixes have started to role in but need more error handling.")
     
         .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | ")
+        .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | ")
 
         msg.channel.send({embed: Embed});
 
@@ -463,7 +463,7 @@ bot.on("message", async msg=>  {
         .addField("**World Health Organization:**", "https://www.who.int/emergencies/diseases/novel-coronavirus-2019")
 
         .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | ")
+        .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | ")
         msg.channel.send({embed: Embed});
         uptimecmds++;
 
@@ -500,7 +500,7 @@ bot.on("message", async msg=>  {
         
 
         .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | ")
+        .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | ")
 
         msg.channel.send({embed: Embed});
         uptimecmds++;
@@ -559,7 +559,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | ")
+            .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | ")
 
 
 
@@ -710,7 +710,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.9 | ")
+                        .setFooter("COVID-19 Bot | 3.0 | ")
 
 
 
@@ -743,7 +743,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.9 | ")
+                        .setFooter("COVID-19 Bot | 3.0 | ")
 
 
 
@@ -775,7 +775,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed | ")
+                        .setFooter("COVID-19 Bot | 3.0 | Use -help to see the new commands we have developed | ")
 
 
 
@@ -808,7 +808,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed | ")
+                        .setFooter("COVID-19 Bot | 3.0 | Use -help to see the new commands we have developed | ")
 
 
 
@@ -839,7 +839,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed | ")
+                        .setFooter("COVID-19 Bot | 3.0 | Use -help to see the new commands we have developed | ")
 
 
 
@@ -872,7 +872,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed | ")
+                        .setFooter("COVID-19 Bot | 3.0 | Use -help to see the new commands we have developed | ")
 
 
 
@@ -904,7 +904,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.9 | Use -help to see the new commands we have developed | ")
+                        .setFooter("COVID-19 Bot | 3.0 | Use -help to see the new commands we have developed | ")
 
 
 
@@ -935,7 +935,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.9 | ")
+                        .setFooter("COVID-19 Bot | 3.0 | ")
 
 
 
@@ -967,7 +967,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.9 | ")
+                        .setFooter("COVID-19 Bot | 3.0 | ")
 
 
 
@@ -1000,7 +1000,7 @@ bot.on("message", async msg=>  {
 
 
                         .setTimestamp()
-                        .setFooter("COVID-19 Bot | 2.9 | ")
+                        .setFooter("COVID-19 Bot | 3.0 | ")
 
 
 
@@ -1037,7 +1037,7 @@ bot.on("message", async msg=>  {
 
 
                     .setTimestamp()
-                    .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | ")
+                    .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | ")
 
 
 
@@ -1073,7 +1073,7 @@ bot.on("message", async msg=>  {
 
 
                 .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | ")
+                .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | ")
 
 
 
@@ -1093,7 +1093,7 @@ bot.on("message", async msg=>  {
 
 
                 .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.9 | ")
+                .setFooter("COVID-19 Bot | 3.0 | ")
 
 
 
@@ -1136,7 +1136,7 @@ bot.on("message", async msg=>  {
         .addField("Uptime: ", uptime)
         .addField("Verification Satus: ", "Verified")
         .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.9 |")
+        .setFooter("COVID-19 Bot | 3.0 |")
         msg.channel.send({embed: Embed});
         uptimecmds++;
 
@@ -1213,7 +1213,7 @@ bot.on("message", async msg=>  {
 
 
                 .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | ")
+                .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | ")
 
 
 
@@ -1233,7 +1233,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | ")
+            .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | ")
 
 
 
@@ -1275,7 +1275,7 @@ bot.on("message", async msg=>  {
         .setColor(colors.blue)
         .addField("Use this link to invite COVID Bot:", invite)
             .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | " )
+        .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | " )
 
 
         msg.author.send(Embed);
@@ -1355,7 +1355,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | " )
+            .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | " )
 
 
 
@@ -1382,7 +1382,7 @@ bot.on("message", async msg=>  {
     
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | ")
+            .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | ")
 
 
 
@@ -1448,7 +1448,7 @@ bot.on("message", async msg=>  {
         .addField("**2 days ago:** ", "📈 Total Cases: " + numberWithCommas(cases[4]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[4]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[4]))
         .addField("**1 day ago:** ", "📈 Total Cases: " + numberWithCommas(cases[5]) + "\n☠️ Total Deaths: " + numberWithCommas(deaths[5]) + "\n💉 Total Recovs: " + numberWithCommas(recovs[5]))
             .setTimestamp()
-        .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | ")
+        .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | ")
         msg.channel.send({embed: Embed});
         uptimecmds++;
 
@@ -1527,7 +1527,7 @@ bot.on("message", async msg=>  {
 
 
                 .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | ")
+                .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | ")
                 msg.channel.send({embed: Embed});
 
         } catch {
@@ -1540,7 +1540,7 @@ bot.on("message", async msg=>  {
                 .setDescription("Command Currently down due to API errors. Should be returned shortly. Last updated 11/11/20.")
     
                 .setTimestamp()
-                .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | ")
+                .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | ")
     
                 msg.channel.send({embed: Embed});
                 return
@@ -1603,7 +1603,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | ")
+            .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | ")
 
 
 
@@ -1646,7 +1646,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | ")
+            .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | ")
             msg.channel.send({embed: Embed});
 
 
@@ -1669,7 +1669,7 @@ bot.on("message", async msg=>  {
 
 
             .setTimestamp()
-            .setFooter("COVID-19 Bot | 2.9 | Vaccination statistics coming soon, use -help for updates. | " )
+            .setFooter("COVID-19 Bot | 3.0 | Vaccination statistics coming soon, use -help for updates. | " )
             msg.channel.send({embed: Embed});
         }
 
