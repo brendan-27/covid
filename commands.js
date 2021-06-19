@@ -913,6 +913,7 @@ bot.on("message", async msg=>  {
 
 
                 }
+                //
                 if (casesMillion <= 0) {
 
                     Embed = new discord.MessageEmbed()
