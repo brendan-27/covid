@@ -84,7 +84,7 @@ bot.on("guildDelete", guild => {
 });
 //stack end
 
-let statuses = [`COVID-19`, `-help`, `Coronavirus`, `API's`, `Data`, `-invite`, `The News`, `Health`, `-world`, `Statistics`, `discord.js`, `Verification`]
+let statuses = [`COVID-19`, `-help`, `Coronavirus`, `API's`, `Data`, `-invite`, `The News`, `Health`, `-world`, `Statistics`, `discord.js`, `Verification`, `for Commands`]
 
 setInterval(function() {
 
