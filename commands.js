@@ -584,7 +584,7 @@ bot.on("message", async msg=>  {
         bot.channels.cache.get('839286832784867378').send({embed: Embed2});
 
     }
-
+    // only working in discord ATM
     if(cmd == `${prefix}whois`) {
 
         var newStr = "";
@@ -608,7 +608,7 @@ bot.on("message", async msg=>  {
             msg.channel.send({embed: Embed});
 
         } else {
-            msg.channel.send("User not found.") // The user doesn't exists or the bot couldn't find him.
+            msg.channel.send("User not found. (Or not in discord).") // The user doesn't exists or the bot couldn't find him.
         };
 
         uptimecmds++;
