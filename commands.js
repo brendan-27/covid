@@ -80,7 +80,7 @@ bot.on('guildCreate', guild => {
 
     Embed = new discord.MessageEmbed()
         .setColor(colors.blue)
-        .setAuthor("COVID-Statistic", bot.user.displayAvatarURL())
+        .setAuthor("COVID-Statistics:", bot.user.displayAvatarURL())
         .setDescription("-For help use -help \n-To get the bot invite link use -invite \n-To report a bug use -form")
         
         .setTimestamp()
