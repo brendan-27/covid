@@ -80,11 +80,11 @@ bot.on('guildCreate', guild => {
 
     Embed = new discord.MessageEmbed()
         .setColor(colors.blue)
-        .setAuthor("Thanks For Inviting Me", bot.user.displayAvatarURL())
-        .setDescription("For help use -help \nTo get the bot invite link use -invite \nTo report a bug use -form")
+        .setAuthor("COVID-Statistic", bot.user.displayAvatarURL())
+        .setDescription("-For help use -help \n-To get the bot invite link use -invite \n-To report a bug use -form")
         
         .setTimestamp()
-        .setFooter("COVID-19 Bot | ")
+        .setFooter("COVID-19 Bot ")
         channel.send({embed: Embed});
         
 
