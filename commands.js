@@ -74,7 +74,10 @@ bot.on("ready", async () => {
 })
 
 bot.on('guildCreate', guild => {
+
+   
     const channel = guild.channels.cache.find(channel => channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'))
+
     Embed = new discord.MessageEmbed()
         .setColor(colors.blue)
         .setAuthor("Thanks For Inviting Me", bot.user.displayAvatarURL())
@@ -82,8 +85,8 @@ bot.on('guildCreate', guild => {
         
         .setTimestamp()
         .setFooter("COVID-19 Bot | ")
-        msg.channel.send({embed: Embed});
-        uptimecmds++;
+        channel.send({embed: Embed});
+        
 
 })
 
