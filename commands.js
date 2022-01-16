@@ -72,6 +72,12 @@ bot.on("ready", async () => {
     //bot.user.setActivity("Gaming | g!help");
     
 })
+
+bot.on('guildCreate', guild => {
+    const channel = guild.channels.cache.find(channel => channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'))
+    channel.send("Thanks for inviting me")
+})
+
 //stack overflow tests
 bot.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
