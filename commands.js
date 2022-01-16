@@ -75,7 +75,16 @@ bot.on("ready", async () => {
 
 bot.on('guildCreate', guild => {
     const channel = guild.channels.cache.find(channel => channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'))
-    channel.send("Thanks for inviting me")
+    Embed = new discord.MessageEmbed()
+        .setColor(colors.blue)
+        .setAuthor("Thanks For Inviting Me", bot.user.displayAvatarURL())
+        .setDescription("For help use -help \nTo get the bot invite link use -invite \nTo report a bug use -form")
+        
+        .setTimestamp()
+        .setFooter("COVID-19 Bot | ")
+        msg.channel.send({embed: Embed});
+        uptimecmds++;
+
 })
 
 //stack overflow tests
