@@ -17,6 +17,10 @@ Shows live covid stats that get updated every 5-10 mins. You can see country, co
 
 Any other commands can be found in -help.
 
+// 
+
+code is messy and unorganized but a fully working bot with lots of features. 
+
 
 
 
