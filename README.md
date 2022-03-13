@@ -21,6 +21,8 @@ Any other commands can be found in -help.
 
 code is messy and unorganized but a fully working bot with lots of features. 
 
+coded by me
+
 
 
 
