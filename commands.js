@@ -11,8 +11,8 @@ const mongoose = require('mongoose');
 //bot token might have to update soon.
 const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcwODQwODQ3ODU3Mzc4OTI2NiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTkwNTI0NDkyfQ.ajFs47xxzPA-N5y36CtaSoQBgxo41QcnX0-Fy7n3hWc', bot);
 
-//connected to database not in use rn.
-mongoose.connect('mongodb+srv://whatland:RevRad99@covid-19.bchcm.mongodb.net/test', {useNewUrlParser: true, useUnifiedTopology: true})
+//connected to db
+mongoose.connect('', {useNewUrlParser: true, useUnifiedTopology: true})
 
 
 //channel id for logs
@@ -69,7 +69,7 @@ bot.on("ready", async () => {
     console.log(`${bot.user.username} is online!`)
     bot.channels.cache.get('839286832784867378').send("```BOT ONLINE: NO ERRORS \n \nDAILY SERVER RESTARTS EVERY 24 HOURS  ```")
 
-    //bot.user.setActivity("Gaming | g!help");
+
     
 })
 
@@ -90,17 +90,17 @@ bot.on('guildCreate', guild => {
 
 })
 
-//stack overflow tests
+//logs for private server
 bot.on("guildCreate", guild => {
-    // This event triggers when the bot joins a guild.
+    // on bot join
     bot.channels.cache.get('849742141088727060').send(`New server joined: ${guild.name} (id: ${guild.id}). This server has ${guild.memberCount} members!`);
 });
 
 bot.on("guildDelete", guild => {
-    // this event triggers when the bot is removed from a guild.
+    // removed from guild
     bot.channels.cache.get('849742141088727060').send(`I have been removed from: ${guild.name} (id: ${guild.id})`);
 });
-//stack end
+
 
 let statuses = [`COVID-19`, `-help`, `Coronavirus`, `API's`, `Data`, `-invite`, `The News`, `Health`, `-world`, `Statistics`, `discord.js`, `Verification`, `for Commands`]
 
@@ -136,11 +136,11 @@ bot.on("message", async msg=>  {
     var uptime = (days + ":" + hours + ":" + minutes + ":" + seconds);
     
     
-    //working on this starting now.
+    //test command
 
     if(cmd == `${prefix}yag13dd`) {
         
-        //stack overflow code:
+        
         let totalSeconds = (bot.uptime / 1000);
         let days = Math.floor(totalSeconds / 86400);
         totalSeconds %= 86400;
@@ -1725,4 +1725,4 @@ bot.on("message", async msg=>  {
 
 bot.login(process.env.token);
 
-// outdated: bot.login(botconfig.token);
+// nonhost: bot.login(botconfig.token);
