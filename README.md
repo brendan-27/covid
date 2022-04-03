@@ -19,6 +19,8 @@ Any other commands can be found in -help.
 
 // 
 
+Verified by discord
+
 code is messy and unorganized but a fully working bot with lots of features. 
 
 coded by me
