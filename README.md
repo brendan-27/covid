@@ -21,9 +21,9 @@ Any other commands can be found in -help.
 
 Verified by discord
 
-code is messy and unorganized but a fully working bot with lots of features. 
+code is extremely messy and unorganized but fully functional
 
-coded by me
+
 
 
 
